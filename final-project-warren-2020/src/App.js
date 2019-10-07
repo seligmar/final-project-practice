@@ -3,6 +3,7 @@ import logo from './logo.svg'
 import './App.css'
 import Login from './Login'
 import NewSupport from './NewSupporter'
+import API from './API'
 
 // reminder to use sweet-alert
 // import Swal from 'sweetalert2'
