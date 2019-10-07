@@ -1,0 +1,41 @@
+/* Warren colors:  
+
+    color: #b7e4cf; victory green
+     #b61b28 ; amazing red 
+     #232444 lovely dark blue purple 
+
+     polka-dot basics below:
+     body {
+  background: #232444 ;
+  background-image:
+    radial-gradient(#fff 30%, transparent 0), 
+    radial-gradient(#fff 30%, transparent 0);
+  background-size: 90px 90px;
+  background-position:  0px 0px, 0px 0px;
+}
+
+*/
+
+
+.App {
+  text-align: center;
+}
+
+.App-logo {
+  height: 40vmin;
+}
+
+.App-header {
+  background-color: #282c34;
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  font-size: calc(10px + 2vmin);
+  color: white;
+}
+
+.App-link {
+  color: #09d3ac;
+}
