@@ -1,6 +1,7 @@
 import React from 'react'
 import './App.css'
 import UserIndex from './components/UserIndex'
+import MapFragment from './components/Map'
 
 // below is mockup
 // "https://www.figma.com/file/KY3BKNojNY9CZgudaWBWw5/Warren2020?node-id=8%3A1"
@@ -15,9 +16,11 @@ import UserIndex from './components/UserIndex'
 const App = () => {
   return (
     <div className='App'>
-      <header className='App-header'>
-        <UserIndex />
-        {/* MySwal.fire({
+      {/* <header className='App-header'> */}
+      <MapFragment />
+      <UserIndex />
+
+      {/* MySwal.fire({
       imageUrl: 'https://media.giphy.com/media/h5AHEcNMhn7u8/giphy.gif',
       imageWidth: 300,
       imageHeight: 200,
@@ -29,7 +32,7 @@ const App = () => {
       confirmButtonColor: 'cornflowerblue',
       width: 300
     }) */}
-      </header>
+      {/* </header> */}
     </div>
   )
 }
