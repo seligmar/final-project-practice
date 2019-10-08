@@ -19,10 +19,11 @@ const Map = () => {
 
 const WrappedMap = withScriptjs(withGoogleMap(Map))
 
-const MapFragment = () => {
+const MapFragment = props => {
+  // const events = props.events // pretty sure this is correct
   return (
     <div style={{ width: '50vw', height: '50vh' }}>
-      <button onClick={() => this.getEvents()} />
+      <button onClick={() => props.getEvents()} />
       <WrappedMap
         googleMapURL={`https://maps.googleapis.com/maps/api/js?v=3.exp&libraries=geometry,drawing,places&key=${GOOGLE_API_KEY}`}
         loadingElement={<div style={{ height: '100%' }} />}

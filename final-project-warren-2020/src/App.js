@@ -13,14 +13,25 @@ import MapFragment from './components/Map'
 
 // const MySwal = withReactContent(Swal)
 
-const App = () => {
-  return (
-    <div className='App'>
-      {/* <header className='App-header'> */}
-      <MapFragment />
-      <UserIndex />
+class App extends React.Component {
+  state = {
+    events: []
+  }
 
-      {/* MySwal.fire({
+  getEvents = () => {
+    return fetch('http://localhost:3001/events') // events url
+      .then(resp => resp.json())
+      .then(events => this.setState({ events }))
+  }
+
+  render () {
+    return (
+      <div className='App'>
+        {/* <header className='App-header'> */}
+        <MapFragment events={this.state.events} getEvents={this.getEvents} />
+        <UserIndex />
+
+        {/* MySwal.fire({
       imageUrl: 'https://media.giphy.com/media/h5AHEcNMhn7u8/giphy.gif',
       imageWidth: 300,
       imageHeight: 200,
@@ -32,9 +43,9 @@ const App = () => {
       confirmButtonColor: 'cornflowerblue',
       width: 300
     }) */}
-      {/* </header> */}
-    </div>
-  )
+        {/* </header> */}
+      </div>
+    )
+  }
 }
-
 export default App
