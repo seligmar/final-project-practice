@@ -1,0 +1,102 @@
+crp_id: "N00033492"
+cspan_id: "1023023"
+current_party: "D"
+date_of_birth: "1949-06-22"
+facebook_account: "senatorelizabethwarren"
+first_name: "Elizabeth"
+gender: "F"
+google_entity_id: "/m/01qh39"
+govtrack_id: "412542"
+icpsr_id: "41301"
+in_office: true
+last_name: "Warren"
+last_updated: "2019-10-07 08:07:46 -0400"
+member_id: "W000817"
+middle_name: null
+most_recent_vote: "2019-09-24"
+roles: Array(4)
+0: {congress: "116", chamber: "Senate", title: "Senator, 1st Class", short_title: "Sen.", state: "MA", …}
+1: {congress: "115", chamber: "Senate", title: "Senator, 1st Class", short_title: "Sen.", state: "MA", …}
+2: {congress: "114", chamber: "Senate", title: "Senator, 1st Class", short_title: "Sen.", state: "MA", …}
+3: {congress: "113", chamber: "Senate", title: "Senator, 1st Class", short_title: "Sen.", state: "MA", …}
+length: 4
+__proto__: Array(0)
+rss_url: "https://www.warren.senate.gov/rss/"
+suffix: null
+times_tag: ""
+times_topics_url: ""
+twitter_account: "SenWarren"
+url: "https://www.warren.senate.gov"
+votesmart_id: "141272"
+youtube_account: "senelizabethwarren"
+
+/// 0:
+bills_cosponsored: 388
+bills_sponsored: 40
+chamber: "Senate"
+committees: Array(4)
+0:
+api_uri: "https://api.propublica.org/congress/v1/116/senate/committees/SSBK.json"
+begin_date: "2019-01-09"
+code: "SSBK"
+end_date: "2021-01-03"
+name: "Committee on Banking, Housing, and Urban Affairs"
+rank_in_party: 6
+side: "minority"
+title: "Member"
+__proto__: Object
+1:
+api_uri: "https://api.propublica.org/congress/v1/116/senate/committees/SPAG.json"
+begin_date: "2019-01-09"
+code: "SPAG"
+end_date: "2021-01-03"
+name: "Special Committee on Aging"
+rank_in_party: 4
+side: "minority"
+title: "Member"
+__proto__: Object
+2:
+api_uri: "https://api.propublica.org/congress/v1/116/senate/committees/SSHR.json"
+begin_date: "2019-01-09"
+code: "SSHR"
+end_date: "2021-01-03"
+name: "Committee on Health, Education, Labor, and Pensions"
+rank_in_party: 6
+side: "minority"
+title: "Member"
+__proto__: Object
+3:
+api_uri: "https://api.propublica.org/congress/v1/116/senate/committees/SSAS.json"
+begin_date: "2019-01-09"
+code: "SSAS"
+end_date: "2021-01-03"
+name: "Committee on Armed Services"
+rank_in_party: 9
+side: "minority"
+title: "Member"
+__proto__: Object
+length: 4
+__proto__: Array(0)
+congress: "116"
+contact_form: "https://www.warren.senate.gov/?p=email_senator"
+end_date: "2021-01-03"
+fax: null
+fec_candidate_id: "S2MA00170"
+leadership_role: null
+lis_id: "S366"
+missed_votes_pct: 37.38
+ocd_id: "ocd-division/country:us/state:ma"
+office: "309 Hart Senate Office Building"
+party: "D"
+phone: "202-224-4543"
+senate_class: "1"
+seniority: "7"
+short_title: "Sen."
+start_date: "2019-01-03"
+state: "MA"
+state_rank: "senior"
+subcommittees: (8) [{…}, {…}, {…}, {…}, {…}, {…}, {…}, {…}]
+title: "Senator, 1st Class"
+votes_against_party_pct: 24.74
+votes_with_party_pct: 75.26
+__proto__: Object

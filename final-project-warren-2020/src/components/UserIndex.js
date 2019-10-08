@@ -1,7 +1,9 @@
 import Login from './Login'
 import NewSupport from './NewSupporter'
-import API from './API'
 
+import API from '../API'
+
+/// would it make more sense to move this to the landing page?
 class UserIndex extends React.Component {
   state = {
     user: ''

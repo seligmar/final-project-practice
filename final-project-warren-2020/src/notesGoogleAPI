@@ -1,0 +1,873 @@
+
+{
+ "kind": "civicinfo#representativeInfoResponse",
+ "normalizedInput": {
+  "line1": "90 West 14th Street",
+  "city": "Holland",
+  "state": "MI",
+  "zip": "49423"
+ },
+ "divisions": {
+  "ocd-division/country:us": {
+   "name": "United States",
+   "officeIndices": [
+    0,
+    1
+   ]
+  },
+  "ocd-division/country:us/state:mi": {
+   "name": "Michigan",
+   "officeIndices": [
+    2,
+    4,
+    5,
+    14,
+    15,
+    16,
+    17
+   ]
+  },
+  "ocd-division/country:us/state:mi/cd:2": {
+   "name": "Michigan's 2nd congressional district",
+   "officeIndices": [
+    3
+   ]
+  },
+  "ocd-division/country:us/state:mi/county:ottawa": {
+   "name": "Ottawa County",
+   "officeIndices": [
+    8,
+    9,
+    10,
+    11,
+    12
+   ]
+  },
+  "ocd-division/country:us/state:mi/county:ottawa/council_district:3": {
+   "name": "Ottawa County Commissioner District 3",
+   "officeIndices": [
+    13
+   ]
+  },
+  "ocd-division/country:us/state:mi/place:holland": {
+   "name": "Holland city"
+  },
+  "ocd-division/country:us/state:mi/place:holland/ward:3": {
+   "name": "HOLLAND MI Ward 3"
+  },
+  "ocd-division/country:us/state:mi/sldl:90": {
+   "name": "Michigan State House district 90",
+   "officeIndices": [
+    7
+   ]
+  },
+  "ocd-division/country:us/state:mi/sldu:30": {
+   "name": "Michigan State Senate district 30",
+   "officeIndices": [
+    6
+   ]
+  }
+ },
+ "offices": [
+  {
+   "name": "President of the United States",
+   "divisionId": "ocd-division/country:us",
+   "levels": [
+    "country"
+   ],
+   "roles": [
+    "headOfState",
+    "headOfGovernment"
+   ],
+   "officialIndices": [
+    0
+   ]
+  },
+  {
+   "name": "Vice-President of the United States",
+   "divisionId": "ocd-division/country:us",
+   "levels": [
+    "country"
+   ],
+   "roles": [
+    "deputyHeadOfGovernment"
+   ],
+   "officialIndices": [
+    1
+   ]
+  },
+  {
+   "name": "United States Senate",
+   "divisionId": "ocd-division/country:us/state:mi",
+   "levels": [
+    "country"
+   ],
+   "roles": [
+    "legislatorUpperBody"
+   ],
+   "officialIndices": [
+    2,
+    3
+   ]
+  },
+  {
+   "name": "United States House of Representatives MI-02",
+   "divisionId": "ocd-division/country:us/state:mi/cd:2",
+   "levels": [
+    "country"
+   ],
+   "roles": [
+    "legislatorLowerBody"
+   ],
+   "officialIndices": [
+    4
+   ]
+  },
+  {
+   "name": "Governor",
+   "divisionId": "ocd-division/country:us/state:mi",
+   "levels": [
+    "administrativeArea1"
+   ],
+   "roles": [
+    "headOfGovernment"
+   ],
+   "officialIndices": [
+    5
+   ]
+  },
+  {
+   "name": "Lieutenant Governor",
+   "divisionId": "ocd-division/country:us/state:mi",
+   "levels": [
+    "administrativeArea1"
+   ],
+   "roles": [
+    "deputyHeadOfGovernment"
+   ],
+   "officialIndices": [
+    6
+   ]
+  },
+  {
+   "name": "MI State Senate District 30",
+   "divisionId": "ocd-division/country:us/state:mi/sldu:30",
+   "levels": [
+    "administrativeArea1"
+   ],
+   "roles": [
+    "legislatorUpperBody"
+   ],
+   "officialIndices": [
+    7
+   ]
+  },
+  {
+   "name": "MI State House District 90",
+   "divisionId": "ocd-division/country:us/state:mi/sldl:90",
+   "levels": [
+    "administrativeArea1"
+   ],
+   "roles": [
+    "legislatorLowerBody"
+   ],
+   "officialIndices": [
+    8
+   ]
+  },
+  {
+   "name": "Sheriff",
+   "divisionId": "ocd-division/country:us/state:mi/county:ottawa",
+   "officialIndices": [
+    9
+   ]
+  },
+  {
+   "name": "Prosecuting Attorney",
+   "divisionId": "ocd-division/country:us/state:mi/county:ottawa",
+   "officialIndices": [
+    10
+   ]
+  },
+  {
+   "name": "County Clerk/Register of Deeds",
+   "divisionId": "ocd-division/country:us/state:mi/county:ottawa",
+   "officialIndices": [
+    11
+   ]
+  },
+  {
+   "name": "Water Resources Commissioner",
+   "divisionId": "ocd-division/country:us/state:mi/county:ottawa",
+   "officialIndices": [
+    12
+   ]
+  },
+  {
+   "name": "Treasurer",
+   "divisionId": "ocd-division/country:us/state:mi/county:ottawa",
+   "officialIndices": [
+    13
+   ]
+  },
+  {
+   "name": "Commission District 3",
+   "divisionId": "ocd-division/country:us/state:mi/county:ottawa/council_district:3",
+   "officialIndices": [
+    14
+   ]
+  },
+  {
+   "name": "State Supreme Court Justice",
+   "divisionId": "ocd-division/country:us/state:mi",
+   "officialIndices": [
+    15,
+    16,
+    17,
+    18,
+    19,
+    20,
+    21
+   ]
+  },
+  {
+   "name": "State Board of Education Member",
+   "divisionId": "ocd-division/country:us/state:mi",
+   "officialIndices": [
+    22,
+    23,
+    24,
+    25,
+    26,
+    27,
+    28,
+    29
+   ]
+  },
+  {
+   "name": "Attorney General",
+   "divisionId": "ocd-division/country:us/state:mi",
+   "officialIndices": [
+    30
+   ]
+  },
+  {
+   "name": "Secretary of State",
+   "divisionId": "ocd-division/country:us/state:mi",
+   "officialIndices": [
+    31
+   ]
+  }
+ ],
+ "officials": [
+  {
+   "name": "Donald J. Trump",
+   "address": [
+    {
+     "line1": "The White House",
+     "line2": "1600 Pennsylvania Ave NW",
+     "line3": "",
+     "city": "Washington",
+     "state": "DC",
+     "zip": "20500"
+    }
+   ],
+   "party": "Republican Party",
+   "phones": [
+    "(202) 456-1111"
+   ],
+   "urls": [
+    "http://www.whitehouse.gov/"
+   ],
+   "photoUrl": "https://www.whitehouse.gov/sites/whitehouse.gov/files/images/45/PE%20Color.jpg",
+   "channels": [
+    {
+     "type": "GooglePlus",
+     "id": "+whitehouse"
+    },
+    {
+     "type": "Facebook",
+     "id": "DonaldTrump"
+    },
+    {
+     "type": "Twitter",
+     "id": "potus"
+    },
+    {
+     "type": "YouTube",
+     "id": "whitehouse"
+    }
+   ]
+  },
+  {
+   "name": "Mike Pence",
+   "address": [
+    {
+     "line1": "The White House",
+     "line2": "1600 Pennsylvania Avenue NW",
+     "line3": "",
+     "city": "Washington",
+     "state": "DC",
+     "zip": "20500"
+    }
+   ],
+   "party": "Republican Party",
+   "phones": [
+    "(202) 456-1111"
+   ],
+   "urls": [
+    "http://www.whitehouse.gov/"
+   ],
+   "photoUrl": "https://www.whitehouse.gov/sites/whitehouse.gov/files/images/45/VPE%20Color.jpg",
+   "channels": [
+    {
+     "type": "GooglePlus",
+     "id": "+whitehouse"
+    },
+    {
+     "type": "Facebook",
+     "id": "mikepence"
+    },
+    {
+     "type": "Twitter",
+     "id": "VP"
+    }
+   ]
+  },
+  {
+   "name": "Debbie Stabenow",
+   "address": [
+    {
+     "line1": "United States Senate",
+     "line2": "731 Hart Senate Office Building",
+     "line3": "",
+     "city": "Washington",
+     "state": "DC",
+     "zip": "20510"
+    },
+    {
+     "line1": "221 West Lake Lansing Road",
+     "line2": "Suite 100",
+     "line3": "",
+     "city": "East Lansing",
+     "state": "MI",
+     "zip": "48823"
+    }
+   ],
+   "party": "Democratic Party",
+   "phones": [
+    "(202) 224-4822"
+   ],
+   "urls": [
+    "http://www.stabenow.senate.gov/"
+   ],
+   "photoUrl": "http://bioguide.congress.gov/bioguide/photo/S/S000770.jpg",
+   "channels": [
+    {
+     "type": "Facebook",
+     "id": "stabenow"
+    },
+    {
+     "type": "Twitter",
+     "id": "stabenow"
+    },
+    {
+     "type": "YouTube",
+     "id": "SenatorStabenow"
+    }
+   ]
+  },
+  {
+   "name": "Gary C. Peters",
+   "address": [
+    {
+     "line1": "United States Senate",
+     "line2": "724 Hart Senate Office Building",
+     "line3": "",
+     "city": "Washington",
+     "state": "DC",
+     "zip": "20510"
+    },
+    {
+     "line1": "Patrick V. McNamara Federal Building",
+     "line2": "477 Michigan Avenue",
+     "line3": "Suite 1860",
+     "city": "Detroit",
+     "state": "MI",
+     "zip": "48226"
+    }
+   ],
+   "party": "Democratic Party",
+   "phones": [
+    "(202) 224-6221"
+   ],
+   "urls": [
+    "http://www.peters.senate.gov"
+   ],
+   "photoUrl": "http://bioguide.congress.gov/bioguide/photo/P/P000595.jpg",
+   "channels": [
+    {
+     "type": "Facebook",
+     "id": "SenGaryPeters"
+    },
+    {
+     "type": "Twitter",
+     "id": "SenGaryPeters"
+    },
+    {
+     "type": "YouTube",
+     "id": "UC7LYNbnKSK2VZqQ98YROWHQ"
+    }
+   ]
+  },
+  {
+   "name": "Bill Huizenga",
+   "address": [
+    {
+     "line1": "United States House of Representatives",
+     "line2": "2232 Rayburn House Office Building",
+     "line3": "",
+     "city": "Washington",
+     "state": "DC",
+     "zip": "20515"
+    },
+    {
+     "line1": "1 South Harbor Avenue",
+     "line2": "Suite 6B",
+     "line3": "",
+     "city": "Grand Haven",
+     "state": "MI",
+     "zip": "49417"
+    }
+   ],
+   "party": "Republican Party",
+   "phones": [
+    "(202) 225-4401"
+   ],
+   "urls": [
+    "http://huizenga.house.gov/"
+   ],
+   "photoUrl": "http://bioguide.congress.gov/bioguide/photo/H/H001058.jpg",
+   "channels": [
+    {
+     "type": "Facebook",
+     "id": "RepHuizenga"
+    },
+    {
+     "type": "Twitter",
+     "id": "RepHuizenga"
+    },
+    {
+     "type": "GooglePlus",
+     "id": "108377989918510111501"
+    },
+    {
+     "type": "YouTube",
+     "id": "RepHuizenga"
+    }
+   ]
+  },
+  {
+   "name": "Gretchen Whitmer",
+   "party": "Democratic Party",
+   "phones": [
+    "(517) 373-3400"
+   ],
+   "channels": [
+    {
+     "type": "Facebook",
+     "id": "GretchenWhitmer"
+    },
+    {
+     "type": "Twitter",
+     "id": "gretchenwhitmer"
+    }
+   ]
+  },
+  {
+   "name": "Garlin D. Gilchrist II",
+   "party": "Democratic Party",
+   "phones": [
+    "(517) 373-3400"
+   ],
+   "channels": [
+    {
+     "type": "Twitter",
+     "id": "garlin"
+    }
+   ]
+  },
+  {
+   "name": "Roger Victory",
+   "party": "Republican Party",
+   "phones": [
+    "(517) 373-6920"
+   ],
+   "urls": [
+    "https://www.senatorrogervictory.com/"
+   ],
+   "emails": [
+    "senrvictory@senate.michigan.gov"
+   ],
+   "channels": [
+    {
+     "type": "Facebook",
+     "id": "SenatorRogerVictory"
+    },
+    {
+     "type": "Twitter",
+     "id": "SenRogerVictory"
+    }
+   ]
+  },
+  {
+   "name": "Bradley Slagh",
+   "party": "Republican Party",
+   "phones": [
+    "(517) 373-0830"
+   ],
+   "urls": [
+    "http://gophouse.org/representatives/westmi/slagh/"
+   ],
+   "emails": [
+    "BradleySlagh@house.mi.gov"
+   ],
+   "channels": [
+    {
+     "type": "Facebook",
+     "id": "bradleyslaghforstaterepresentativemichigans90th"
+    }
+   ]
+  },
+  {
+   "name": "Steve Kempker",
+   "party": "Republican",
+   "phones": [
+    "(616) 738-4000"
+   ],
+   "urls": [
+    "http://www.miottawa.org/Sheriff/"
+   ]
+  },
+  {
+   "name": "Ronald J. Frantz",
+   "party": "Republican",
+   "phones": [
+    "(616) 846-8215"
+   ],
+   "urls": [
+    "http://www.miottawa.org/Courts/Prosecutor/"
+   ],
+   "emails": [
+    "prosecutor@miottawa.org"
+   ]
+  },
+  {
+   "name": "Justin F. Roebuck",
+   "party": "Republican",
+   "phones": [
+    "(616) 994-4531"
+   ],
+   "emails": [
+    "countyclerk@miottawa.org"
+   ]
+  },
+  {
+   "name": "Joe Bush",
+   "party": "Republican",
+   "phones": [
+    "(616) 994-4530"
+   ],
+   "urls": [
+    "https://www.miottawa.org/Departments/Drain/"
+   ],
+   "emails": [
+    "waterresourcescommissioner@miottawa.org"
+   ]
+  },
+  {
+   "name": "Amanda Price",
+   "party": "Republican",
+   "phones": [
+    "(616) 994-4501"
+   ],
+   "urls": [
+    "http://www.miottawa.org/Departments/Treasurer/"
+   ],
+   "emails": [
+    "treasurer@miottawa.org"
+   ]
+  },
+  {
+   "name": "Doug R. Zylstra",
+   "party": "Democratic",
+   "phones": [
+    "(616) 738-4898"
+   ],
+   "urls": [
+    "http://www.miottawa.org/Departments/BOC/"
+   ],
+   "emails": [
+    "dzylstra@miottawa.org"
+   ]
+  },
+  {
+   "name": "Richard Bernstein",
+   "phones": [
+    "(517) 373-0120"
+   ],
+   "urls": [
+    "https://courts.michigan.gov/courts/michigansupremecourt/justices/pages/justice-richard-bernstein.aspx"
+   ],
+   "channels": [
+    {
+     "type": "Facebook",
+     "id": "misupremecourt"
+    },
+    {
+     "type": "Twitter",
+     "id": "MISupremeCourt"
+    }
+   ]
+  },
+  {
+   "name": "Stephen J. Markman",
+   "phones": [
+    "(517) 373-0120"
+   ],
+   "urls": [
+    "https://courts.michigan.gov/courts/michigansupremecourt/justices/pages/justice-stephen-j.-markman.aspx"
+   ],
+   "channels": [
+    {
+     "type": "Facebook",
+     "id": "misupremecourt"
+    },
+    {
+     "type": "Twitter",
+     "id": "MISupremeCourt"
+    }
+   ]
+  },
+  {
+   "name": "David F. Viviano",
+   "phones": [
+    "(517) 373-0120"
+   ],
+   "urls": [
+    "https://courts.michigan.gov/courts/michigansupremecourt/justices/pages/justice-david-f.-viviano.aspx"
+   ],
+   "channels": [
+    {
+     "type": "Facebook",
+     "id": "misupremecourt"
+    },
+    {
+     "type": "Twitter",
+     "id": "MISupremeCourt"
+    }
+   ]
+  },
+  {
+   "name": "Megan K. Cavanagh",
+   "phones": [
+    "(517) 373-0120"
+   ],
+   "urls": [
+    "https://courts.michigan.gov/courts/michigansupremecourt/justices/pages/justice-megan-k.-cavanagh.aspx"
+   ],
+   "channels": [
+    {
+     "type": "Facebook",
+     "id": "misupremecourt"
+    },
+    {
+     "type": "Twitter",
+     "id": "MISupremeCourt"
+    }
+   ]
+  },
+  {
+   "name": "Brian K. Zahra",
+   "phones": [
+    "(517) 373-0120"
+   ],
+   "urls": [
+    "https://courts.michigan.gov/courts/michigansupremecourt/justices/pages/justice-brian-k.-zahra.aspx"
+   ],
+   "channels": [
+    {
+     "type": "Facebook",
+     "id": "misupremecourt"
+    },
+    {
+     "type": "Twitter",
+     "id": "MISupremeCourt"
+    }
+   ]
+  },
+  {
+   "name": "Elizabeth T. Clement",
+   "phones": [
+    "(517) 373-0120"
+   ],
+   "urls": [
+    "https://courts.michigan.gov/courts/michigansupremecourt/justices/pages/justice-elizabeth-t.-clement.aspx"
+   ],
+   "channels": [
+    {
+     "type": "Facebook",
+     "id": "misupremecourt"
+    },
+    {
+     "type": "Twitter",
+     "id": "MISupremeCourt"
+    }
+   ]
+  },
+  {
+   "name": "Bridget Mary McCormack",
+   "phones": [
+    "(517) 373-0120"
+   ],
+   "urls": [
+    "https://courts.michigan.gov/courts/michigansupremecourt/justices/pages/chief-justice-bridget-mary-mccormack.aspx"
+   ],
+   "channels": [
+    {
+     "type": "Facebook",
+     "id": "misupremecourt"
+    },
+    {
+     "type": "Twitter",
+     "id": "MISupremeCourt"
+    }
+   ]
+  },
+  {
+   "name": "Judith Pritchett",
+   "party": "Democratic Party",
+   "phones": [
+    "(517) 241-7161"
+   ],
+   "emails": [
+    "pritchettj1@michigan.gov"
+   ]
+  },
+  {
+   "name": "Casandra E. Ulbrich",
+   "party": "Democratic Party",
+   "phones": [
+    "(517) 241-7161"
+   ],
+   "emails": [
+    "ulbrichc@michigan.gov"
+   ],
+   "channels": [
+    {
+     "type": "Facebook",
+     "id": "casandraulbrichSBE"
+    }
+   ]
+  },
+  {
+   "name": "Michelle Fecteau",
+   "party": "Democratic Party",
+   "phones": [
+    "(313) 577-1750"
+   ],
+   "emails": [
+    "mfecteau@aaupaft.org"
+   ]
+  },
+  {
+   "name": "Tiffany Tilley",
+   "party": "Democratic Party",
+   "phones": [
+    "(517) 241-7161"
+   ],
+   "emails": [
+    "tilleyt@michigan.gov"
+   ]
+  },
+  {
+   "name": "Lupe Ramos-Montigny",
+   "party": "Democratic Party",
+   "phones": [
+    "(616) 942-5241"
+   ],
+   "emails": [
+    "lrmontigny@yahoo.com"
+   ]
+  },
+  {
+   "name": "Nikki Snyder",
+   "party": "Republican Party",
+   "phones": [
+    "(517) 241-7161"
+   ],
+   "emails": [
+    "snydern@michigan.gov"
+   ]
+  },
+  {
+   "name": "Tom McMillin",
+   "party": "Republican Party",
+   "phones": [
+    "(517) 241-7161"
+   ],
+   "emails": [
+    "mcmillint1@michigan.gov"
+   ]
+  },
+  {
+   "name": "Pamela Pugh",
+   "party": "Democratic Party",
+   "phones": [
+    "(616) 942-5241"
+   ],
+   "emails": [
+    "pampugh@umich.edu"
+   ],
+   "channels": [
+    {
+     "type": "Facebook",
+     "id": "pampughsmith4sbe"
+    }
+   ]
+  },
+  {
+   "name": "Dana Nessel",
+   "party": "Democratic Party",
+   "phones": [
+    "(517) 373-1110"
+   ],
+   "channels": [
+    {
+     "type": "Twitter",
+     "id": "dananessel"
+    }
+   ]
+  },
+  {
+   "name": "Jocelyn Benson",
+   "party": "Democratic Party",
+   "phones": [
+    "(888) 767-6424"
+   ],
+   "emails": [
+    "sos-news@michigan.gov"
+   ],
+   "channels": [
+    {
+     "type": "Facebook",
+     "id": "MichiganSoS"
+    },
+    {
+     "type": "Twitter",
+     "id": "MichSoS"
+    }
+   ]
+  }
+ ]
+}
