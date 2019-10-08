@@ -3,6 +3,8 @@
     color: #b7e4cf; victory green
      #b61b28 ; amazing red 
      #232444 lovely dark blue purple 
+     : #00aef3 democratic party bright blue 
+     #D9F1FF democratic party light blue 
 
      polka-dot basics below:
      body {
@@ -12,6 +14,8 @@
     radial-gradient(#fff 30%, transparent 0);
   background-size: 90px 90px;
   background-position:  0px 0px, 0px 0px;
+
+  https://www.w3schools.com/howto/howto_css_hero_image.asp - how to write over an image 
 }
 
 */
