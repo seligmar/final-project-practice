@@ -1,5 +1,4 @@
 import React from 'react'
-import logo from './logo.svg'
 import './App.css'
 import UserIndex from './components/UserIndex'
 
@@ -17,7 +16,6 @@ const App = () => {
   return (
     <div className='App'>
       <header className='App-header'>
-        <img src={logo} className='App-logo' alt='logo' />
         <UserIndex />
         {/* MySwal.fire({
       imageUrl: 'https://media.giphy.com/media/h5AHEcNMhn7u8/giphy.gif',
