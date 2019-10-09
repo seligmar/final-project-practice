@@ -22,18 +22,29 @@ class App extends React.Component {
 
   linkTo = () => {}
 
+  closeGive = () => {
+    this.setState({ donationsBar: !this.state.donationsBar })
+  }
+
   render () {
     return (
       <div className='App'>
-        <div className='donationsBar'>
-          <button onClick={e => this.linkTo(e)}>Give Now</button>
+        {this.state.donationsBar ? (
+          <div className='donationsBar'>
+            <button onClick={e => this.linkTo(e)}>Give Now</button>
+            <button onClick={e => this.closeGive(e)}>X</button>
+          </div>
+        ) : null}
+        <div className='video-wrapper'>
+          <ReactPlayer
+            className='react-player'
+            url='https://media.giphy.com/media/lPjvLFOfrS3QUudX6S/source.mp4'
+            playing='true'
+            loop='true'
+            width='100%'
+            height='20%'
+          />
         </div>
-        <div className='video-wrapper' />
-        <ReactPlayer
-          url='https://media.giphy.com/media/lPjvLFOfrS3QUudX6S/source.mp4'
-          playing='true'
-          loop='true'
-        />
         <UserIndex />
         <GetInvolved username={this.state.username} />
       </div>

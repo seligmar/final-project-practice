@@ -15,6 +15,12 @@ class GetInvolved extends React.Component {
       .then(events => this.setState({ events }))
   }
 
+  loggedIn = () => {
+    if (this.props.username !== '') {
+      this.setState({ user: true })
+    }
+  }
+
   render () {
     return <MapFragment events={this.state.events} getEvents={this.getEvents} />
   }

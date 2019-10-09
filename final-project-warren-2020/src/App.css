@@ -59,5 +59,10 @@
 
 .video-wrapper {
   position: relative;
-  z-index: -1;
 }
+
+/* .react-player {
+  position: absolute;
+  top: 0;
+  left: 0;
+} */
