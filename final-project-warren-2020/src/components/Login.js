@@ -2,7 +2,7 @@ import React from 'react'
 
 const Login = props => {
   return (
-    <form onSubmit={e => props.logIn(e)} className='ui form'>
+    <form onSubmit={e => props.logIn(e)} className='login-form'>
       <div style={{ paddingBottom: '10px' }} class='field'>
         <label>Type in a username to start:</label>
         <input

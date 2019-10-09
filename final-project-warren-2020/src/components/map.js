@@ -25,7 +25,7 @@ const MapFragment = props => {
   // const events = props.events // pretty sure this is correct
   return (
     <div style={{ width: '50vw', height: '50vh' }}>
-      <button onClick={() => props.getEvents()} />
+      <button onClick={() => props.getEvents()}>Show All Events</button>
       <WrappedMap
         googleMapURL={`https://maps.googleapis.com/maps/api/js?v=3.exp&libraries=geometry,drawing,places&key=${GOOGLE_API_KEY}`}
         loadingElement={<div style={{ height: '100%' }} />}

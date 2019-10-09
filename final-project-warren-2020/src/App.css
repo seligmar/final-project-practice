@@ -27,11 +27,8 @@
 .App {
   text-align: center;
   background-color: #232444;
+  color: #fff
 
-}
-
-.App-logo {
-  height: 40vmin;
 }
 
 .App-header {
