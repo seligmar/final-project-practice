@@ -19,8 +19,8 @@ const Login = props => {
         name='password'
         placeholder='password'
       />
-      <button class='ui button' type='submit'>
-        Start Game
+      <button class='button' type='submit'>
+        Log In
       </button>
     </form>
   )

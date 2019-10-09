@@ -55,15 +55,18 @@ class UserIndex extends React.Component {
       },
       body: JSON.stringify({
         username: e.target.username.value,
-        password: e.target.password.value
+        password: e.target.password.value,
+        emailaddress: e.target.email.value
       })
     }).then(resp => resp.json())
   }
 
-  render () {
+  render() {
     return (
-      <div>
+      <div className='login'>
+        <div>Log In</div>
         <Login logIn={this.logIn} />
+        <div>Create A New User</div>
         <NewSupport LogInNewUser={this.logInNewUser} />
       </div>
     )
