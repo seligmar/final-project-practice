@@ -30,7 +30,11 @@ const MapFragment = props => {
             position={{ lat: selectedEvent.lat, lng: selectedEvent.lng }}
             onCloseClick={() => setSelectedEvent(null)}
           >
-            <div>event</div>
+            <div style={{ color: '#232444' }}>
+              <p>{selectedEvent.title}</p>
+              <p>{selectedEvent.street_address_1}</p>
+              {selectedEvent.city}, {selectedEvent.state}, {selectedEvent.zip}
+            </div>
           </InfoWindow>
         ) : null}
       </GoogleMap>
@@ -44,13 +48,15 @@ const MapFragment = props => {
   return (
     <div>
       {props.showMap ? (
-        <div style={{ width: '50vw', height: '50vh' }}>
-          <WrappedMap
-            googleMapURL={`https://maps.googleapis.com/maps/api/js?v=3.exp&libraries=geometry,drawing,places&key=${GOOGLE_API_KEY}`}
-            loadingElement={<div style={{ height: '100%' }} />}
-            containerElement={<div style={{ height: '100%' }} />}
-            mapElement={<div style={{ height: '100%' }} />}
-          />
+        <div className='googleMap'>
+          <div style={{ width: '50vw', height: '50vh' }}>
+            <WrappedMap
+              googleMapURL={`https://maps.googleapis.com/maps/api/js?v=3.exp&libraries=geometry,drawing,places&key=${GOOGLE_API_KEY}`}
+              loadingElement={<div style={{ height: '100%' }} />}
+              containerElement={<div style={{ height: '100%' }} />}
+              mapElement={<div style={{ height: '100%' }} />}
+            />
+          </div>{' '}
         </div>
       ) : null}
     </div>
