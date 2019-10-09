@@ -2,6 +2,7 @@ import React from 'react'
 import './App.css'
 import UserIndex from './components/UserIndex'
 import MapFragment from './components/Map'
+import ReactPlayer from 'react-player'
 
 // below is mockup
 // "https://www.figma.com/file/KY3BKNojNY9CZgudaWBWw5/Warren2020?node-id=8%3A1"
@@ -15,7 +16,9 @@ import MapFragment from './components/Map'
 
 class App extends React.Component {
   state = {
-    events: []
+    events: [],
+    donationsBar: true,
+    username: ''
   }
 
   getEvents = () => {
@@ -27,7 +30,13 @@ class App extends React.Component {
   render () {
     return (
       <div className='App'>
-        {/* <header className='App-header'> */}
+        <div className='donationsBar' />
+
+        <ReactPlayer
+          url='https://media.giphy.com/media/lPjvLFOfrS3QUudX6S/source.mp4'
+          playing='true'
+          loop='true'
+        />
         <MapFragment events={this.state.events} getEvents={this.getEvents} />
         <UserIndex />
 

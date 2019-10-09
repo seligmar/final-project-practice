@@ -15,15 +15,18 @@
   background-size: 90px 90px;
   background-position:  0px 0px, 0px 0px;
 
+    /* night skys background-image: url('https://media.nbcnewyork.com/images/652*367/astronomy-dark-evening-957061+resized.jpg'); */
+
+/* 
   https://www.w3schools.com/howto/howto_css_hero_image.asp - how to write over an image 
 }
 
-*/
+*/ 
 
 
 .App {
   text-align: center;
-  /* background-image: url('https://media.nbcnewyork.com/images/652*367/astronomy-dark-evening-957061+resized.jpg'); */
+  background-color: #232444;
 
 }
 
@@ -42,5 +45,9 @@
 }
 
 .App-link {
-  color: #09d3ac;
+  color: #fff;
+}
+
+.donationsBar {
+  color: #b7e4cf
 }

@@ -14,8 +14,10 @@ import {
 const GOOGLE_API_KEY = 'AIzaSyBuNd5baj7zHX5OmBtTYoBkhW_a4WN81S8'
 
 const Map = () => {
-  return <GoogleMap defaultZoom={10} defaultCenter={{ lat: 41, lng: -93 }} />
+  return <GoogleMap defaultZoom={3} defaultCenter={{ lat: 41, lng: -93 }} />
 }
+
+// default zoom sets how large or small an area is shown. want entire US
 
 const WrappedMap = withScriptjs(withGoogleMap(Map))
 
