@@ -6,6 +6,8 @@
      : #00aef3 democratic party bright blue 
      #D9F1FF democratic party light blue 
 
+     SHOULD I SET DEFAULT TO 80% WIDTH?
+
      polka-dot basics below:
      body {
   background: #232444 ;
@@ -63,3 +65,19 @@
   top: 0;
   left: 0;
 } */
+
+.button {
+  background-color: #b61b28;
+  color: white
+}
+
+.googleMap {
+  border-style: solid;
+  border-width: 10px;
+  border-color:#b7e4cf;
+  display: block;
+  margin-left: auto;
+  margin-right: auto;
+  width: 50%;
+  padding: 30px
+}
