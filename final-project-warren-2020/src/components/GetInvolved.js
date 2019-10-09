@@ -2,6 +2,7 @@ import React from 'react'
 import MapFragment from './Map'
 import EnterAddressForm from './EnterAddressForm'
 import ShowReps from './ShowReps'
+import ListEvents from './ListEvents'
 
 const GOOGLE_API_KEY = 'AIzaSyBuNd5baj7zHX5OmBtTYoBkhW_a4WN81S8'
 
@@ -75,6 +76,9 @@ class GetInvolved extends React.Component {
           <button className='button' onClick={() => this.showMap()}>
             Show All Events On The Map!
           </button>
+        ) : null}
+        {this.state.showEvent ? (
+          <ListEvents events={this.state.events} />
         ) : null}
         {this.state.getRepInfo ? (
           <EnterAddressForm callGoogleAPI={this.callGoogleAPI} />
