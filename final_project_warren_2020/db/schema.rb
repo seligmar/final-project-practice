@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2019_10_09_153955) do
+ActiveRecord::Schema.define(version: 2019_10_09_163710) do
 
   create_table "donations", force: :cascade do |t|
     t.integer "total"
@@ -35,9 +35,11 @@ ActiveRecord::Schema.define(version: 2019_10_09_153955) do
     t.float "lat"
   end
 
-  create_table "user_event_joint_tables", force: :cascade do |t|
-    t.string "users"
-    t.string "events"
+  create_table "user_events", force: :cascade do |t|
+    t.string "user_id"
+    t.string "event_id"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
   end
 
   create_table "users", force: :cascade do |t|
