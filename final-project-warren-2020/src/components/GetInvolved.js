@@ -19,6 +19,8 @@ class GetInvolved extends React.Component {
 
   showEvent = () => this.setState({ showEvent: true })
 
+  showMap = () => this.setState({ showMap: !this.state.showMap })
+
   loggedIn = () => {
     if (this.props.username !== '') {
       this.setState({ user: true })
@@ -40,11 +42,19 @@ class GetInvolved extends React.Component {
         <button className='button' onClick={() => this.getEvents()}>
           Show All Events
         </button>
+        {this.state.showEvent ? (
+          <button className='button' onClick={() => this.showMap()}>
+            Show All Events On The Map!
+          </button>
+        ) : null}
         {this.state.getRepInfo ? (
           <EnterAddressForm callGoogleAPI={this.callGoogleAPI} />
         ) : null}
         <div className='map-element'>
-          <MapFragment events={this.state.events} />
+          <MapFragment
+            showMap={this.state.showMap}
+            events={this.state.events}
+          />
         </div>
       </div>
     )
