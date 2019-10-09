@@ -5,6 +5,8 @@
   "dependencies": {
     "react": "^16.10.2",
     "react-dom": "^16.10.2",
+    "react-google-maps": "^9.4.5",
+    "react-player": "^1.13.0",
     "react-scripts": "3.2.0",
     "sweetalert2": "^8.18.1"
   },
