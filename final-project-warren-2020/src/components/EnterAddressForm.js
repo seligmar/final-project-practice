@@ -14,12 +14,6 @@ const EnterAddressForm = props => {
         <input
           style={{ width: 200 }}
           type='text'
-          name='addressLine2'
-          placeholder='address line 2'
-        />
-        <input
-          style={{ width: 200 }}
-          type='text'
           name='city'
           placeholder='city'
         />

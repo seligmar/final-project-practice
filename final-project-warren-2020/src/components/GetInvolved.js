@@ -1,6 +1,7 @@
 import React from 'react'
 import MapFragment from './Map'
 import EnterAddressForm from './EnterAddressForm'
+import ShowReps from './ShowReps'
 
 const GOOGLE_API_KEY = 'AIzaSyBuNd5baj7zHX5OmBtTYoBkhW_a4WN81S8'
 
@@ -11,7 +12,8 @@ class GetInvolved extends React.Component {
     showMap: false,
     getRepInfo: false,
     user: false,
-    reps: []
+    reps: [],
+    renderReps: false
   }
 
   getEvents = () => {
@@ -57,6 +59,7 @@ class GetInvolved extends React.Component {
     )
       .then(resp => resp.json())
       .then(reps => this.setState({ reps }))
+      .then(() => this.setState({ renderReps: true }))
   }
 
   render () {
@@ -76,6 +79,7 @@ class GetInvolved extends React.Component {
         {this.state.getRepInfo ? (
           <EnterAddressForm callGoogleAPI={this.callGoogleAPI} />
         ) : null}
+        {this.state.renderReps ? <ShowReps reps={this.state.reps} /> : null}
         <div className='map-element'>
           <MapFragment
             showMap={this.state.showMap}

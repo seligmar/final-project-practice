@@ -42,7 +42,7 @@ class App extends React.Component {
             playing='true'
             loop='true'
             width='100%'
-            height='20%'
+            height='0%'
           />
         </div>
         <UserIndex />
