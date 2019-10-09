@@ -1,4 +1,4 @@
-import React from 'react'
+import React, { useState } from 'react'
 import {
   GoogleMap,
   withScriptjs,
@@ -13,19 +13,35 @@ import {
 
 const GOOGLE_API_KEY = 'AIzaSyBuNd5baj7zHX5OmBtTYoBkhW_a4WN81S8'
 
-const Map = () => {
-  return <GoogleMap defaultZoom={3} defaultCenter={{ lat: 41, lng: -93 }} />
-}
-
-// default zoom sets how large or small an area is shown. want entire US
-
-const WrappedMap = withScriptjs(withGoogleMap(Map))
-
 const MapFragment = props => {
-  // const events = props.events // pretty sure this is correct
+  const Map = () => {
+    const [selectedEvent, setSelectedEvent] = useState(null)
+    return (
+      <GoogleMap defaultZoom={3} defaultCenter={{ lat: 41, lng: -93 }}>
+        {props.events.map(event => (
+          <Marker
+            key={event.id}
+            position={{ lat: event.lat, lng: event.lng }}
+            onClick={() => setSelectedEvent(event)}
+          />
+        ))}
+        {selectedEvent ? (
+          <InfoWindow
+            position={{ lat: selectedEvent.lat, lng: selectedEvent.lng }}
+          >
+            <div>event</div>
+          </InfoWindow>
+        ) : null}
+      </GoogleMap>
+    )
+  }
+
+  // default zoom sets how large or small an area is shown. want entire US
+
+  const WrappedMap = withScriptjs(withGoogleMap(Map))
+
   return (
     <div style={{ width: '50vw', height: '50vh' }}>
-      <button onClick={() => props.getEvents()}>Show All Events</button>
       <WrappedMap
         googleMapURL={`https://maps.googleapis.com/maps/api/js?v=3.exp&libraries=geometry,drawing,places&key=${GOOGLE_API_KEY}`}
         loadingElement={<div style={{ height: '100%' }} />}

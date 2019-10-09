@@ -1,19 +1,23 @@
 import React from 'react'
 import MapFragment from './Map'
+import EnterAddressForm from './EnterAddressForm'
 
 class GetInvolved extends React.Component {
   state = {
     events: [],
+    showEvent: false,
     showMap: false,
-    showInfo: false,
+    getRepInfo: false,
     user: false
   }
 
   getEvents = () => {
     return fetch('http://localhost:3001/events') // events url
       .then(resp => resp.json())
-      .then(events => this.setState({ events }))
+      .then(events => this.setState({ events }, this.showEvent()))
   }
+
+  showEvent = () => this.setState({ showEvent: true })
 
   loggedIn = () => {
     if (this.props.username !== '') {
@@ -22,46 +26,25 @@ class GetInvolved extends React.Component {
   }
 
   showInfo = () => {
-    this.setState({ showInfo: true })
+    this.setState({ getRepInfo: true })
   }
 
   callGoogleAPI = e => {}
 
   render () {
     return (
-      <div className='buttons'>
-        <button onClick={() => this.showInfo()}>Who Represents Me?</button>
-        {this.state.showInfo ? (
-          <form onSubmit={e => this.callGoogleAPI(e)} className='input-form'>
-            <div style={{ paddingBottom: '10px' }} class='field'>
-              <label>Where Do You Live?</label>
-              <input
-                style={{ width: 200 }}
-                type='text'
-                name='username'
-                placeholder='username'
-              />
-              <input
-                style={{ width: 200 }}
-                type='text'
-                name='username'
-                placeholder='username'
-              />
-              <input
-                style={{ width: 200 }}
-                type='text'
-                name='username'
-                placeholder='username'
-              />
-              <button class='ui button' type='submit'>
-                Start Game
-              </button>
-            </div>
-          </form>
+      <div className='other'>
+        <button className='button' onClick={() => this.showInfo()}>
+          Who Represents Me?
+        </button>
+        <button className='button' onClick={() => this.getEvents()}>
+          Show All Events
+        </button>
+        {this.state.getRepInfo ? (
+          <EnterAddressForm callGoogleAPI={this.callGoogleAPI} />
         ) : null}
-
         <div className='map-element'>
-          <MapFragment events={this.state.events} getEvents={this.getEvents} />
+          <MapFragment events={this.state.events} />
         </div>
       </div>
     )
