@@ -7,12 +7,12 @@
 #   Character.create(name: 'Luke', movie: movies.first)
 
 users = [
-  { username: "hc123", password: '123456'},
-  { username: "nc123", password: '123456'},
-  { username: "ms123", password: '123456'},
-  { username: "aa123", password: '123456'},
-  { username: "eh123", password: '123456'},
-  { username: "rc123", password: '123456'},
+  { username: "hc123", password: '123456', emailaddress: ''},
+  { username: "nc123", password: '123456', emailaddress: ''},
+  { username: "ms123", password: '123456', emailaddress: ''},
+  { username: "aa123", password: '123456', emailaddress: ''},
+  { username: "eh123", password: '123456', emailaddress: ''},
+  { username: "rc123", password: '123456', emailaddress: ''},
 ]
 
 events = [
@@ -140,4 +140,5 @@ title: 'LANE COUNTY FOR ELIZABETH WARREN - WARREN WEDNESDAY'
 ]
 
 
-Event.create events 
+Event.create events
+User.create users 

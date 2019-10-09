@@ -15,7 +15,7 @@ class UsersController < ApplicationController
   end 
 
   def create_new_user 
-    user = User.new(username: params[:username], password: params[:password])
+    user = User.new(username: params[:username], password: params[:password], emailaddress: params[: emailaddress])
     if user.save
         render json: user, status: :created
         # donation = Donation.create(user_id: user.id, total: 0)
@@ -28,7 +28,7 @@ class UsersController < ApplicationController
   private 
 
   def user_params 
-    params.require(:user).permit(:username, :password)
+    params.require(:user).permit(:username, :password, :emailaddress)
   end 
 
 end
