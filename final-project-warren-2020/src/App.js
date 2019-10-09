@@ -1,8 +1,8 @@
 import React from 'react'
 import './App.css'
 import UserIndex from './components/UserIndex'
-import MapFragment from './components/Map'
 import ReactPlayer from 'react-player'
+import GetInvolved from './components/GetInvolved'
 
 // below is mockup
 // "https://www.figma.com/file/KY3BKNojNY9CZgudaWBWw5/Warren2020?node-id=8%3A1"
@@ -16,43 +16,26 @@ import ReactPlayer from 'react-player'
 
 class App extends React.Component {
   state = {
-    events: [],
     donationsBar: true,
     username: ''
   }
 
-  getEvents = () => {
-    return fetch('http://localhost:3001/events') // events url
-      .then(resp => resp.json())
-      .then(events => this.setState({ events }))
-  }
+  linkTo = () => {}
 
   render () {
     return (
       <div className='App'>
-        <div className='donationsBar' />
-
+        <div className='donationsBar'>
+          <button onClick={e => this.linkTo(e)}>Give Now</button>
+        </div>
+        <div className='video-wrapper' />
         <ReactPlayer
           url='https://media.giphy.com/media/lPjvLFOfrS3QUudX6S/source.mp4'
           playing='true'
           loop='true'
         />
-        <MapFragment events={this.state.events} getEvents={this.getEvents} />
         <UserIndex />
-
-        {/* MySwal.fire({
-      imageUrl: 'https://media.giphy.com/media/h5AHEcNMhn7u8/giphy.gif',
-      imageWidth: 300,
-      imageHeight: 200,
-      imageAlt: 'Bob Ross',
-      animation: false,
-      confirmButtonText: 'Im done',
-      background: '#090526',
-      padding: '.25em',
-      confirmButtonColor: 'cornflowerblue',
-      width: 300
-    }) */}
-        {/* </header> */}
+        <GetInvolved username={this.state.username} />
       </div>
     )
   }
