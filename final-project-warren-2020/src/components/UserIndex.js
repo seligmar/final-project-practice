@@ -1,5 +1,4 @@
 import React from 'react'
-
 import Login from './Login'
 import NewSupport from './NewSupporter'
 
@@ -55,15 +54,17 @@ class UserIndex extends React.Component {
       },
       body: JSON.stringify({
         username: e.target.username.value,
-        password: e.target.password.value
+        password: e.target.password.value,
+        emailaddress: e.target.email.value
       })
     }).then(resp => resp.json())
   }
 
-  render () {
+  render() {
     return (
       <div>
         <Login logIn={this.logIn} />
+        <br></br>
         <NewSupport LogInNewUser={this.logInNewUser} />
       </div>
     )

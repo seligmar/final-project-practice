@@ -10,3 +10,8 @@ https://github.com/CookPete/react-player - react player github
 
 https://www.youtube.com/watch?time_continue=172&v=Pf7g32CwX_s - how to make google maps is go youtube video
 
+https://www.fec.gov/resources/cms-content/documents/contribution_limits_chart_2019-2020.pdf 
+
+https://ballotpedia.org/API-documentation - this would probably be a better API but you have to pay for access 
+
+https://www.youtube.com/watch?v=Law7wfdg_ls - react router youtube video 

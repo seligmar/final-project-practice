@@ -10,7 +10,7 @@ const ListEvents = props => {
             <p>{event.name}</p>
             <p>{event.street_address_1}</p>
             <p>
-              {event.city},{event.state}, {event.zip}
+              {event.city}, {event.state} {event.zip}
             </p>
           </div>
         ))}

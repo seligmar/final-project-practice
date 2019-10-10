@@ -3,6 +3,9 @@ import MapFragment from './Map'
 import EnterAddressForm from './EnterAddressForm'
 import ShowReps from './ShowReps'
 import ListEvents from './ListEvents'
+import UserIndex from './UserIndex'
+import { Link } from 'react-router-dom'
+
 
 const GOOGLE_API_KEY = 'AIzaSyBuNd5baj7zHX5OmBtTYoBkhW_a4WN81S8'
 
@@ -63,7 +66,7 @@ class GetInvolved extends React.Component {
       .then(() => this.setState({ renderReps: true }))
   }
 
-  render () {
+  render() {
     return (
       <div className='other'>
         <button className='button' onClick={() => this.showInfo()}>
@@ -72,6 +75,13 @@ class GetInvolved extends React.Component {
         <button className='button' onClick={() => this.getEvents()}>
           Show All Events
         </button>
+        {this.state.renderReps ? <ShowReps reps={this.state.reps} /> : null}
+        <div className='map-element'>
+          <MapFragment
+            showMap={this.state.showMap}
+            events={this.state.events}
+          />
+        </div>
         {this.state.showEvent ? (
           <button className='button' onClick={() => this.showMap()}>
             Show All Events On The Map!
@@ -83,13 +93,7 @@ class GetInvolved extends React.Component {
         {this.state.getRepInfo ? (
           <EnterAddressForm callGoogleAPI={this.callGoogleAPI} />
         ) : null}
-        {this.state.renderReps ? <ShowReps reps={this.state.reps} /> : null}
-        <div className='map-element'>
-          <MapFragment
-            showMap={this.state.showMap}
-            events={this.state.events}
-          />
-        </div>
+        <UserIndex />
       </div>
     )
   }
