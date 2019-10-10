@@ -1,20 +1,28 @@
 import React from 'react'
+import { Card, Image } from 'semantic-ui-css/semantic.min.css'
 
 const ListEvents = props => {
   return (
     <div>
-      <div>Events</div>
-      <div className='grid'>
-        {props.events.map(event => (
-          <div className='event-div' key={event.id}>
-            <p>{event.name}</p>
-            <p>{event.street_address_1}</p>
-            <p>
-              {event.city}, {event.state} {event.zip}
-            </p>
+      {props.events.map(event => (
+        <div style={{ padding: '1%' }}>
+          <div className='event-div'>
+            <div className='ui fluid card' key={event.id}>
+              <div className='class-content'>
+                <img className='ui small right floated image'
+                  src='https://cdn.shopify.com/s/files/1/1908/6551/products/YardSign-Comp_LG_1_530x@2x.jpg?v=1561750606' />
+                <p className='header'>{event.title}</p>
+                <p className='description'>{event.street_address_1}</p>
+                <p className='description'>
+                  {event.city}, {event.state} {event.zip}
+                </p>
+                <button className='button'>RSVP!</button>
+              </div>
+            </div>
           </div>
-        ))}
-      </div>
+        </div>
+      ))
+      }
     </div>
   )
 }

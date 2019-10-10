@@ -23,7 +23,7 @@ class GetInvolved extends React.Component {
   getEvents = () => {
     return fetch('http://localhost:3001/events') // events url
       .then(resp => resp.json())
-      .then(events => this.setState({ events }, this.showEvent()))
+      .then(events => this.setState({ events }, this.showEvent))
   }
 
   showEvent = () => this.setState({ showEvent: true })
@@ -36,6 +36,9 @@ class GetInvolved extends React.Component {
     }
   }
 
+  componentDidMount() {
+    this.getEvents()
+  }
   showInfo = () => {
     this.setState({ getRepInfo: true })
   }
