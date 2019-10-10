@@ -29,7 +29,7 @@ const NewSupporter = props => {
             name='email'
             placeholder='email address' />
           <br></br>
-          <button class='button' type='submit'>
+          <button class='event-button' type='submit'>
             Become a Supporter!
       </button>
         </div>

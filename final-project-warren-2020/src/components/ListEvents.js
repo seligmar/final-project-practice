@@ -1,5 +1,4 @@
 import React from 'react'
-import { Card, Image } from 'semantic-ui-css/semantic.min.css'
 
 const ListEvents = props => {
   return (
@@ -16,12 +15,13 @@ const ListEvents = props => {
                 <p className='description'>
                   {event.city}, {event.state} {event.zip}
                 </p>
-                <button className='button'>RSVP!</button>
+                <button className='event-button'>RSVP!</button>
               </div>
             </div>
           </div>
         </div>
-      ))
+      )
+      )
       }
     </div>
   )

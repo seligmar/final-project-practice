@@ -60,7 +60,7 @@ class App extends React.Component {
             <Donate {...routerProps} />} />
           <Route component={() => <h1>404 - Page Not Found</h1>} />
         </Switch>
-      </div >
+      </div>
     )
   }
 }
