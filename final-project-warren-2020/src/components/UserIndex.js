@@ -1,5 +1,4 @@
 import React from 'react'
-
 import Login from './Login'
 import NewSupport from './NewSupporter'
 
@@ -63,10 +62,9 @@ class UserIndex extends React.Component {
 
   render() {
     return (
-      <div className='login'>
-        <div>Log In</div>
+      <div>
         <Login logIn={this.logIn} />
-        <div>Create A New User</div>
+        <br></br>
         <NewSupport LogInNewUser={this.logInNewUser} />
       </div>
     )
