@@ -37,6 +37,16 @@
   color: #fff;
 }
 
+.donationsBar-new {
+  background-color: #b7e4cf;
+  text-align: center;
+  height: 10%;
+  margin-left: auto;
+  margin-right: auto;
+  color: #232444;
+  width: 100%;
+}
+
 .donationsBar {
   background-color: #b7e4cf;
   text-align: center;
@@ -85,9 +95,8 @@
   border-width: 10px;
   border-color:#b7e4cf;
   display: block;
-  margin-left: auto;
-  margin-right: auto;
-  width: 80%;
+  margin-left: 20%;
+  margin-right: 20%;
   padding: 30px
 }
 

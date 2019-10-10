@@ -68,32 +68,46 @@ class GetInvolved extends React.Component {
 
   render() {
     return (
-      <div className='other'>
-        <button className='button' onClick={() => this.showInfo()}>
-          Who Represents Me?
+      <div>
+        {this.props.showDonationsBar ? (
+          <div className='maybe-later' onClick={e => this.props.closeGive(e)}>Maybe Later</div>
+        ) : null
+        }
+        {
+          this.props.showDonationsBar ? (
+            <Link to="/donate/elizabethwarren2020">
+              <div className='donationsBar-new' onClick={e => this.props.resetDonationsBar(e)}>
+                <h1 className="giving-text">Give Now</h1></div>
+            </Link>
+          ) : null
+        }
+        <div className='other'>
+          <button className='button' onClick={() => this.showInfo()}>
+            Who Represents Me?
         </button>
-        <button className='button' onClick={() => this.getEvents()}>
-          Show All Events
+          <button className='button' onClick={() => this.getEvents()}>
+            Show All Events
         </button>
-        {this.state.renderReps ? <ShowReps reps={this.state.reps} /> : null}
-        <div className='map-element'>
-          <MapFragment
-            showMap={this.state.showMap}
-            events={this.state.events}
-          />
-        </div>
-        {this.state.showEvent ? (
-          <button className='button' onClick={() => this.showMap()}>
-            Show All Events On The Map!
+          {this.state.renderReps ? <ShowReps reps={this.state.reps} /> : null}
+          <div className='map-element'>
+            <MapFragment
+              showMap={this.state.showMap}
+              events={this.state.events}
+            />
+          </div>
+          {this.state.showEvent ? (
+            <button className='button' onClick={() => this.showMap()}>
+              Show All Events On The Map!
           </button>
-        ) : null}
-        {this.state.showEvent ? (
-          <ListEvents events={this.state.events} />
-        ) : null}
-        {this.state.getRepInfo ? (
-          <EnterAddressForm callGoogleAPI={this.callGoogleAPI} />
-        ) : null}
-        <UserIndex />
+          ) : null}
+          {this.state.showEvent ? (
+            <ListEvents events={this.state.events} />
+          ) : null}
+          {this.state.getRepInfo ? (
+            <EnterAddressForm callGoogleAPI={this.callGoogleAPI} />
+          ) : null}
+          <UserIndex />
+        </div>
       </div>
     )
   }

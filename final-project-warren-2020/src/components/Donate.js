@@ -5,6 +5,7 @@ import { Link } from 'react-router-dom'
 class Donate extends React.Component {
 
   donateNew = e => {
+    const total = parseFloat(e.target.parentElement.childNodes[15].value)
     debugger
     return fetch('http://localhost:3001/donate', {
       method: 'POST',
@@ -13,7 +14,7 @@ class Donate extends React.Component {
       },
       body: JSON.stringify({
         // user_id: user_id, //this needs to be user_id 
-        total: e.target.parentElement.childNodes[15].value
+        total: total
       })
     }).then(resp => resp.json())
   }
@@ -21,7 +22,8 @@ class Donate extends React.Component {
   render() {
     return (
       <div className='login'>
-        <form class="ui form" onSubmit={e => this.donateNew(e)}>
+        <form class="ui form" >
+          <div>Name</div>
           <label>First Name</label>
           <input type="text" name="name" placeholder="First Name" />
           <label>Last Name</label>
@@ -29,9 +31,11 @@ class Donate extends React.Component {
           <label>Address</label>
           <input type="text" name="address" placeholder="Street Address" />
           <div class="four wide field">
-            <input type="text" name="address-2" placeholder="Apt #" />
+            <input type="text" name="city" placeholder="City" />
+            <input type="text" name="state" placeholder="State" />
+            <input type="text" name="zip" placeholder="Zip" />
           </div >
-          < h4> Billing Information</h4>
+          <div> Billing Information</div>
           <div class="seven wide field">
             <label>Card Number</label>
             <input type="text" name="cardnumber" maxlength="16" placeholder="Card #" />
@@ -61,9 +65,12 @@ class Donate extends React.Component {
             </div></div>
           <input type="text" name="expire-year" maxlength="4" placeholder="Year" />
           <br></br><br></br>
-          <input type="float" name="total" maxlength="7" placeholder="total" />
-          <br></br><br></br>
+          <div class="seven wide field">
+            <label>Total:  </label>
+            <input type="text" name="total" maxlength="7" placeholder="total" /></div>
+          <br></br>
           <div class="button" onClick={(e) => this.donateNew(e)}>Donate Now</div>
+          <br></br><br></br>
         </form>
       </div >
     )

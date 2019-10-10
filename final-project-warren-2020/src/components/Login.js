@@ -21,7 +21,8 @@ const Login = props => {
             placeholder='password'
           />
           <br></br>
-          <button class='button' type='submit'>Log In</button>
+          <button className='button' type='submit'>Log In</button>
+          <button className="button" onClick={(e) => props.showNewUserBar(e)}>Create A New Account</button>
         </div>
       </form>
     </div>

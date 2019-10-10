@@ -30,26 +30,32 @@ class App extends React.Component {
     this.setState({ donationsBar: !this.state.donationsBar })
   }
 
+  logout = () => { }
+
   render() {
     return (
       <div className='App'>
-        {this.state.donationsBar ? (
-          <div className='maybe-later' onClick={e => this.closeGive(e)}>Maybe Later</div>
-        ) : null}
-        {this.state.donationsBar ? (
-          <Link to="/donate/elizabethwarren2020">
-            <div className='donationsBar' onClick={e => this.resetDonationsBar(e)}>
-              <h1 className="giving-text">Give Now</h1></div>
-          </Link>
-        ) : null}
+        {this.state.username ?
+          <button onClick={() => this.logout()}>Log Out</button>
+          : null}
         <Switch>
           <Route path='/elizabethwarren2020' component={routerProps =>
-            <Home {...routerProps} username={this.state.username} />} />
+            <Home {...routerProps} username={this.state.username}
+              closeGive={this.closeGive}
+              resetDonationsBar={this.resetDonationsBar}
+              showDonationsBar={this.state.donationsBar} />} />
           <Route path='/getinvolved' component={routerProps =>
-            <GetInvolved {...routerProps} username={this.state.username} />} />
+            <GetInvolved {...routerProps} username={this.state.username}
+              closeGive={this.closeGive}
+              resetDonationsBar={this.resetDonationsBar}
+              showDonationsBar={this.state.donationsBar}
+            />} />
 
           <Route path="/about/elizabethwarren2020" component={routerProps =>
-            <About {...routerProps} />} />
+            <About {...routerProps} />}
+            closeGive={this.closeGive}
+            resetDonationsBar={this.resetDonationsBar}
+            showDonationsBar={this.state.donationsBar} />
           <Route path="/donate/elizabethwarren2020" component={routerProps =>
             <Donate {...routerProps} />} />
           <Route component={() => <h1>404 - Page Not Found</h1>} />

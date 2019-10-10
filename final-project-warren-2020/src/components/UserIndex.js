@@ -7,7 +7,8 @@ import API from '../API'
 /// would it make more sense to move this to the landing page?
 class UserIndex extends React.Component {
   state = {
-    user: ''
+    user: '',
+    newUser: false
     // password: ''
   }
 
@@ -18,7 +19,7 @@ class UserIndex extends React.Component {
         user: e.target.username.value
         //  password: e.target.password.value
       },
-      this.postNewUser(e)
+      this.LogInUser(e)
     )
   }
 
@@ -33,7 +34,7 @@ class UserIndex extends React.Component {
     )
   }
 
-  postNewUser = e => {
+  LogInUser = e => {
     return fetch('http://localhost:3001/signin', {
       method: 'POST',
       headers: {
@@ -60,12 +61,17 @@ class UserIndex extends React.Component {
     }).then(resp => resp.json())
   }
 
+  showNewUserBar = (e) => {
+    e.preventDefault()
+    this.setState({ newUser: true })
+  }
+
   render() {
     return (
       <div>
-        <Login logIn={this.logIn} />
+        <Login logIn={this.logIn} showNewUserBar={this.showNewUserBar} />
         <br></br>
-        <NewSupport LogInNewUser={this.logInNewUser} />
+        {this.state.newUser ? <NewSupport LogInNewUser={this.logInNewUser} /> : null}
       </div>
     )
   }
