@@ -39,9 +39,17 @@ class Home extends React.Component {
               <p>I'm not afraid.</p>
               <p>― Elizabeth Warren</p></h2>
             <h1></h1>
-            <h1></h1>
+            <Link to="/getinvolved/elizabethwarren2020">
+              <button className='button'>Get Involved</button>
+            </Link>
             <h1></h1>
           </div>
+        </div>
+        <div className='youtube'>
+          <iframe
+            width="100%" height="580" src="https://www.youtube.com/embed/uF3IjYG8eeY" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture"
+            allowfullscreen>
+          </iframe>
         </div>
       </div>
     )
