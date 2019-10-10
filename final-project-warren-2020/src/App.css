@@ -37,9 +37,23 @@
   color: #fff;
 }
 
-.button-div{
-  width: 80%
+.button {
+  background-color: #b61b28;
+  border-color: #232444;
+  border-width: 1px;
+  width: 80%;
+  color: #fff
 }
+
+.event-button {
+  background-color: #b61b28;
+  border-color: #232444;
+  border-width: 1px;
+  width: 30%;
+  color: #fff
+}
+
+/* DONATIONS */
 
 .donationsBar-new {
   background-color: #b7e4cf;
@@ -63,6 +77,7 @@
   margin-right: auto;
   color: #232444;
 }
+
 .giving-text {
   padding: 1% 0;
   color: #232444;
@@ -78,9 +93,50 @@
   border-color: #232444;
 }
 
-
+/* HOME  */
 .video-wrapper {
   position: relative;
+}
+
+.quote-grid {
+  display: grid;
+  grid-template-columns: 50% 0%;
+  padding-top: 4%; 
+  margin-left: 10%;
+  margin-right: 10%;
+  border-style: solid;
+  border-width: 10px;
+  border-color:#b7e4cf;
+  height: 5%
+}
+
+.quote-img {
+    grid-area: left; 
+     grid-row: 1 / 1000; 
+    /* grid-column: 3;
+    grid-row: 1;
+     span: 2; */
+}
+
+.img {
+  margin-left: 1%;
+  margin-right: 1%;
+  width: 90%;
+  border-style: solid;
+  border-width: 5px;
+  border-color: #fff;
+}
+
+.quote-text {
+  margin-left: 8%;
+  margin-right: 1%;
+  width: 90%;
+  font-style: italic;
+}
+.quote {
+  grid-area: right;
+  text-align: center; 
+
 }
 
 /* .react-player {
@@ -89,21 +145,8 @@
   left: 0;
 } */
 
-.button {
-  background-color: #b61b28;
-  border-color: #232444;
-  border-width: 1px;
-  width: 80%;
-  color: #fff
-}
 
-.event-button {
-  background-color: #b61b28;
-  border-color: #232444;
-  border-width: 1px;
-  width: 30%;
-  color: #fff
-}
+/* MAPS */
 
 .googleMap {
   border-style: solid;
@@ -135,6 +178,8 @@
   background-color: #fff;
   color: black
 }
+
+/* LOGIN */
 
 .login {  
   text-align: center;
