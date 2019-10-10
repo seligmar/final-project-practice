@@ -4,14 +4,6 @@ const ShowReps = props => {
   return (
     <div className='show-reps'>
       <p>
-        {props.reps.offices[0].name}: {props.reps.officials[0].name} Call:{' '}
-        {props.reps.officials[0].phones[0]}
-      </p>
-      <p>
-        {props.reps.offices[1].name}: {props.reps.officials[1].name} Call:{' '}
-        {props.reps.officials[1].phones[0]}
-      </p>
-      <p>
         {props.reps.offices[2].name}: {props.reps.officials[2].name} Call:{' '}
         {props.reps.officials[2].phones[0]}
       </p>
