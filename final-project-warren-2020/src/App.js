@@ -1,8 +1,9 @@
 import React from 'react'
 import './App.css'
-import UserIndex from './components/UserIndex'
-import ReactPlayer from 'react-player'
 import GetInvolved from './components/GetInvolved'
+import { Route, Switch } from 'react-router-dom'
+import About from './components/About'
+import Home from './components/Home'
 
 // below is mockup
 // "https://www.figma.com/file/KY3BKNojNY9CZgudaWBWw5/Warren2020?node-id=8%3A1"
@@ -20,35 +21,34 @@ class App extends React.Component {
     username: ''
   }
 
-  linkTo = () => {}
+  linkTo = () => { }
 
   closeGive = () => {
     this.setState({ donationsBar: !this.state.donationsBar })
   }
 
-  render () {
+  render() {
     return (
       <div className='App'>
         {this.state.donationsBar ? (
           <div className='donationsBar'>
-            <button onClick={e => this.linkTo(e)}>Give Now</button>
-            <button onClick={e => this.closeGive(e)}>X</button>
+            <button className='ui button donations-button' onClick={e => this.linkTo(e)}>Give Now</button>
+            <button className='little-x-button' onClick={e => this.closeGive(e)}>X</button>
           </div>
         ) : null}
-        <div className='video-wrapper'>
-          <ReactPlayer
-            className='react-player'
-            url='https://media.giphy.com/media/lPjvLFOfrS3QUudX6S/source.mp4'
-            playing='true'
-            loop='true'
-            width='100%'
-            height='0%'
-          />
-        </div>
-        <UserIndex />
-        <GetInvolved username={this.state.username} />
+
+        <Switch>
+          <Route path='/elizabethwarren2020' component={routerProps =>
+            <Home {...routerProps} username={this.state.username} />} />
+          <Route path='/getinvolved' component={routerProps =>
+            <GetInvolved {...routerProps} username={this.state.username} />} />
+
+          <Route path="/about" component={routerProps =>
+            <About {...routerProps} />} />
+        </Switch>
       </div>
     )
   }
 }
+
 export default App

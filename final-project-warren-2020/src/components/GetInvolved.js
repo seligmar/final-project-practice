@@ -3,6 +3,8 @@ import MapFragment from './Map'
 import EnterAddressForm from './EnterAddressForm'
 import ShowReps from './ShowReps'
 import ListEvents from './ListEvents'
+import UserIndex from './UserIndex'
+
 
 const GOOGLE_API_KEY = 'AIzaSyBuNd5baj7zHX5OmBtTYoBkhW_a4WN81S8'
 
@@ -90,7 +92,7 @@ class GetInvolved extends React.Component {
         {this.state.getRepInfo ? (
           <EnterAddressForm callGoogleAPI={this.callGoogleAPI} />
         ) : null}
-
+        <UserIndex />
       </div>
     )
   }
