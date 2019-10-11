@@ -131,7 +131,6 @@
     border-color: #b7e4cf;
     background-color: #fff;
     color: black;
-    /* height: 180px; */
     position: right;
     margin-left: 40%;
     margin-right: 10%;
@@ -153,16 +152,13 @@
 }
 
 .youtube-block-grid {
-  padding-top: 4%; 
-  margin-left: 10%;
-  margin-right: 10%;
-  border-style: solid;
-  border-width: 10px;
-  border-color:#b7e4cf;
-  margin-top: 5%;
+  padding-top: 5%; 
+ 
 }
 
 .youtube {
+  margin-left: 10%;
+  margin-right: 10%;
   border-style: solid;
   border-width: 5px;
   border-color: #b61b28;
@@ -215,7 +211,32 @@
   left: 0;
 } */
 
+/* ABOUT */
 
+.about-page {
+  margin-top: 5%;
+  margin-left: 10%;
+  margin-right: 10%;
+  color: #232444; 
+  background-color: #fff;
+  font-style: italic;
+}
+
+.image-box {
+  margin-top: 5%;
+  margin-left: 10%;
+  margin-right: 10%;
+  border-style: solid;
+  border-width: 5px;
+  border-color:  #b61b28 
+}
+
+.bio-img-1 {
+  display: block;
+  margin-left: auto;
+  margin-right: auto;
+  width: 100%;
+}
 /* MAPS */
 
 .googleMap {

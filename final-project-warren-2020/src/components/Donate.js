@@ -145,7 +145,7 @@ class Donate extends React.Component {
             <p>I am not a registered Federal lobbyist.</p>
             <p>I am not an executive of a health insurance or pharmaceutical company.</p>
             <p>I am not a registered foreign agent.</p>
-            <p>Contributions or gifts to ActBlue are not deductible as charitable contributions for Federal income tax purposes.</p>
+            <p>Contributions or gifts to political candidates are not deductible as charitable contributions for Federal income tax purposes.</p>
           </div >
         </div>
       </div >
