@@ -33,12 +33,13 @@ class Donate extends React.Component {
     }).then(resp => resp.json())
       .then(data => {
         if (data.error) {
-          this.responseGif(data.error)
+          throw Error(data.error)
         } else {
           this.thanksGif()
         }
+      }).catch(error => {
+        this.responseGif(error)
       })
-      .then(resp => console.log(resp))
   }
 
   thanksGif = () => {
@@ -46,6 +47,7 @@ class Donate extends React.Component {
       text: 'Thank you for your generosity! Your contribution will help us strengthen our Democracy!',
       type: 'success'
     })
+    this.props.history.push('/elizabethwarren2020')
   }
 
   responseGif = (response) => {
@@ -60,7 +62,6 @@ class Donate extends React.Component {
   render() {
     return (
       <div>
-        <UserIndex />
         <div className='login'>
           <form class="ui form" >
             <label>First Name</label>

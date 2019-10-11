@@ -57,6 +57,13 @@ class App extends React.Component {
           {/* any way to call up user donation and event info? 
         if donations total 20 or more s
         short of limit, ask to give $20 */}
+          {this.state.showLogIn ?
+            <UserIndex
+              showLogIn={this.showLogIn}
+              userState={this.userState}
+              logIn={this.logIn}
+              loggedIn={this.state.loggedIn}
+            /> : null}
           <Switch>
             <Route path='/elizabethwarren2020' component={routerProps =>
               <Home {...routerProps}
@@ -92,13 +99,6 @@ class App extends React.Component {
               />} />
             <Route component={() => <h1>404 - Page Not Found</h1>} />
           </Switch>
-          {this.state.showLogIn ?
-            <UserIndex
-              showLogIn={this.showLogIn}
-              userState={this.userState}
-              logIn={this.logIn}
-              loggedIn={this.state.loggedIn}
-            /> : null}
         </div>
       </div>
     )

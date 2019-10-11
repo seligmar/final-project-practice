@@ -26,12 +26,26 @@ class UserIndex extends React.Component {
 
   logInNewUser = e => {
     e.preventDefault()
-    const user = {
-      username: e.target.username.value,
-      password: e.target.password.value,
-      emailaddress: e.target.email.value
+    if (
+      e.target.username.value === '' ||
+      e.target.password.value === "" ||
+      e.target.email.value === ''
+    ) {
+      MySwal.fire({
+        title: 'Please try again',
+        type: 'error',
+        confirmButtonColor: '#b61b28',
+        animation: false
+      })
     }
-    this.createNewUser(user)
+    else {
+      const user = {
+        username: e.target.username.value,
+        password: e.target.password.value,
+        emailaddress: e.target.email.value
+      }
+      this.createNewUser(user)
+    }
   }
 
   LogInUser = user => {
@@ -79,12 +93,14 @@ class UserIndex extends React.Component {
     }).then(resp => resp.json())
       .then(data => {
         if (data.error) {
-          this.responseGif(data.error)
+          throw Error(data.error)
         } else {
           this.props.userState(user)
           this.props.logIn()
           this.props.showLogIn()
         }
+      }).catch(error => {
+        this.responseGif(error)
       })
   }
 
@@ -97,7 +113,7 @@ class UserIndex extends React.Component {
     return (
       <div>
         {
-          this.props.loggedIn === false ?
+          this.props.loggedIn === false && this.state.newUser === false ?
             (<Login logIn={this.logIn} showNewUserBar={this.showNewUserBar} />) : null
         }
         < br ></br >
