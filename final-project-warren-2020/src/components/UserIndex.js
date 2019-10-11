@@ -60,7 +60,7 @@ class UserIndex extends React.Component {
     MySwal.fire({
       title: 'Please try again',
       text: `${response}`,
-      confirmButtonColor: '#232444',
+      confirmButtonColor: '#b61b28',
       animation: false
     })
   }

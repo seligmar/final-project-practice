@@ -13,8 +13,9 @@ class DonationsController < ApplicationController
         donationstotal = donationstotal + donation.total 
     end 
     if donationstotal < 2800 && donationstotal + newDonation < 2800 
-      Donation.create(total: newDonation, user_id: user.id)
-      render json: {error: 'Thank you for your generosity! Your contribution will help us strengthen our Democracy!'}
+      donation = Donation.create(total: newDonation, user_id: user.id)
+      render json: donation, status: :create
+      # {message: 'Thank you for your generosity! Your contribution will help us strengthen our Democracy!'}
     else 
       render json: {error: 'Thank you for your generosity! Your proposed donation exceedes FEC contribution limits.'}
 end 

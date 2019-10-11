@@ -6,7 +6,7 @@ const NewSupporter = props => {
       <form onSubmit={e => props.LogInNewUser(e)} className='ui form'>
         <div style={{ paddingBottom: '10px' }} class='field'>
           <p>Join the fight with Liz!</p>
-          <label>Create a username:</label>
+          <label>Please Enter Your Name:</label>
           <input
             style={{ width: 200 }}
             type='text'
@@ -14,7 +14,7 @@ const NewSupporter = props => {
             placeholder='username'
           />
           <br></br>
-          <label>Create your password:</label>
+          <label>Create Your Password:</label>
           <input
             style={{ width: 200 }}
             type='password'

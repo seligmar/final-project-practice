@@ -35,17 +35,24 @@ class Donate extends React.Component {
         if (data.error) {
           this.responseGif(data.error)
         } else {
-          console.log(data)
+          this.thanksGif()
         }
       })
       .then(resp => console.log(resp))
+  }
+
+  thanksGif = () => {
+    MySwal.fire({
+      text: 'Thank you for your generosity! Your contribution will help us strengthen our Democracy!',
+      type: 'success'
+    })
   }
 
   responseGif = (response) => {
     MySwal.fire({
       title: 'Please try again',
       text: `${response}`,
-      confirmButtonColor: '#232444',
+      confirmButtonColor: '#b61b28',
       animation: false
     })
   }
