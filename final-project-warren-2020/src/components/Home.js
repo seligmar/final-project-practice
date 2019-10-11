@@ -34,22 +34,25 @@ class Home extends React.Component {
           </div>
           <div className='grid-quote'>
             <h2 className='quote-text'>
-              <p>There's a lot at stake for our democracy.
-              But we can't choose a candidate we don't believe in just because we're afraid.</p>
+              <p>There's a lot at stake for our democracy.{' '}
+                But we can't choose a candidate we don't believe in just because we're afraid.</p>
               <p>I'm not afraid.</p>
               <p>― Elizabeth Warren</p></h2>
             <h1></h1>
             <Link to="/getinvolved/elizabethwarren2020">
-              <button className='button'>Get Involved</button>
+              <button className='button'>Get Involved Today</button>
             </Link>
             <h1></h1>
           </div>
         </div>
-        <div className='youtube'>
-          <iframe
-            width="100%" height="580" src="https://www.youtube.com/embed/uF3IjYG8eeY" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture"
-            allowfullscreen>
-          </iframe>
+        <div className='youtube-block-grid'>
+          <div className='youtube'>
+            <iframe
+              width="100%" height="580" src="https://www.youtube.com/embed/uF3IjYG8eeY"
+              frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture"
+              allowfullscreen>
+            </iframe>
+          </div>
         </div>
       </div>
     )

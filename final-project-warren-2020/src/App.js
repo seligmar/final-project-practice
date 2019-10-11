@@ -35,9 +35,15 @@ class App extends React.Component {
   render() {
     return (
       <div className='App'>
-        {this.state.username ?
+        {this.state.username !== '' ?
           <button onClick={() => this.logout()}>Log Out</button>
           : null}
+        {this.state.username !== '' ?
+          <p>Welcome back, {this.state.username}! Thank you for your support!</p>
+          : null}
+        {/* any way to call up user donation and event info? 
+        if donations total 20 or more s
+        short of limit, ask to give $20 */}
         <Switch>
           <Route path='/elizabethwarren2020' component={routerProps =>
             <Home {...routerProps} username={this.state.username}
