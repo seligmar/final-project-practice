@@ -6,7 +6,7 @@ class DonationsController < ApplicationController
   end 
 
   def donate 
-    user = User.find_by(id: params[:user_id])
+    user = User.find_by(username: params[:username])
     newDonation = params[:total]
     donationstotal = 0 
     user.donations.each do |donation| 
@@ -24,7 +24,7 @@ end
 private 
 
  def donations_params 
-    params.require(:user).permit(:user_id, :total)
+    params.require(:user).permit(:username, :total)
 end 
 
 end

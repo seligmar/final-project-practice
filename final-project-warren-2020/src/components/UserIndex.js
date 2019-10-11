@@ -28,7 +28,7 @@ class UserIndex extends React.Component {
     e.preventDefault()
     if (
       e.target.username.value === '' ||
-      e.target.password.value === "" ||
+      e.target.password.value === '' ||
       e.target.email.value === ''
     ) {
       MySwal.fire({
