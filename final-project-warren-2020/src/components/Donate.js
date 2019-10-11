@@ -43,16 +43,9 @@ class Donate extends React.Component {
 
   responseGif = (response) => {
     MySwal.fire({
+      title: 'Please try again',
       text: `${response}`,
-      imageUrl: 'https://media.giphy.com/media/rYEAkYihZsyWs/giphy.gif',
-      imageWidth: 300,
-      imageHeight: 200,
-      confirmButtonText: 'Next!',
-      background: '#090526',
-      imageAlt: 'Bob Ross',
-      padding: '.25em',
-      confirmButtonColor: 'cornflowerblue',
-      width: 300,
+      confirmButtonColor: '#232444',
       animation: false
     })
   }
