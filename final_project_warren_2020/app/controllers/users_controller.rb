@@ -18,7 +18,6 @@ class UsersController < ApplicationController
     user = User.new(username: params[:username], password: params[:password], emailaddress: params[:emailaddress])
     if user.save
         render json: user, status: :create
-        # donation = Donation.create(user_id: user.id, total: 0)
     else 
       if (user.errors.full_messages[0] === 'Username has already been taken')
         render json: {error: 'username and password combination invalid'}

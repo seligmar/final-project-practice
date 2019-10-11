@@ -36,7 +36,7 @@ MISC
 
 https://github.com/sweetalert2/sweetalert2-react-content - alerts
 
-
+https://guides.rubyonrails.org/active_record_validations.html - validation in Ruby on Rails
 
 WARREN INFO/QUOTES 
 
