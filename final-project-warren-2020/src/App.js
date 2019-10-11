@@ -6,15 +6,6 @@ import About from './components/About'
 import Home from './components/Home'
 import Donate from './components/Donate'
 
-// below is mockup
-// "https://www.figma.com/file/KY3BKNojNY9CZgudaWBWw5/Warren2020?node-id=8%3A1"
-
-// reminder to use sweet-alert
-// import Swal from 'sweetalert2'
-// import withReactContent from 'sweetalert2-react-content'
-// import { withRouter } from 'react-router-dom'
-
-// const MySwal = withReactContent(Swal)
 
 class App extends React.Component {
   state = {

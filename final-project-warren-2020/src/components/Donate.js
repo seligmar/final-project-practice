@@ -2,11 +2,15 @@ import React from 'react'
 import ReactPlayer from 'react-player'
 import { Link } from 'react-router-dom'
 
+import Swal from 'sweetalert2'
+import withReactContent from 'sweetalert2-react-content'
+
+const MySwal = withReactContent(Swal)
+
 class Donate extends React.Component {
 
   donateNew = e => {
-    const total = parseFloat(e.target.parentElement.childNodes[15].value)
-    debugger
+    const total = parseInt(e.target.parentElement.childNodes[16].childNodes[1].value)
     return fetch('http://localhost:3001/donate', {
       method: 'POST',
       headers: {
@@ -17,6 +21,22 @@ class Donate extends React.Component {
         total: total
       })
     }).then(resp => resp.json())
+      .then(resp => console.log(resp))
+  }
+
+  responseGif = (response) => {
+    MySwal.fire({
+      imageUrl: 'https://media.giphy.com/media/rYEAkYihZsyWs/giphy.gif',
+      imageWidth: 300,
+      imageHeight: 200,
+      confirmButtonText: 'Next!',
+      background: '#090526',
+      imageAlt: 'Bob Ross',
+      padding: '.25em',
+      confirmButtonColor: 'cornflowerblue',
+      width: 300,
+      animation: false
+    })
   }
 
   render() {
@@ -72,7 +92,7 @@ class Donate extends React.Component {
           <div class="button" onClick={(e) => this.donateNew(e)}>Donate Now</div>
           <br></br><br></br>
         </form>
-      </div >
+      </div>
     )
   }
 }
