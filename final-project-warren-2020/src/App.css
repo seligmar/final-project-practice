@@ -95,8 +95,6 @@
 }
 
 .donation-pitch{
-  margin-left: 10%;
-  margin-right: 10%;
   padding-top: 2%;
   padding-bottom: 2%; 
   background-color:  #b7e4cf;
@@ -123,6 +121,20 @@
 
 .FEC-rules {
   text-decoration: underline;
+}
+
+.donations-form {
+  text-align: center;
+    height: middle;
+    border-style: solid;
+    border-width: 10px;
+    border-color: #b7e4cf;
+    background-color: #fff;
+    color: black;
+    /* height: 180px; */
+    position: right;
+    margin-left: 40%;
+    margin-right: 10%;
 }
 
 .maybe-later {
@@ -249,7 +261,7 @@
     color: black;
     /* height: 180px; */
     position: right;
-    margin-left: 40%;
+    margin-left: 10%;
     margin-right: 10%;
     /* top: 50%; */
   }

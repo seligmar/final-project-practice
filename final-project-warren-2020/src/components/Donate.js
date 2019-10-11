@@ -74,13 +74,13 @@ class Donate extends React.Component {
   render() {
     return (
       <div >
-        <div>
+        <div className='donation-pitch'>
           <h2>THE TIME FOR SMALL IDEAS IS OVER</h2>
           We're fighting for big, structural change, and we're counting on grassroots donors to make it possible.
           Even $3 makes a difference.
         </div>
         < div className='donation-page'>
-          <div className='login'>
+          <div className='donations-form'>
             <div>
               <form class="ui form">
                 <label>First Name</label>

@@ -10,7 +10,6 @@ class UsersController < ApplicationController
       render json: user 
     else 
       render json: {error: 'username and password combination invalid'}, status: 401
-     # redirect to: "/signin"
     end 
   end 
 
@@ -24,6 +23,10 @@ class UsersController < ApplicationController
       else 
         render json: { error: user.errors.full_messages }, status: :unprocessable_entity
     end 
+  end 
+
+  def validate 
+    
   end 
 
   end 
