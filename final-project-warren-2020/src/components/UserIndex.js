@@ -69,7 +69,8 @@ class UserIndex extends React.Component {
   render() {
     return (
       <div>
-        <Login logIn={this.logIn} showNewUserBar={this.showNewUserBar} />
+        {this.props.loggedIn === false ?
+          (<Login logIn={this.logIn} showNewUserBar={this.showNewUserBar} />) : null}
         <br></br>
         {this.state.newUser ? <NewSupport LogInNewUser={this.logInNewUser} /> : null}
       </div>

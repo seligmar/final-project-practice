@@ -17,8 +17,15 @@ class GetInvolved extends React.Component {
     getRepInfo: false,
     user: false,
     reps: [],
-    renderReps: false
+    renderReps: false,
+    newUser: false,
+    createEvent: false
   }
+
+  createEventState = () => {
+    this.setState({ createEvent: true })
+  }
+
 
   getEvents = () => {
     return fetch('http://localhost:3001/events') // events url
@@ -29,12 +36,6 @@ class GetInvolved extends React.Component {
   showEvent = () => this.setState({ showEvent: true })
 
   showMap = () => this.setState({ showMap: !this.state.showMap })
-
-  loggedIn = () => {
-    if (this.props.username !== '') {
-      this.setState({ user: true })
-    }
-  }
 
   componentDidMount() {
     this.getEvents()
@@ -84,13 +85,15 @@ class GetInvolved extends React.Component {
             </Link>
           ) : null
         }
-        <div className='other'>
+        < div className='other' >
           <button className='button' onClick={() => this.showInfo()}>
             Who Represents Me?
         </button>
-          <button className='button' onClick={() => this.getEvents()}>
-            Show All Events
+          <button className='button' onClick={() => this.createEventState()}>
+            Create Event
         </button>
+          {this.state.createEvent ?
+            <UserIndex /> : null}
           {this.state.renderReps ? <ShowReps reps={this.state.reps} /> : null}
           <div className='map-element'>
             <MapFragment
@@ -98,20 +101,25 @@ class GetInvolved extends React.Component {
               events={this.state.events}
             />
           </div>
-          {this.state.showEvent ? (
-            <button className='button' onClick={() => this.showMap()}>
-              Show All Events On The Map!
+          {
+            this.state.showEvent ? (
+              <button className='button' onClick={() => this.showMap()}>
+                Show All Events On The Map!
           </button>
-          ) : null}
-          {this.state.showEvent ? (
-            <ListEvents events={this.state.events} />
-          ) : null}
-          {this.state.getRepInfo ? (
-            <EnterAddressForm callGoogleAPI={this.callGoogleAPI} />
-          ) : null}
-          <UserIndex />
-        </div>
-      </div>
+            ) : null
+          }
+          {
+            this.state.showEvent ? (
+              <ListEvents events={this.state.events} />
+            ) : null
+          }
+          {
+            this.state.getRepInfo ? (
+              <EnterAddressForm callGoogleAPI={this.callGoogleAPI} />
+            ) : null
+          }
+        </div >
+      </div >
     )
   }
 }

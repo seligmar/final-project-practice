@@ -3,13 +3,12 @@ ReadMe
 COLOR SCHEME/CSS 
 notes- using official colors of the Warren campaign 
 
+https://semantic-ui.com - design styling used
+
 https://www.figma.com/file/KY3BKNojNY9CZgudaWBWw5/Warren2020?node-id=8%3A1 
 
 https://trello.com/b/RbqpIb10/final-project-back-end 
 
-MISC 
-
-https://github.com/sweetalert2/sweetalert2-react-content - alerts
 
 EMBED FEATURES 
 
@@ -31,6 +30,12 @@ https://www.youtube.com/watch?time_continue=172&v=Pf7g32CwX_s
 REACT INFO 
 
 https://www.youtube.com/watch?v=Law7wfdg_ls - react router youtube video 
+
+MISC 
+
+https://github.com/sweetalert2/sweetalert2-react-content - alerts
+
+
 
 WARREN INFO/QUOTES 
 

@@ -47,6 +47,15 @@
   /* round edges of buttons? might be cute */
 }
 
+.button-login {
+  background-color: #b61b28;
+  border-color: #232444;
+  border-width: 1px;
+  width: 100%;
+  height: 9%;
+  color: #fff;
+}
+
 .event-button {
   background-color: #b61b28;
   border-color: #232444;
