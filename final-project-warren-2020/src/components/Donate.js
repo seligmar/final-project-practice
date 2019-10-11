@@ -74,6 +74,11 @@ class Donate extends React.Component {
   render() {
     return (
       <div>
+        <div className='donation-pitch'>
+          <h2>THE TIME FOR SMALL IDEAS IS OVER</h2>
+          We're fighting for big, structural change, and we're counting on grassroots donors to make it possible.
+          Even $3 makes a difference.
+        </div>
         < div>
           <div className='login'>
             <form class="ui form">
@@ -138,9 +143,10 @@ class Donate extends React.Component {
             <p>I am not a registered Federal lobbyist.</p>
             <p>I am not an executive of a health insurance or pharmaceutical company.</p>
             <p>I am not a registered foreign agent.</p>
+            <p>Contributions or gifts to ActBlue are not deductible as charitable contributions for Federal income tax purposes.</p>
           </div >
         </div>
-      </div>
+      </div >
     )
   }
 }
