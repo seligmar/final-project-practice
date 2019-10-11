@@ -19,9 +19,13 @@ class UsersController < ApplicationController
     if user.save
         render json: user, status: :create
         # donation = Donation.create(user_id: user.id, total: 0)
-    else
-        render json: { user_errors: user.errors.full_messages }, status: :unprocessable_entity
+    else 
+      if (user.errors.full_messages[0] === 'Username has already been taken')
+        render json: {error: 'username and password combination invalid'}
+      else 
+        render json: { error: user.errors.full_messages }, status: :unprocessable_entity
     end 
+  end 
 
   end 
 

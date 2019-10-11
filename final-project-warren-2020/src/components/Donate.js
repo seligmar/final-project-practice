@@ -12,7 +12,7 @@ class Donate extends React.Component {
 
   donateNew = e => {
     e.preventDefault()
-    if (this.props.username === '') {
+    if (!this.props.username) {
       MySwal.fire({
         text: 'Please log in to donate',
         type: 'error',
