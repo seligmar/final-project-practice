@@ -9,6 +9,7 @@ https://www.figma.com/file/KY3BKNojNY9CZgudaWBWw5/Warren2020?node-id=8%3A1
 
 https://trello.com/b/RbqpIb10/final-project-back-end 
 
+https://www.npmjs.com/package/react-konami-code - consider adding konami easter egg 
 
 EMBED FEATURES 
 

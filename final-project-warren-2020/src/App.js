@@ -37,7 +37,11 @@ class App extends React.Component {
     this.setState({ username: user.username })
   }
 
-  logout = () => { }
+  logout = () => {
+    this.setState({ showLogIn: !this.state.showLogIn })
+    this.setState({ loggedIn: false })
+    this.setState({ username: '' })
+  }
 
   render() {
     return (

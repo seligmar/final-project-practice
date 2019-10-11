@@ -3,6 +3,11 @@ import Login from './Login'
 import NewSupport from './NewSupporter'
 
 import API from '../API'
+import Swal from 'sweetalert2'
+import withReactContent from 'sweetalert2-react-content'
+
+
+const MySwal = withReactContent(Swal)
 
 /// would it make more sense to move this to the landing page?
 class UserIndex extends React.Component {
@@ -16,9 +21,6 @@ class UserIndex extends React.Component {
       username: e.target.username.value,
       password: e.target.password.value
     }
-    this.props.userState(user)
-    this.props.logIn()
-    this.props.showLogIn()
     this.LogInUser(user)
   }
 
@@ -29,9 +31,6 @@ class UserIndex extends React.Component {
       password: e.target.password.value,
       emailaddress: e.target.email.value
     }
-    this.props.userState(user)
-    this.props.logIn()
-    this.props.showLogIn()
     this.createNewUser(user)
   }
 
@@ -48,11 +47,29 @@ class UserIndex extends React.Component {
     }).then(resp => resp.json())
       .then(data => {
         if (data.error) {
-          alert(data.error)
+          this.responseGif(data.error)
         } else {
-          console.log(data)
+          this.props.userState(user)
+          this.props.logIn()
+          this.props.showLogIn()
         }
       })
+  }
+
+  responseGif = (response) => {
+    MySwal.fire({
+      text: `${response}`,
+      imageUrl: 'https://media.giphy.com/media/rYEAkYihZsyWs/giphy.gif',
+      imageWidth: 300,
+      imageHeight: 200,
+      confirmButtonText: 'Next!',
+      background: '#090526',
+      imageAlt: 'Bob Ross',
+      padding: '.25em',
+      confirmButtonColor: 'cornflowerblue',
+      width: 300,
+      animation: false
+    })
   }
 
   createNewUser = user => {
@@ -69,9 +86,11 @@ class UserIndex extends React.Component {
     }).then(resp => resp.json())
       .then(data => {
         if (data.error) {
-          alert(data.error)
+          this.responseGif(data.error)
         } else {
-          console.log(data)
+          this.props.userState(user)
+          this.props.logIn()
+          this.props.showLogIn()
         }
       })
   }

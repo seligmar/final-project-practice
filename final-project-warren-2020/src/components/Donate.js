@@ -11,22 +11,39 @@ const MySwal = withReactContent(Swal)
 class Donate extends React.Component {
 
   donateNew = e => {
-    const total = parseInt(e.target.parentElement.childNodes[16].childNodes[1].value)
+    e.preventDefault()
+    const donation = {
+      //  user: this.state.username ??? ,
+
+      total: parseInt(e.target.parentElement.childNodes[16].childNodes[1].value)
+    }
+    this.postDonation(donation)
+  }
+
+  postDonation = donation => {
     return fetch('http://localhost:3001/donate', {
       method: 'POST',
       headers: {
         'content-type': 'application/json'
       },
       body: JSON.stringify({
-        // user_id: user_id, //this needs to be user_id 
-        total: total
+        ////
+        total: donation.total
       })
     }).then(resp => resp.json())
+      .then(data => {
+        if (data.error) {
+          this.responseGif(data.error)
+        } else {
+          console.log(data)
+        }
+      })
       .then(resp => console.log(resp))
   }
 
   responseGif = (response) => {
     MySwal.fire({
+      text: `${response}`,
       imageUrl: 'https://media.giphy.com/media/rYEAkYihZsyWs/giphy.gif',
       imageWidth: 300,
       imageHeight: 200,
