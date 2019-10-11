@@ -126,7 +126,20 @@ class Donate extends React.Component {
               <br></br><br></br>
             </form>
           </div>
-        </div >
+          <div className='FEC'>
+            <p className='FEC-rules'>Contribution rules:</p>
+            <p>I am a U.S. citizen or lawfully admitted permanent resident (i.e., green card holder).</p>
+            <p>This contribution is made from my own funds, and funds are not being provided to me by another person or entity for the purpose of making this contribution.</p>
+            <p>I am making this contribution with my own personal credit card and not with a corporate or business credit card or a card issued to another person.</p>
+            <p>I am at least eighteen years old.</p>
+            <p>I am not a federal contractor.</p>
+            <p>This contribution is not made from the funds of a political action committee.</p>
+            <p>I am not an executive of a fossil fuel company.</p>
+            <p>I am not a registered Federal lobbyist.</p>
+            <p>I am not an executive of a health insurance or pharmaceutical company.</p>
+            <p>I am not a registered foreign agent.</p>
+          </div >
+        </div>
       </div>
     )
   }

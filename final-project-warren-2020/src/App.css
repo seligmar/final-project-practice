@@ -94,6 +94,19 @@
   color: #232444;
 }
 
+.FEC {
+  font-size: small;
+  text-align: left;
+  margin-left: 10%;
+  margin-right: 10%;
+  padding-top: 5%;
+  padding-bottom: 5%
+}
+
+.FEC-rules {
+  text-decoration: underline;
+}
+
 .maybe-later {
   background-color: #b7e4cf;
   text-align: center;
@@ -164,7 +177,6 @@
 .quote {
   grid-area: right;
   text-align: center; 
-
 }
 
 /* .react-player {
