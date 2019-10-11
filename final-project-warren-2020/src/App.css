@@ -106,6 +106,12 @@
   border-bottom-width: 5%
 }
 
+.donation-page {
+  background-image: url("https://img.theculturetrip.com/x/smart/wp-content/uploads/2018/11/shutterstock_139844653-featuredimage.jpg");
+  background-repeat: no-repeat;
+  background-size: 100% 65%;
+}
+
 .FEC {
   font-size: small;
   text-align: left;
@@ -242,9 +248,8 @@
     background-color: #fff;
     color: black;
     /* height: 180px; */
-    position: center;
-    left: 50%;
-    margin-left: 10%;
+    position: right;
+    margin-left: 40%;
     margin-right: 10%;
     /* top: 50%; */
   }
