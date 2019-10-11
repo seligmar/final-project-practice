@@ -221,6 +221,9 @@
   background-color: #fff;
   font-style: italic;
 }
+.gif {
+  width: 100%;
+}
 
 .image-box {
   margin-top: 5%;

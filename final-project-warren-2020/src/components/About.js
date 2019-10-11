@@ -2,7 +2,6 @@ import React from 'react'
 import { Link } from 'react-router-dom'
 import ReactPlayer from 'react-player'
 
-
 class About extends React.Component {
   render() {
     return (
@@ -19,15 +18,16 @@ class About extends React.Component {
             </Link>
           ) : null
         }
-        <div className='video-wrapper'>
+        <div className='gif'>
           <ReactPlayer
             className='react-player'
-            url='https://media.giphy.com/media/TK4XFFAzhHmar2MsDG/source.gif'
+            url='https://media.giphy.com/media/TK4XFFAzhHmar2MsDG/giphy.mp4'
             playing='true'
             loop='true'
             width='100%'
             height='0%'
           />
+
         </div>
         <div className='about-page'>
           <h1></h1>
