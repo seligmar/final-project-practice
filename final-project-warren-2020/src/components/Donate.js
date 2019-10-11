@@ -63,7 +63,11 @@ class Donate extends React.Component {
       title: 'Please try again',
       text: `${response}`,
       confirmButtonColor: '#b61b28',
-      animation: false
+      animation: false,
+      html:
+        'Please refer to the ' +
+        '<a href="https://www.fec.gov/resources/cms-content/documents/contribution_limits_chart_2019-2020.pdf" target="_blank">FEC</a> ' +
+        'for more information on campaign contribution limits'
     })
   }
 
