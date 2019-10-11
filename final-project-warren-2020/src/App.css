@@ -107,15 +107,13 @@
   border-style: solid;
   border-width: 10px;
   border-color:#b7e4cf;
+  margin-top: 5%;
 }
 
 .youtube {
-  padding-top: 4%; 
-  margin-left: 10%;
-  margin-right: 10%;
   border-style: solid;
-  border-width: 10px;
-  border-color:#b7e4cf;
+  border-width: 5px;
+  border-color: #b61b28;
 }
 
 .quote-grid {
@@ -127,7 +125,7 @@
   border-style: solid;
   border-width: 10px;
   border-color:#b7e4cf;
-  height: 5%
+  margin-top: 5%;
 }
 
 .quote-img {
