@@ -49,8 +49,9 @@ class Home extends React.Component {
         <div className='youtube-block-grid'>
           <div className='youtube'>
             <iframe
+              title='Dream Big'
               width="100%" height="580" src="https://www.youtube.com/embed/uF3IjYG8eeY"
-              frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture"
+              frameBorder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture"
               allowfullscreen>
             </iframe>
           </div>

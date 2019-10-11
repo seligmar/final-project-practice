@@ -30,7 +30,11 @@ class App extends React.Component {
   }
 
   showLogIn = () => {
-    this.setState({ showLogIn: true })
+    this.setState({ showLogIn: !this.state.showLogIn })
+  }
+
+  userState = user => {
+    this.setState({ username: user.username })
   }
 
   logout = () => { }
@@ -86,8 +90,9 @@ class App extends React.Component {
           </Switch>
           {this.state.showLogIn ?
             <UserIndex
+              showLogIn={this.showLogIn}
+              userState={this.userState}
               logIn={this.logIn}
-              username={this.state.username}
               loggedIn={this.state.loggedIn}
             /> : null}
         </div>

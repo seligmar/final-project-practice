@@ -7,58 +7,73 @@ import API from '../API'
 /// would it make more sense to move this to the landing page?
 class UserIndex extends React.Component {
   state = {
-    user: '',
     newUser: false
-    // password: ''
   }
 
   logIn = e => {
     e.preventDefault()
-    this.setState(
-      {
-        user: e.target.username.value
-        //  password: e.target.password.value
-      },
-      this.LogInUser(e)
-    )
+    const user = {
+      username: e.target.username.value,
+      password: e.target.password.value
+    }
+    this.props.userState(user)
+    this.props.logIn()
+    this.props.showLogIn()
+    this.LogInUser(user)
   }
 
   logInNewUser = e => {
     e.preventDefault()
-    this.setState(
-      {
-        user: e.target.username.value
-        //  password: e.target.password.value
-      },
-      this.createNewUser(e)
-    )
+    const user = {
+      username: e.target.username.value,
+      password: e.target.password.value,
+      emailaddress: e.target.email.value
+    }
+    this.props.userState(user)
+    this.props.logIn()
+    this.props.showLogIn()
+    this.createNewUser(user)
   }
 
-  LogInUser = e => {
+  LogInUser = user => {
     return fetch('http://localhost:3001/signin', {
       method: 'POST',
       headers: {
         'content-type': 'application/json'
       },
       body: JSON.stringify({
-        username: e.target.username.value,
-        password: e.target.password.value
+        username: user.username,
+        password: user.password
       })
     }).then(resp => resp.json())
+      .then(data => {
+        if (data.error) {
+          alert(data.error)
+        } else {
+          console.log(data)
+        }
+      })
   }
 
-  createNewUser = e => {
+  createNewUser = user => {
     return fetch('http://localhost:3001/new-supporter', {
       method: 'POST',
       headers: {
         'content-type': 'application/json'
       },
       body: JSON.stringify({
-        username: e.target.username.value,
-        password: e.target.password.value,
-        emailaddress: e.target.email.value
+        username: user.username,
+        password: user.password,
+        emailaddress: user.email
       })
     }).then(resp => resp.json())
+      .then(data => {
+        if (data.error) {
+          alert(data.error)
+        } else {
+          console.log(data)
+        }
+      })
   }
 
   showNewUserBar = (e) => {
@@ -69,11 +84,13 @@ class UserIndex extends React.Component {
   render() {
     return (
       <div>
-        {this.props.loggedIn === false ?
-          (<Login logIn={this.logIn} showNewUserBar={this.showNewUserBar} />) : null}
-        <br></br>
+        {
+          this.props.loggedIn === false ?
+            (<Login logIn={this.logIn} showNewUserBar={this.showNewUserBar} />) : null
+        }
+        < br ></br >
         {this.state.newUser ? <NewSupport LogInNewUser={this.logInNewUser} /> : null}
-      </div>
+      </div >
     )
   }
 }
