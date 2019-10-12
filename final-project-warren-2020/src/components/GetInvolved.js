@@ -6,6 +6,11 @@ import ListEvents from './ListEvents'
 import UserIndex from './UserIndex'
 import { Link } from 'react-router-dom'
 import API from '../API'
+import NewEvent from './NewEvent'
+import Swal from 'sweetalert2'
+import withReactContent from 'sweetalert2-react-content'
+
+const MySwal = withReactContent(Swal)
 
 const GOOGLE_API_KEY = 'AIzaSyBuNd5baj7zHX5OmBtTYoBkhW_a4WN81S8'
 
@@ -26,9 +31,24 @@ class GetInvolved extends React.Component {
     this.setState({ createEvent: true })
   }
 
+  NewEvent = e => {
+    e.preventDefault()
+    if (!this.props.username) {
+      MySwal.fire({
+        text: 'Please log in to create a new event',
+        type: 'error',
+        confirmButtonColor: '#b61b28'
+      })
+    }
+    else {
+      const event = {
+        total: parseInt(e.target.parentElement.childNodes[15].childNodes[1].value)
+      }
+      this.createEvent(event)
+    }
+  }
 
   getEvents = () => API.getEvents().then(events => this.setState({ events }, this.showEvent))
-
 
   showEvent = () => this.setState({ showEvent: true })
 
@@ -90,8 +110,7 @@ class GetInvolved extends React.Component {
           <button className='button' onClick={() => this.createEventState()}>
             Create Event
         </button>
-          {this.state.createEvent ?
-            <UserIndex /> : null}
+
           {this.state.renderReps ? <ShowReps reps={this.state.reps} /> : null}
           <div className='map-element'>
             <MapFragment
@@ -104,6 +123,11 @@ class GetInvolved extends React.Component {
               <button className='button' onClick={() => this.showMap()}>
                 Show All Events On The Map!
           </button>
+            ) : null
+          }
+          {
+            this.state.createEvent ? (
+              <NewEvent NewEvent={this.NewEvent} />
             ) : null
           }
           {
