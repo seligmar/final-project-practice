@@ -23,10 +23,6 @@ const ShowReps = props => {
         {props.reps.offices[5].name}: {props.reps.officials[6].name} Call:{' '}
         {props.reps.officials[6].phones[0]}
       </div>
-      <div>
-        {props.reps.offices[6].name}: {props.reps.officials[7].name} Call:{' '}
-        {props.reps.officials[7].phones[0]}
-      </div>
     </div>
   )
 }

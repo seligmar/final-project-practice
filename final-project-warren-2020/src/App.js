@@ -5,21 +5,20 @@ import { Route, Switch, Link } from 'react-router-dom'
 import About from './components/About'
 import Home from './components/Home'
 import Donate from './components/Donate'
+import UserIndex from './components/UserIndex'
+import API from './API'
+import Swal from 'sweetalert2'
+import withReactContent from 'sweetalert2-react-content'
 
-// below is mockup
-// "https://www.figma.com/file/KY3BKNojNY9CZgudaWBWw5/Warren2020?node-id=8%3A1"
+const MySwal = withReactContent(Swal)
 
-// reminder to use sweet-alert
-// import Swal from 'sweetalert2'
-// import withReactContent from 'sweetalert2-react-content'
-// import { withRouter } from 'react-router-dom'
-
-// const MySwal = withReactContent(Swal)
 
 class App extends React.Component {
   state = {
     donationsBar: true,
-    username: ''
+    username: '',
+    loggedIn: false,
+    showLogIn: false
   }
 
   resetDonationsBar = () => {
@@ -30,31 +29,114 @@ class App extends React.Component {
     this.setState({ donationsBar: !this.state.donationsBar })
   }
 
+  logIn = () => {
+    this.setState({ loggedIn: true })
+  }
+
+  showLogIn = () => {
+    this.setState({ showLogIn: !this.state.showLogIn })
+  }
+
+  userState = user => {
+    this.setState({ username: user.username })
+    localStorage.setItem('token', user.id)
+  }
+
+  logout = () => {
+    this.setState({ showLogIn: !this.state.showLogIn })
+    this.setState({ loggedIn: false })
+    this.setState({ username: '' })
+    localStorage.removeItem('token')
+  }
+
+  componentDidMount() {
+    if (localStorage.getItem('token') !== undefined) {
+      API.validate()
+        .then(data => {
+          if (data.error) {
+          }
+          else
+            API.signIn(data)
+              .then(data => {
+                if (data.error) {
+                  this.responseGif(data.error)
+                } else {
+                  this.userState(data)
+                  this.logIn()
+                  this.showLogIn()
+                }
+              })
+        })
+    }
+  }
+
+  responseGif = (response) => {
+    MySwal.fire({
+      title: 'Please try again',
+      text: `${response}`,
+      confirmButtonColor: '#b61b28',
+      animation: false
+    })
+  }
+
   render() {
     return (
       <div className='App'>
-        {this.state.donationsBar ? (
-          <div className='maybe-later' onClick={e => this.closeGive(e)}>Maybe Later</div>
-        ) : null}
-        {this.state.donationsBar ? (
-          <Link to="/donate/elizabethwarren2020">
-            <div className='donationsBar' onClick={e => this.resetDonationsBar(e)}>
-              <h1 className="giving-text">Give Now</h1></div>
-          </Link>
-        ) : null}
-        <Switch>
-          <Route path='/elizabethwarren2020' component={routerProps =>
-            <Home {...routerProps} username={this.state.username} />} />
-          <Route path='/getinvolved' component={routerProps =>
-            <GetInvolved {...routerProps} username={this.state.username} />} />
+        <div>
+          {this.state.loggedIn ?
+            <button className="button-login" onClick={() => this.logout()}>Log Out</button>
+            : <button className="button-login" onClick={() => this.showLogIn()}>Log In</button>
+          }
+          {this.state.loggedIn ?
+            <p>Welcome back, {this.state.username}! Thank you for your support!</p>
+            : null}
+          {/* any way to call up user donation and event info? 
+        if donations total 20 or more s
+        short of limit, ask to give $20 */}
+          {this.state.showLogIn ?
+            <UserIndex
+              showLogIn={this.showLogIn}
+              userState={this.userState}
+              logIn={this.logIn}
+              loggedIn={this.state.loggedIn}
+            /> : null}
+          <Switch>
+            <Route path='/elizabethwarren2020' component={routerProps =>
+              <Home {...routerProps}
+                username={this.state.username}
+                closeGive={this.closeGive}
+                loggedIn={this.state.loggedIn}
+                logIn={this.logIn}
+                resetDonationsBar={this.resetDonationsBar}
+                showDonationsBar={this.state.donationsBar} />} />
+            <Route path='/getinvolved' component={routerProps =>
+              <GetInvolved {...routerProps}
+                username={this.state.username}
+                closeGive={this.closeGive}
+                loggedIn={this.state.loggedIn}
+                logIn={this.logIn}
+                resetDonationsBar={this.resetDonationsBar}
+                showDonationsBar={this.state.donationsBar}
+              />} />
 
-          <Route path="/about/elizabethwarren2020" component={routerProps =>
-            <About {...routerProps} />} />
-          <Route path="/donate/elizabethwarren2020" component={routerProps =>
-            <Donate {...routerProps} />} />
-          <Route component={() => <h1>404 - Page Not Found</h1>} />
-        </Switch>
-      </div >
+            <Route path="/about/elizabethwarren2020" component={routerProps =>
+              <About {...routerProps}
+                closeGive={this.closeGive}
+                logIn={this.logIn}
+                username={this.state.username}
+                loggedIn={this.state.loggedIn}
+                resetDonationsBar={this.resetDonationsBar}
+                showDonationsBar={this.state.donationsBar} />} />
+            <Route path="/donate/elizabethwarren2020" component={routerProps =>
+              <Donate {...routerProps}
+                logIn={this.logIn}
+                loggedIn={this.state.loggedIn}
+                username={this.state.username}
+              />} />
+            <Route component={() => <h1>404 - Page Not Found</h1>} />
+          </Switch>
+        </div>
+      </div>
     )
   }
 }

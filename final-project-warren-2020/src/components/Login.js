@@ -20,8 +20,9 @@ const Login = props => {
             name='password'
             placeholder='password'
           />
-          <br></br>
-          <button class='button' type='submit'>Log In</button>
+          <br></br> <br></br>
+          <button className='event-button ' type='submit'>Log In</button><br></br><br></br>
+          <button className='event-button' onClick={(e) => props.showNewUserBar(e)}>Create A New Account</button>
         </div>
       </form>
     </div>

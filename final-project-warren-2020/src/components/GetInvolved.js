@@ -5,7 +5,7 @@ import ShowReps from './ShowReps'
 import ListEvents from './ListEvents'
 import UserIndex from './UserIndex'
 import { Link } from 'react-router-dom'
-
+import API from '../API'
 
 const GOOGLE_API_KEY = 'AIzaSyBuNd5baj7zHX5OmBtTYoBkhW_a4WN81S8'
 
@@ -17,23 +17,25 @@ class GetInvolved extends React.Component {
     getRepInfo: false,
     user: false,
     reps: [],
-    renderReps: false
+    renderReps: false,
+    newUser: false,
+    createEvent: false
   }
 
-  getEvents = () => {
-    return fetch('http://localhost:3001/events') // events url
-      .then(resp => resp.json())
-      .then(events => this.setState({ events }, this.showEvent()))
+  createEventState = () => {
+    this.setState({ createEvent: true })
   }
+
+
+  getEvents = () => API.getEvents().then(events => this.setState({ events }, this.showEvent))
+
 
   showEvent = () => this.setState({ showEvent: true })
 
   showMap = () => this.setState({ showMap: !this.state.showMap })
 
-  loggedIn = () => {
-    if (this.props.username !== '') {
-      this.setState({ user: true })
-    }
+  componentDidMount() {
+    this.getEvents()
   }
 
   showInfo = () => {
@@ -68,33 +70,54 @@ class GetInvolved extends React.Component {
 
   render() {
     return (
-      <div className='other'>
-        <button className='button' onClick={() => this.showInfo()}>
-          Who Represents Me?
+      <div>
+        {this.props.showDonationsBar ? (
+          <div className='maybe-later' onClick={e => this.props.closeGive(e)}>Maybe Later</div>
+        ) : null
+        }
+        {
+          this.props.showDonationsBar ? (
+            <Link to="/donate/elizabethwarren2020">
+              <div className='donationsBar-new' onClick={e => this.props.resetDonationsBar(e)}>
+                <h1 className="giving-text">Give Now</h1></div>
+            </Link>
+          ) : null
+        }
+        < div className='other' >
+          <button className='button' onClick={() => this.showInfo()}>
+            Who Represents Me?
         </button>
-        <button className='button' onClick={() => this.getEvents()}>
-          Show All Events
+          <button className='button' onClick={() => this.createEventState()}>
+            Create Event
         </button>
-        {this.state.renderReps ? <ShowReps reps={this.state.reps} /> : null}
-        <div className='map-element'>
-          <MapFragment
-            showMap={this.state.showMap}
-            events={this.state.events}
-          />
-        </div>
-        {this.state.showEvent ? (
-          <button className='button' onClick={() => this.showMap()}>
-            Show All Events On The Map!
+          {this.state.createEvent ?
+            <UserIndex /> : null}
+          {this.state.renderReps ? <ShowReps reps={this.state.reps} /> : null}
+          <div className='map-element'>
+            <MapFragment
+              showMap={this.state.showMap}
+              events={this.state.events}
+            />
+          </div>
+          {
+            this.state.showEvent ? (
+              <button className='button' onClick={() => this.showMap()}>
+                Show All Events On The Map!
           </button>
-        ) : null}
-        {this.state.showEvent ? (
-          <ListEvents events={this.state.events} />
-        ) : null}
-        {this.state.getRepInfo ? (
-          <EnterAddressForm callGoogleAPI={this.callGoogleAPI} />
-        ) : null}
-        <UserIndex />
-      </div>
+            ) : null
+          }
+          {
+            this.state.showEvent ? (
+              <ListEvents events={this.state.events} />
+            ) : null
+          }
+          {
+            this.state.getRepInfo ? (
+              <EnterAddressForm callGoogleAPI={this.callGoogleAPI} />
+            ) : null
+          }
+        </div >
+      </div >
     )
   }
 }

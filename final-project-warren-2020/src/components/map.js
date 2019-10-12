@@ -49,7 +49,7 @@ const MapFragment = props => {
     <div>
       {props.showMap ? (
         <div className='googleMap'>
-          <div style={{ width: '50vw', height: '50vh' }}>
+          <div style={{ width: '100%', height: '50vh' }}>
             <WrappedMap
               googleMapURL={`https://maps.googleapis.com/maps/api/js?v=3.exp&libraries=geometry,drawing,places&key=${GOOGLE_API_KEY}`}
               loadingElement={<div style={{ height: '100%' }} />}
