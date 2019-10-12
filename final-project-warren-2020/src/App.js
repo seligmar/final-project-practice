@@ -42,6 +42,7 @@ class App extends React.Component {
     this.setState({ showLogIn: !this.state.showLogIn })
     this.setState({ loggedIn: false })
     this.setState({ username: '' })
+    localStorage.removeItem('token')
   }
 
   render() {

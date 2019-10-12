@@ -52,7 +52,8 @@ class UserIndex extends React.Component {
     return fetch('http://localhost:3001/signin', {
       method: 'POST',
       headers: {
-        'content-type': 'application/json'
+        'content-type': 'application/json',
+        Application: localStorage.getItem('token')
       },
       body: JSON.stringify({
         username: user.username,
@@ -83,7 +84,8 @@ class UserIndex extends React.Component {
     return fetch('http://localhost:3001/new-supporter', {
       method: 'POST',
       headers: {
-        'content-type': 'application/json'
+        'content-type': 'application/json',
+        Authorization: localStorage.getItem('token')
       },
       body: JSON.stringify({
         username: user.username,
