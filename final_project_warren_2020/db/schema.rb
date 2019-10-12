@@ -22,7 +22,9 @@ ActiveRecord::Schema.define(version: 2019_10_09_163710) do
   create_table "events", force: :cascade do |t|
     t.time "start_time"
     t.time "end_time"
-    t.date "date"
+    t.integer "year"
+    t.integer "month"
+    t.integer "day"
     t.string "street_address_1"
     t.string "street_address_2"
     t.string "city"

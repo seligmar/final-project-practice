@@ -32,6 +32,7 @@ const MapFragment = props => {
           >
             <div style={{ color: '#232444' }}>
               <p>{selectedEvent.title}</p>
+              <p>{selectedEvent.start_time} - {selectedEvent.start_time} on {selectedEvent.day}/{selectedEvent.month}/{selectedEvent.year}</p>
               <p>{selectedEvent.street_address_1}</p>
               {selectedEvent.city}, {selectedEvent.state}, {selectedEvent.zip}
             </div>
