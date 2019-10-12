@@ -1,11 +1,9 @@
 import React from 'react'
 import Login from './Login'
 import NewSupport from './NewSupporter'
-
 import API from '../API'
 import Swal from 'sweetalert2'
 import withReactContent from 'sweetalert2-react-content'
-
 
 const MySwal = withReactContent(Swal)
 
@@ -49,17 +47,7 @@ class UserIndex extends React.Component {
   }
 
   LogInUser = user => {
-    return fetch('http://localhost:3001/signin', {
-      method: 'POST',
-      headers: {
-        'content-type': 'application/json',
-        Application: localStorage.getItem('token')
-      },
-      body: JSON.stringify({
-        username: user.username,
-        password: user.password
-      })
-    }).then(resp => resp.json())
+    API.signIn(user)
       .then(data => {
         if (data.error) {
           this.responseGif(data.error)
@@ -81,18 +69,7 @@ class UserIndex extends React.Component {
   }
 
   createNewUser = user => {
-    return fetch('http://localhost:3001/new-supporter', {
-      method: 'POST',
-      headers: {
-        'content-type': 'application/json',
-        Authorization: localStorage.getItem('token')
-      },
-      body: JSON.stringify({
-        username: user.username,
-        password: user.password,
-        emailaddress: user.email
-      })
-    }).then(resp => resp.json())
+    API.newUser(user)
       .then(data => {
         if (data.error) {
           throw Error(data.error)

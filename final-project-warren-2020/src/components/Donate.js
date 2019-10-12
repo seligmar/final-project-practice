@@ -4,6 +4,7 @@ import UserIndex from './UserIndex'
 import { Link } from 'react-router-dom'
 import Swal from 'sweetalert2'
 import withReactContent from 'sweetalert2-react-content'
+import API from '../API'
 
 
 const MySwal = withReactContent(Swal)
@@ -29,16 +30,7 @@ class Donate extends React.Component {
   }
 
   postDonation = donation => {
-    return fetch('http://localhost:3001/donate', {
-      method: 'POST',
-      headers: {
-        'content-type': 'application/json'
-      },
-      body: JSON.stringify({
-        username: donation.username,
-        total: donation.total
-      })
-    }).then(resp => resp.json())
+    API.donate(donation)
       .then(data => {
         if (data.error) {
           throw Error(data.error)

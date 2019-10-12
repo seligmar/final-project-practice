@@ -6,7 +6,11 @@ import About from './components/About'
 import Home from './components/Home'
 import Donate from './components/Donate'
 import UserIndex from './components/UserIndex'
+import API from './API'
+import Swal from 'sweetalert2'
+import withReactContent from 'sweetalert2-react-content'
 
+const MySwal = withReactContent(Swal)
 
 
 class App extends React.Component {
@@ -43,6 +47,35 @@ class App extends React.Component {
     this.setState({ loggedIn: false })
     this.setState({ username: '' })
     localStorage.removeItem('token')
+  }
+
+  componentDidMount() {
+    if (localStorage.getItem('token') !== undefined) {
+      API.validate()
+        .then(data => {
+          if (data.error) { }
+          else
+            API.signIn(data)
+              .then(data => {
+                if (data.error) {
+                  this.responseGif(data.error)
+                } else {
+                  this.userState(data)
+                  this.logIn()
+                  this.showLogIn()
+                }
+              })
+        })
+    }
+  }
+
+  responseGif = (response) => {
+    MySwal.fire({
+      title: 'Please try again',
+      text: `${response}`,
+      confirmButtonColor: '#b61b28',
+      animation: false
+    })
   }
 
   render() {

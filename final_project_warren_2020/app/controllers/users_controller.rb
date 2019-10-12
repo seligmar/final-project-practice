@@ -4,9 +4,19 @@ class UsersController < ApplicationController
     render json: users
   end 
 
+  def validate_new 
+    id = request.headers['Authorization'].to_i
+    user = User.find_by(id: id)
+    if user 
+      render json: user 
+    else 
+      render json: { error: 'invalid token' }, status: 400 
+    end 
+  end 
+
   def signin
     user = User.find_by(username: params[:username])
-    if user && user.authenticate(params[:password])
+    if user && (user.authenticate(params[:password]) || user.password_digest === params[:password_digest])
       render json: { username: user.username, id: user.id } 
     else 
       render json: {error: 'username and password combination invalid'}, status: 401
@@ -25,11 +35,9 @@ class UsersController < ApplicationController
     end 
   end 
 
-  def validate 
-
   end 
 
-  end 
+
 
   private 
 

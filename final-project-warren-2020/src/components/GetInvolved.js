@@ -5,6 +5,7 @@ import ShowReps from './ShowReps'
 import ListEvents from './ListEvents'
 import UserIndex from './UserIndex'
 import { Link } from 'react-router-dom'
+import API from '../API'
 
 
 const GOOGLE_API_KEY = 'AIzaSyBuNd5baj7zHX5OmBtTYoBkhW_a4WN81S8'
@@ -28,8 +29,7 @@ class GetInvolved extends React.Component {
 
 
   getEvents = () => {
-    return fetch('http://localhost:3001/events') // events url
-      .then(resp => resp.json())
+    API.getEvents()
       .then(events => this.setState({ events }, this.showEvent))
   }
 
