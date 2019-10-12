@@ -53,7 +53,8 @@ class App extends React.Component {
     if (localStorage.getItem('token') !== undefined) {
       API.validate()
         .then(data => {
-          if (data.error) { }
+          if (data.error) {
+          }
           else
             API.signIn(data)
               .then(data => {

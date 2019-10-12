@@ -13,6 +13,8 @@ const PRO_PUBLICA_MEMBERINFO =
   PRO_PUBLICA_BASE + '/members/' + PRO_PUBLICA_WARREN_ID + '.json'
 const PRO_PUBLICA_STATEMENTS = PRO_PUBLICA_BASE + '/members/' + PRO_PUBLICA_WARREN_ID + '/statements/116.json'
 
+
+
 const getValidation = VALIDATE_URL =>
   fetch(VALIDATE_URL, {
     headers: {
@@ -45,7 +47,9 @@ const validate = () => getValidation(VALIDATE_URL)
 
 const getEvents = () => get(EVENTS_URL)
 
-export default { signIn, validate, newUser, donate, getEvents }
+const get = () => get(url)
+
+export default { signIn, validate, newUser, donate, getEvents, get }
 
 // // "https://api.propublica.org/congress/v1/members/W000817.json"
 // const GOOGLE_API_KEY = 'AIzaSyBuNd5baj7zHX5OmBtTYoBkhW_a4WN81S8'

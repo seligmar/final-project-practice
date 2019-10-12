@@ -7,7 +7,6 @@ import UserIndex from './UserIndex'
 import { Link } from 'react-router-dom'
 import API from '../API'
 
-
 const GOOGLE_API_KEY = 'AIzaSyBuNd5baj7zHX5OmBtTYoBkhW_a4WN81S8'
 
 class GetInvolved extends React.Component {
@@ -28,10 +27,8 @@ class GetInvolved extends React.Component {
   }
 
 
-  getEvents = () => {
-    API.getEvents()
-      .then(events => this.setState({ events }, this.showEvent))
-  }
+  getEvents = () => API.getEvents().then(events => this.setState({ events }, this.showEvent))
+
 
   showEvent = () => this.setState({ showEvent: true })
 
@@ -40,6 +37,7 @@ class GetInvolved extends React.Component {
   componentDidMount() {
     this.getEvents()
   }
+
   showInfo = () => {
     this.setState({ getRepInfo: true })
   }
