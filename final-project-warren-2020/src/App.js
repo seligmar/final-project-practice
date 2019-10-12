@@ -35,6 +35,7 @@ class App extends React.Component {
 
   userState = user => {
     this.setState({ username: user.username })
+    localStorage.setItem('token', user.id)
   }
 
   logout = () => {

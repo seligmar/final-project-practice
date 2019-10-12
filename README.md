@@ -5,6 +5,10 @@ notes- using official colors of the Warren campaign
 
 https://semantic-ui.com - design styling used
 
+http://bg.siteorigin.com/ - create css background files in PNG formatat 
+
+https://www.iloveimg.com - convert PNG to JPG
+
 https://www.figma.com/file/KY3BKNojNY9CZgudaWBWw5/Warren2020?node-id=8%3A1 
 
 https://trello.com/b/RbqpIb10/final-project-back-end 

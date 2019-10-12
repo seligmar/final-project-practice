@@ -7,7 +7,7 @@ class UsersController < ApplicationController
   def signin
     user = User.find_by(username: params[:username])
     if user && user.authenticate(params[:password])
-      render json: user 
+      render json: { username: user.username, id: user.id } 
     else 
       render json: {error: 'username and password combination invalid'}, status: 401
     end 
@@ -16,7 +16,7 @@ class UsersController < ApplicationController
   def create_new_user 
     user = User.new(username: params[:username], password: params[:password], emailaddress: params[:emailaddress])
     if user.save
-        render json: user, status: :create
+        render json: { username: user.username, id: user.id }, status: :create
     else 
       if (user.errors.full_messages[0] === 'Username has already been taken')
         render json: {error: 'username and password combination invalid'}
@@ -26,7 +26,7 @@ class UsersController < ApplicationController
   end 
 
   def validate 
-    
+
   end 
 
   end 

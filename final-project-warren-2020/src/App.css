@@ -24,13 +24,13 @@
 }
 
 */ 
-
+/* to embed background image:  */
+/* <img src={require('../images/34b0af99.jpg')} />  */
 
 .App {
   text-align: center;
   background-color: #232444;
   color: #fff
-
 }
 
 .App-link {

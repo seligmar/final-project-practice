@@ -63,7 +63,7 @@ class UserIndex extends React.Component {
         if (data.error) {
           this.responseGif(data.error)
         } else {
-          this.props.userState(user)
+          this.props.userState(data)
           this.props.logIn()
           this.props.showLogIn()
         }
@@ -95,7 +95,7 @@ class UserIndex extends React.Component {
         if (data.error) {
           throw Error(data.error)
         } else {
-          this.props.userState(user)
+          this.props.userState(data)
           this.props.logIn()
           this.props.showLogIn()
         }
