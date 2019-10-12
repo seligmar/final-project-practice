@@ -22,7 +22,6 @@ class Donate extends React.Component {
     }
     else {
       const donation = {
-        username: this.props.username,
         total: parseInt(e.target.parentElement.childNodes[15].childNodes[1].value)
       }
       this.postDonation(donation)
@@ -52,7 +51,7 @@ class Donate extends React.Component {
 
   responseGif = (response) => {
     MySwal.fire({
-      title: 'Please try again',
+      title: 'Invalid Contribution',
       text: `${response}`,
       confirmButtonColor: '#b61b28',
       animation: false,

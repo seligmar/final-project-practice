@@ -18,8 +18,7 @@ const PRO_PUBLICA_STATEMENTS = PRO_PUBLICA_BASE + '/members/' + PRO_PUBLICA_WARR
 const getValidation = VALIDATE_URL =>
   fetch(VALIDATE_URL, {
     headers: {
-      Authorization: localStorage.getItem('token'),
-      credentials: 'include'
+      Authorization: localStorage.getItem('token')
     }
   }).then(resp => resp.json())
 
@@ -30,8 +29,7 @@ const post = (url, data) =>
     method: 'POST',
     headers: {
       'Content-Type': 'application/json',
-      Authorization: localStorage.getItem('token'),
-      credentials: 'include'
+      Authorization: localStorage.getItem('token')
     },
     body: JSON.stringify(data)
   }).then(resp => resp.json())
@@ -47,9 +45,7 @@ const validate = () => getValidation(VALIDATE_URL)
 
 const getEvents = () => get(EVENTS_URL)
 
-const get = () => get(url)
-
-export default { signIn, validate, newUser, donate, getEvents, get }
+export default { signIn, validate, newUser, donate, getEvents }
 
 // // "https://api.propublica.org/congress/v1/members/W000817.json"
 // const GOOGLE_API_KEY = 'AIzaSyBuNd5baj7zHX5OmBtTYoBkhW_a4WN81S8'

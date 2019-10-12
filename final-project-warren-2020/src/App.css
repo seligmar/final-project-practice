@@ -174,6 +174,7 @@
   border-width: 10px;
   border-color:#b7e4cf;
   margin-top: 5%;
+  background-image: url('./images/34b0af99.jpg')
 }
 
 .quote-img {
@@ -218,7 +219,7 @@
   margin-left: 10%;
   margin-right: 10%;
   color: #232444; 
-  background-color: #fff;
+  background-image: url('./images/WhiteBackground.PNG');
   font-style: italic;
 }
 .gif {
