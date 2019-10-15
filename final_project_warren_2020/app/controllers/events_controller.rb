@@ -24,39 +24,25 @@ class EventsController < ApplicationController
   end 
 
   def create 
-      event = Event.new(
-        start_time: params[:start_time], 
-        end_time: params[:end_time], 
-        day: params[:day],
-        month: params[:month], 
-        year: params[:year],
-        street_address_1: params[:street_address_1],
-        city: params[:city],
-        state: params[:state],
-        zip: params[:zip],
-        title: params[:title],
-        lng: params[:lng],
-        lat: params[:lat]
-        )
+      event = Event.new(event_params)
       if event.save
           render json: event, status: :create
         else 
           render json: { error: user.errors.full_messages }, status: :unprocessable_entity
       end 
-  
   end 
 
   private
 
   def event_params 
     params.require(:event).permit(
-    :title, 
+      :title, 
     :start_time, 
     :end_time, 
     :day, 
     :month, 
     :year, 
-    street_address_1, 
+    :street_address_1, 
     :city, 
     :state, 
     :zip, 
@@ -65,3 +51,17 @@ class EventsController < ApplicationController
   end 
 
 end
+
+# start_time: params[:start_time], 
+# end_time: params[:end_time], 
+# day: params[:day],
+# month: params[:month], 
+# year: params[:year],
+# street_address_1: params[:street_address_1],
+# city: params[:city],
+# state: params[:state],
+# zip: params[:zip],
+# title: params[:title],
+# lng: params[:lng],
+# lat: params[:lat]
+

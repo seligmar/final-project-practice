@@ -33,10 +33,15 @@ class NewEvent extends React.Component {
         state.replace(/[^\w ]/, '').split(' '),
         zip.replace(/[^\w ]/, '').split(' ')
       )
+      const titleUpCase = e.target.title.value
+      const start = e.target.start.value
+      const end = e.target.end.value
       const eventData = {
-        title: e.target.title.value,
-        start_time: e.target.start.value,
-        end_time: e.target.end.value,
+        title: titleUpCase.toUpperCase(),
+        start_time: start,
+        // + ':' + '00',
+        end_time: end,
+        // + ':' + '00',
         street_address_1: line1,
         city: city,
         state: state,
@@ -67,7 +72,6 @@ class NewEvent extends React.Component {
 
   mergeInfo = (event, coordinates) => {
     const newEvent = Object.assign(event, coordinates)
-    debugger
     this.postEvent(newEvent)
   }
 

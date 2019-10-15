@@ -43,7 +43,7 @@ const validate = () => get(VALIDATE_URL)
 
 const getEvents = () => get(EVENTS_URL)
 
-const newEvent = () => post(NEW_EVENT_URL)
+const newEvent = (data) => post(NEW_EVENT_URL, data)
 
 export default { signIn, validate, newUser, donate, getEvents, newEvent }
 
