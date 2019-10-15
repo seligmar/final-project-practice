@@ -18,7 +18,7 @@ const ListEvents = props => {
                 <p className='description'>
                   {event.city}, {event.state} {event.zip}
                 </p>
-                <button className='event-button'>RSVP!</button>
+                <button className='event-button' onClick={(e) => props.rsvp(e, event.id)}>RSVP!</button>
               </div>
             </div>
           </div>
@@ -26,7 +26,7 @@ const ListEvents = props => {
       )
       )
       }
-    </div>
+    </div >
   )
 }
 

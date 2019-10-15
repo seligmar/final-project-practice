@@ -41,7 +41,7 @@ class Donate extends React.Component {
       })
   }
 
-  thanksGif = (message) => {
+  thanksGif = () => {
     MySwal.fire({
       text: 'Thank you for your generosity! Your contribution will help us strengthen our Democracy!',
       type: 'success'

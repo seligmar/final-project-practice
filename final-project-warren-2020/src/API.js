@@ -5,6 +5,7 @@ const EVENTS_URL = BASEURL + 'events'
 const VALIDATE_URL = BASEURL + 'validate'
 const DONATE_URL = BASEURL + 'donate'
 const NEW_EVENT_URL = BASEURL + 'new-event'
+const RSVP_URL = BASEURL + 'rsvp'
 
 const MY_PRO_PUBLICA_KEY = 'mGZ80fLhqn7WGi7KyArHqNLZTz0sCgehU4E9mIv7'
 const PRO_PUBLICA_WARREN_ID = 'W000817'
@@ -33,6 +34,8 @@ const post = (url, data) =>
   }).then(resp => resp.json())
 
 
+const rsvp = event => post(RSVP_URL, event)
+
 const signIn = user => post(SIGNIN_URL, user)
 
 const newUser = user => post(NEW_USER_URL, user)
@@ -45,7 +48,7 @@ const getEvents = () => get(EVENTS_URL)
 
 const newEvent = (data) => post(NEW_EVENT_URL, data)
 
-export default { signIn, validate, newUser, donate, getEvents, newEvent }
+export default { signIn, validate, newUser, donate, getEvents, newEvent, rsvp }
 
 
 // // "https://api.propublica.org/congress/v1/members/W000817.json"

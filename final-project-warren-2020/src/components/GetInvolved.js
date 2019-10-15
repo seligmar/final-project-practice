@@ -73,6 +73,46 @@ class GetInvolved extends React.Component {
       .then(() => this.setState({ renderReps: true }))
   }
 
+  rsvp = (e, key) => {
+    e.preventDefault()
+    if (!this.props.username) {
+      MySwal.fire({
+        text: 'Please log in to RSVP',
+        type: 'error',
+        confirmButtonColor: '#b61b28'
+      })
+    }
+    else {
+      const rsvpTo = {
+        event_id: key,
+        username: this.props.username
+      }
+      API.rsvp(rsvpTo)
+        .then(data => {
+          if (data.error) {
+            this.responseGif(data.error)
+          } else
+            this.thanksGif()
+        })
+    }
+  }
+
+  thanksGif = () => {
+    MySwal.fire({
+      text: 'Thank you for joining the team! We look forward to seeing you soon!',
+      type: 'success'
+    })
+  }
+
+  responseGif = (response) => {
+    MySwal.fire({
+      title: 'Please try again',
+      text: `${response}`,
+      confirmButtonColor: '#b61b28',
+      animation: false
+    })
+  }
+
   render() {
     return (
       <div>
@@ -117,7 +157,7 @@ class GetInvolved extends React.Component {
           }
           {
             this.state.showEvent ? (
-              <ListEvents events={this.state.events} />
+              <ListEvents events={this.state.events} rsvp={this.rsvp} />
             ) : null
           }
           {
