@@ -11,6 +11,14 @@ const GOOGLE_API_KEY = 'AIzaSyBuNd5baj7zHX5OmBtTYoBkhW_a4WN81S8'
 
 class NewEvent extends React.Component {
 
+  // HOW TO CHEKC IF IT IS LATER THAN TODAY
+  // var today = new Date();
+  // var dd = String(today.getDate()).padStart(2, '0');
+  // var mm = String(today.getMonth() + 1).padStart(2, '0'); //January is 0!
+  // var yyyy = today.getFullYear();
+
+  // todaySDATE = mm + '/' + dd + '/' + yyyy;
+
   newEvent = e => {
     e.preventDefault()
     if (!this.props.user) {

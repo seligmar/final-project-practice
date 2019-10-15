@@ -1,6 +1,7 @@
 import React from 'react'
 import ReactPlayer from 'react-player'
 import { Link } from 'react-router-dom'
+import { TwitterTimelineEmbed, TwitterShareButton, TwitterFollowButton, TwitterHashtagButton, TwitterMentionButton, TwitterTweetEmbed, TwitterMomentShare, TwitterDMButton, TwitterVideoEmbed, TwitterOnAirButton } from 'react-twitter-embed';
 
 class Home extends React.Component {
   render() {
@@ -25,7 +26,7 @@ class Home extends React.Component {
             playing='true'
             loop='true'
             width='100%'
-            height='0%'
+            height='80%'
           />
         </div>
         <div className='quote-grid'>
@@ -46,13 +47,23 @@ class Home extends React.Component {
             <h1></h1>
           </div>
         </div>
-        <a class="twitter-timeline" href="https://twitter.com/TwitterDev?ref_src=twsrc%5Etfw">Tweets by TwitterDev</a> <script async src="https://platform.twitter.com/widgets.js" charset="utf-8"></script>
+
+        <TwitterTimelineEmbed
+          sourceType="profile"
+          screenName="ewarren"
+          options={{ height: 400 }}
+         />
+        // <blockquote class="twitter-tweet">
+        //   <p lang="en" dir="ltr">Corruption in Washington is holding back progress—and much of it is perfectly legal thanks to the Supreme Court. It’s time to get big money out of politics and put power back in the hands of the people—and I&#39;ve got a plan for that. <a href="https://t.co/wtT7JacMpx">https://t.co/wtT7JacMpx</a>
+        //   </p>&mdash; Elizabeth Warren (@ewarren)
+        //   <a href="https://twitter.com/ewarren/status/1184106806999736322?ref_src=twsrc%5Etfw">October 15, 2019</a></blockquote>
+        // <script async src="https://platform.twitter.com/widgets.js" charset="utf-8"></script>
+
         <div className='youtube-block-grid'>
           <div className='youtube'>
-            <iframe
-              title='Dream Big'
-              width="100%" height="580" src="https://www.youtube.com/embed/uF3IjYG8eeY"
-              frameBorder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture"
+            <iframe title='Dream Big'
+              width='100%' height='580' src="https://www.youtube.com/embed/uF3IjYG8eeY"
+              frameBorder='0' allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture"
               allowfullscreen>
             </iframe>
           </div>

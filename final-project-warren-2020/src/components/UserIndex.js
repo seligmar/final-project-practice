@@ -95,9 +95,8 @@ class UserIndex extends React.Component {
           this.props.loggedIn === false && this.state.newUser === false ?
             (<Login logIn={this.logIn} showNewUserBar={this.showNewUserBar} HideLogIn={this.props.HideLogIn} />) : null
         }
-        < br ></br >
         {this.state.newUser ? <NewSupport LogInNewUser={this.logInNewUser} HideLogIn={this.props.HideLogIn} /> : null}
-      </div >
+      </div>
     )
   }
 }
