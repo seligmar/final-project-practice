@@ -9,6 +9,7 @@ import UserIndex from './components/UserIndex'
 import API from './API'
 import Swal from 'sweetalert2'
 import withReactContent from 'sweetalert2-react-content'
+import Menu from './Menu'
 
 const MySwal = withReactContent(Swal)
 
@@ -140,6 +141,7 @@ class App extends React.Component {
               />} />
             <Route component={() => <h1>404 - Page Not Found</h1>} />
           </Switch>
+          <Menu />
         </div>
       </div>
     )

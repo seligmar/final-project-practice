@@ -48,11 +48,12 @@ class Home extends React.Component {
           </div>
         </div>
         <div className='twitter'>
-          <TwitterTimelineEmbed
-            sourceType="profile"
-            screenName="ewarren"
-            options={{ height: 400 }}
-          /></div>
+          <div className='twitter-box'>
+            <TwitterTimelineEmbed
+              sourceType="profile"
+              screenName="ewarren"
+              options={{ height: 400 }}
+            /></div></div>
         <div className='youtube-block-grid'>
           <div className='youtube'>
             <iframe title='Dream Big'

@@ -157,16 +157,23 @@
   margin-right: 10%;
 }
 
+.twitter-box{
+  background-color: #b7e4cf; 
+  padding: 1%;
+}
+
 .youtube-block-grid {
-  padding-top: 5%;
+  padding-top: 5%
 }
 
 .youtube {
   margin-left: 10%;
   margin-right: 10%;
-  border-style: solid;
-  border-width: 5px;
-  border-color: #b61b28;
+  background-color: #b7e4cf; 
+  padding: 1%;
+  /* border-style: solid;
+  border-width: 1%;
+  border-color: #b61b28; */
 }
 
 .quote-grid {
@@ -299,4 +306,12 @@
     margin-left: 10%;
     margin-right: 10%;
     /* top: 50%; */
+  }
+
+  /* MENU  */
+
+  .Menu {
+    padding-top: 5%;
+    color: #fff; 
+    background-color: #b61b28;
   }

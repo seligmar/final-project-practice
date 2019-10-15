@@ -25,6 +25,8 @@ https://www.youtube.com/watch?time_continue=172&v=Pf7g32CwX_s - how to make goog
 
 https://www.youtube.com/watch?v=pRiQeo17u6c - google geocode API
 
+https://www.npmjs.com/package/react-twitter-embed - embed tweets
+
 LEGAL INFO 
 https://www.fec.gov/resources/cms-content/documents/contribution_limits_chart_2019-2020.pdf 
 
