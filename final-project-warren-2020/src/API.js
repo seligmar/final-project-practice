@@ -43,9 +43,9 @@ const validate = () => get(VALIDATE_URL)
 
 const getEvents = () => get(EVENTS_URL)
 
-const newEvent = () => post()
+const newEvent = () => post(NEW_EVENT_URL)
 
-export default { signIn, validate, newUser, donate, getEvents, GOOGLE_API_KEY }
+export default { signIn, validate, newUser, donate, getEvents, newEvent }
 
 
 // // "https://api.propublica.org/congress/v1/members/W000817.json"

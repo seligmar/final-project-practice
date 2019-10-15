@@ -31,24 +31,6 @@ class GetInvolved extends React.Component {
     this.setState({ createEvent: true })
   }
 
-  NewEvent = e => {
-    e.preventDefault()
-    if (!this.props.username) {
-      MySwal.fire({
-        text: 'Please log in to create a new event',
-        type: 'error',
-        confirmButtonColor: '#b61b28'
-      })
-    }
-    else {
-      const event = {
-        title: e.target.
-
-        
-      }
-      this.createEvent(event)
-    }
-  }
 
   getEvents = () => API.getEvents().then(events => this.setState({ events }, this.showEvent))
 
@@ -130,7 +112,7 @@ class GetInvolved extends React.Component {
           }
           {
             this.state.createEvent ? (
-              <NewEvent NewEvent={this.NewEvent} />
+              <NewEvent user={this.state.user} />
             ) : null
           }
           {
