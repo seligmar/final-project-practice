@@ -206,11 +206,10 @@
   text-align: center; 
 }
 
-/* .react-player {
-  position: absolute;
-  top: 0;
-  left: 0;
-} */
+.react-player {
+  text-align: center; 
+  padding-top: 1% /* Player ratio: 100 / (1280 / 720) */
+}
 
 /* ABOUT */
 
@@ -219,11 +218,17 @@
   margin-left: 10%;
   margin-right: 10%;
   color: #232444; 
-  background-image: url('./images/WhiteBackground.PNG');
+  background-color: #fff;
+  /* background-image: url('./images/WhiteBackground.PNG'); */
   font-style: italic;
 }
 .gif {
   width: 100%;
+  height: 10%;
+  /* position: absolute; */
+   position: relative;
+   text-align: center; 
+  padding-top: 1% 
 }
 
 .image-box {

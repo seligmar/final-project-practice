@@ -19,17 +19,6 @@ class About extends React.Component {
             </Link>
           ) : null
         }
-        <div className='gif'>
-          <ReactPlayer
-            className='react-player'
-            url='https://media.giphy.com/media/TK4XFFAzhHmar2MsDG/giphy.mp4'
-            playing='true'
-            loop='true'
-            width='100%'
-            height='0%'
-          />
-
-        </div>
         <div className='about-page'>
           <h1></h1>
           <h3>Elizabeth's dad sold fencing and carpeting, and ended up as a building maintenance man. Her mom stayed home with Elizabeth and her older brothers.
@@ -52,6 +41,9 @@ class About extends React.Component {
           Three years later, she graduated at eight months pregnant with her son Alex.
           Elizabeth hung out a shingle and practiced law out of her living room, but she soon returned to teaching.
             <p></p>
+            <div className='image-box'>
+              <img className='bio-img-1' src='https://mediad.publicbroadcasting.net/p/shared/npr/styles/x_large/nprshared/201811/514053746.jpg' alt='Elizabeth with her mom and brothers' />
+            </div>
             Elizabeth was a law professor for more than 30 years at Rutgers University, the University of Houston, University of Texas-Austin, University of Michigan, University of Pennsylvania, and Harvard University.
             She is one of the nation’s top experts on the financial pressures facing middle class families.
             She taught classes on commercial law, contracts, and bankruptcy, and conducted groundbreaking research on the connection between health care costs and personal bankruptcy.
@@ -61,14 +53,21 @@ class About extends React.Component {
             <p></p>
             Elizabeth is widely credited for the original thinking, political courage, and relentless persistence that led to the creation of the Consumer Financial Protection Bureau.
             As an assistant to President Barack Obama and special adviser to the Secretary of the Treasury, she led the establishment of the consumer agency to protect consumers from financial tricks and traps often hidden in mortgages, credit cards, and other financial products.
-            <div className='image-box'>
-              <img className='bio-img-1' src='https://mediad.publicbroadcasting.net/p/shared/npr/styles/x_large/nprshared/201811/514053746.jpg' alt='Elizabeth with her mom and brothers' />
-            </div>
             Wall Street opposed the CFPB, and they didn’t want Elizabeth – the agency’s biggest champion – to run it. After Senate Republicans vowed to block Elizabeth’s nomination to serve as the first director of the CFPB, Elizabeth ran for the U.S. Senate in her home state of Massachusetts.
             She has served as the Bay State’s Senior Senator since 2013.
             <p></p>
+            <div className='gif'>
+              <ReactPlayer
+                className='react-player'
+                url='https://media.giphy.com/media/TK4XFFAzhHmar2MsDG/giphy.mp4'
+                playing='true'
+                loop='true'
+                width='100%'
+              />
+            </div>
             <p></p>
             Elizabeth and her husband Bruce have been married for 38 years. They have three grandchildren and a golden retriever named Bailey.</h3>
+
           <div className='bio-grid'>
           </div>
         </div>
