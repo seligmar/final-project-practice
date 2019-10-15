@@ -17,7 +17,7 @@ class Menu extends React.Component {
           </Link>
           <Link to="/about/elizabethwarren2020">
             <div className='about-box'>
-              <h1>Get Involved</h1></div>
+              <h1>About</h1></div>
           </Link>
         </div>
         <div>
@@ -43,10 +43,10 @@ class Menu extends React.Component {
                 YouTube
 </button></a>
           </div>
-
+          <iframe src="https://giphy.com/embed/LqrDQpeG0ojjfEjKCb" width="480" height="480" frameBorder="0" class="giphy-embed" allowFullScreen></iframe>
           <p>PAID FOR BY WARREN FOR PRESIDENT.</p>
           <p> © Copyright 2019. All rights reserved.</p></div>
-        <iframe src="https://giphy.com/embed/LqrDQpeG0ojjfEjKCb" width="480" height="480" frameBorder="0" class="giphy-embed" allowFullScreen></iframe>
+        <p></p>
       </div>
     )
   }
