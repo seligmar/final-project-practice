@@ -112,7 +112,7 @@ class GetInvolved extends React.Component {
           }
           {
             this.state.createEvent ? (
-              <NewEvent user={this.state.user} />
+              <NewEvent user={this.props.username} />
             ) : null
           }
           {
