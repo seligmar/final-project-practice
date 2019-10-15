@@ -5,7 +5,8 @@ post "/new-supporter", to: "users#create_new_user"
 get "/validate", to: "users#validate_new"
 
 get '/events', to: "events#index"
-post '/events', to: "events#create"
+post '/new-event', to: "events#create"
+
 post '/donate', to: "donations#donate"
 get '/donations', to: "donations#index" #delete this after leave dev mode
 end

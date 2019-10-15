@@ -42,7 +42,9 @@ class GetInvolved extends React.Component {
     }
     else {
       const event = {
-        total: parseInt(e.target.parentElement.childNodes[15].childNodes[1].value)
+        title: e.target.
+
+        
       }
       this.createEvent(event)
     }
@@ -62,6 +64,7 @@ class GetInvolved extends React.Component {
     this.setState({ getRepInfo: true })
   }
 
+  /// move to sho reps! this iz v messy 
   callGoogleAPI = e => {
     e.preventDefault()
     const address = []
@@ -140,8 +143,8 @@ class GetInvolved extends React.Component {
               <EnterAddressForm callGoogleAPI={this.callGoogleAPI} />
             ) : null
           }
-        </div >
-      </div >
+        </div>
+      </div>
     )
   }
 }

@@ -52,3 +52,5 @@ https://www.vogue.com/article/elizabeth-warren-shares-pregnancy-discrimination-s
 https://www.harpersbazaar.com/culture/politics/a29008478/elizabeth-warren-quotes/
 
 https://www.women.com/ashleylocke/lists/elizabeth-warren-quotes-080719 
+
+USE REDUX WHEN RECREATE 

@@ -3,6 +3,7 @@ import React from 'react'
 const ShowReps = props => {
   return (
     <div className='show-reps'>
+      <div>Please note that information may not be accurate for U.S. territories or Washington, D.C.</div>
       <div>
         {props.reps.offices[2].name}: {props.reps.officials[2].name} Call:{' '}
         {props.reps.officials[2].phones[0]}
