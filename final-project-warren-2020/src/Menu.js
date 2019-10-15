@@ -22,28 +22,33 @@ class Menu extends React.Component {
         </div>
         <div>
           <div className='social-media-grid'>
-            <a href="https://www.facebook.com/ElizabethWarren/" target="_blank">
-              <button class="ui facebook button">
-                <i class="facebook icon"></i>
-                Facebook
+            <div className='social-media'>
+              <a href="https://www.facebook.com/ElizabethWarren/" target="_blank">
+                <button class="ui facebook button">
+                  <i class="facebook icon"></i>
+                  Facebook
             </button></a>
-            <a href='https://twitter.com/ewarren' target="_blank">
-              <button class="ui twitter button">
-                <i class="twitter icon"></i>
-                Twitter
+              <a href='https://twitter.com/ewarren' target="_blank">
+                <button class="ui twitter button">
+                  <i class="twitter icon"></i>
+                  Twitter
 </button></a>
-            <a href='https://www.instagram.com/elizabethwarren/' target="_blank">
-              <button class="ui instagram button">
-                <i class="instagram icon"></i>
-                Instagram
+              <a href='https://www.instagram.com/elizabethwarren/' target="_blank">
+                <button class="ui instagram button">
+                  <i class="instagram icon"></i>
+                  Instagram
 </button></a>
-            <a href='https://www.youtube.com/channel/UCrj-0FxK19tgUR2EbHkBBGg' target="_blank">
-              <button class="ui youtube button">
-                <i class="youtube icon"></i>
-                YouTube
+              <a href='https://www.youtube.com/channel/UCrj-0FxK19tgUR2EbHkBBGg' target="_blank">
+                <button class="ui youtube button">
+                  <i class="youtube icon"></i>
+                  YouTube
 </button></a>
-          </div>
-          <iframe src="https://giphy.com/embed/LqrDQpeG0ojjfEjKCb" width="480" height="480" frameBorder="0" class="giphy-embed" allowFullScreen></iframe>
+            </div></div>
+          <div className='menu-gif'>
+            <iframe src="https://giphy.com/embed/LqrDQpeG0ojjfEjKCb"
+              // width="480" 
+              height="480"
+              frameBorder="0" class="giphy-embed" allowFullScreen></iframe></div>
           <p>PAID FOR BY WARREN FOR PRESIDENT.</p>
           <p> © Copyright 2019. All rights reserved.</p></div>
         <p></p>

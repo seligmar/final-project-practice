@@ -314,7 +314,6 @@
   .Menu {
     color: #fff; 
     background-color: #b61b28;
-
   }
 
   .menu-grid {
@@ -325,13 +324,36 @@
   }
 
   .donation-box{
-
+    border-color:  #b7e4cf;
+    border-style: solid; 
+    border-width: '1px';
+    background-image: url('./images/34b0af99.jpg')
   }
 
   .about-box {
-
+    border-color:  #b7e4cf;
+    border-style: solid; 
+    border-width: '1px';
+    background-image: url('./images/34b0af99.jpg')
   }
   
 .involved-button{
-
+  border-color:  #b7e4cf;
+  border-style: solid; 
+  border-width: '1px';
+  background-image: url('./images/34b0af99.jpg')
+  }
+  
+  .social-media {
+    border-color:  #b7e4cf;
+    border-style: solid; 
+    border-width: '1px';
+    background-image: url('./images/34b0af99.jpg')
+  }
+  
+  .menu-gif {
+    border-color:  #b7e4cf;
+    border-style: solid; 
+    border-width: '1px';
+    background-image: url('./images/34b0af99.jpg')
   }
