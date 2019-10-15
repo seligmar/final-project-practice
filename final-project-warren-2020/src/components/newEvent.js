@@ -33,13 +33,31 @@ class NewEvent extends React.Component {
         state.replace(/[^\w ]/, '').split(' '),
         zip.replace(/[^\w ]/, '').split(' ')
       )
+      const eventData = {
+        title: e.target.title,
+        start_time: e.target.start_time,
+        end_time: e.target.end_time,
+        address_line_1: line1,
+        city: city,
+        state: state,
+        zip: zip,
+        day: e.target.day,
+        month: e.target.month,
+        year: e.target.year
+      }
       this.getLatLngFromAPI(newAddress.join('+'))
+      this.mergeInfo(eventData)
     }
   }
 
   getLatLngFromAPI = address => {
     debugger
     return <div></div>
+  }
+
+  mergeInfo = (eventData) => {
+    const allInfo = eventData
+
   }
 
   postEvent = event => {
