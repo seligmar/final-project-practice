@@ -25,8 +25,8 @@ class EventsController < ApplicationController
 
   def create 
       event = Event.new(
-        start_time: params[:start_time].strftime("%H:%M"), 
-        end_time: params[:end_time].strftime("%H:%M"), 
+        start_time: params[:start_time], 
+        end_time: params[:end_time], 
         day: params[:day],
         month: params[:month], 
         year: params[:year],

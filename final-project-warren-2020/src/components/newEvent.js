@@ -37,7 +37,7 @@ class NewEvent extends React.Component {
         title: e.target.title.value,
         start_time: e.target.start.value,
         end_time: e.target.end.value,
-        address_line_1: line1,
+        street_address_1: line1,
         city: city,
         state: state,
         zip: zip,
