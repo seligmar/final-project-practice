@@ -132,15 +132,10 @@ class GetInvolved extends React.Component {
           <button className='button' onClick={() => this.showInfo()}>
             Who Represents Me?
         </button>
-          {
-            this.state.user ? (
-              <button className='button' onClick={() => this.createEventState()}>
-                Create Event
-          </button>) : null
-          }
-
-
-
+          {this.state.user ? (
+            <button className='button' onClick={() => this.createEventState()}>
+              Create Event
+          </button>) : null}
           {this.state.renderReps ? <ShowReps reps={this.state.reps} /> : null}
           <div className='map-element'>
             <MapFragment

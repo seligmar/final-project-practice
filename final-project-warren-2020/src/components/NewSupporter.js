@@ -32,6 +32,7 @@ const NewSupporter = props => {
           <button class='event-button' type='submit'>
             Become a Supporter!
       </button>
+          <button className='event-button' onClick={() => props.HideLogIn()}>Hide Login</button>
         </div>
       </form>
     </div>

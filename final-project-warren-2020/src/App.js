@@ -37,6 +37,10 @@ class App extends React.Component {
     this.setState({ showLogIn: !this.state.showLogIn })
   }
 
+  HideLogIn = () => {
+    this.setState({ showLogIn: !this.state.showLogIn })
+  }
+
   userState = user => {
     this.setState({ username: user.username })
     localStorage.setItem('token', user.token)
@@ -99,6 +103,7 @@ class App extends React.Component {
               userState={this.userState}
               logIn={this.logIn}
               loggedIn={this.state.loggedIn}
+              HideLogIn={this.HideLogIn}
             /> : null}
           <Switch>
             <Route path='/elizabethwarren2020' component={routerProps =>
