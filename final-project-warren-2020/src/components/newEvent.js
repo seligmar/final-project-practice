@@ -45,29 +45,29 @@ class NewEvent extends React.Component {
         month: e.target.month.value,
         year: e.target.year.value
       }
-      this.getLatLngFromAPI(newAddress.join('+'))
-      this.mergeInfo(eventData)
+      this.getLatLngFromAPI(eventData, newAddress.join('+'))
     }
   }
 
-  getLatLngFromAPI = address => {
+  getLatLngFromAPI = (event, address) => {
     return fetch(`https://maps.googleapis.com/maps/api/geocode/json?address=${address}&key=${GOOGLE_API_KEY}`)
       .then(resp => resp.json())
-      .then(data => this.parseAPI(data))
+      .then(data => this.parseAPI(event, data))
   }
 
-  parseAPI = data => {
+  parseAPI = (event, data) => {
     const lat = data["results"]["0"]["geometry"]["location"]["lat"]
     const lng = data["results"]["0"]["geometry"]["location"]["lng"]
-    const latLng = {
+    const coordinates = {
       lat: lat,
       lng: lng
     }
-    this.mergeInfo(latLng)
+    this.mergeInfo(event, coordinates)
   }
 
-  mergeInfo = (eventData, latLng) => {
-    const newEvent = Object.assign(eventData, latLng)
+  mergeInfo = (event, coordinates) => {
+    const newEvent = Object.assign(event, coordinates)
+    debugger
     this.postEvent(newEvent)
   }
 
