@@ -35,20 +35,91 @@ class NewEvent extends React.Component {
       )
       const titleUpCase = e.target.title.value
       const start = e.target.start.value
+      if (start.length !== 5 || !start.includes(":", 2)
+        || typeof (parseInt(start[0])) !== 'number' || typeof (parseInt(start[0])) >= 3
+        || typeof (parseInt(start[1])) !== 'number'
+        || typeof (parseInt(start[3])) !== 'number'
+        || typeof (parseInt(start[4])) !== 'number') {
+        MySwal.fire({
+          title: 'Please format the start time 00:00',
+          confirmButtonColor: '#b61b28',
+          animation: false
+        })
+        return
+      }
       const end = e.target.end.value
+      if (end.length !== 5 || !end.includes(":", 2)
+        || typeof (parseInt(end[0])) !== 'number' || typeof (parseInt(end[0])) >= 3
+        || typeof (parseInt(end[1])) !== 'number'
+        || typeof (parseInt(end[3])) !== 'number'
+        || typeof (parseInt(end[4])) !== 'number') {
+        MySwal.fire({
+          title: 'Please format the end time 00:00',
+          confirmButtonColor: '#b61b28',
+          animation: false
+        })
+        return
+      }
+      const day = e.target.day.value
+      if (day.length !== 2
+        || typeof (parseInt(day[0])) !== 'number'
+        || typeof (parseInt(day[1])) !== 'number') {
+        MySwal.fire({
+          title: 'Please format the date DD',
+          confirmButtonColor: '#b61b28',
+          animation: false
+        })
+        return
+      }
+      const month = e.target.month.value
+      if (month.length !== 2
+        || typeof (parseInt(month[0])) !== 'number'
+        || typeof (parseInt(month[1])) !== 'number') {
+        MySwal.fire({
+          title: 'Please format the month MM',
+          confirmButtonColor: '#b61b28',
+          animation: false
+        })
+        return
+      }
+      const year = e.target.year.value
+      if (year.length !== 4
+        || typeof (parseInt(year[0])) !== 'number'
+        || typeof (parseInt(year[1])) !== 'number'
+        || typeof (parseInt(year[2])) !== 'number'
+        || typeof (parseInt(year[3])) !== 'number'
+        || year !== ("2020" || "2019")) {
+        MySwal.fire({
+          title: 'Please format the year YYYY',
+          confirmButtonColor: '#b61b28',
+          animation: false
+        })
+        return
+      }
+      if (zip.length !== 5
+        || typeof (parseInt(zip[0])) !== 'number'
+        || typeof (parseInt(zip[1])) !== 'number'
+        || typeof (parseInt(zip[2])) !== 'number'
+        || typeof (parseInt(zip[3])) !== 'number'
+        || typeof (parseInt(zip[4])) !== 'number') {
+        MySwal.fire({
+          title: 'Please re-enter the zipcode',
+          confirmButtonColor: '#b61b28',
+          animation: false
+        })
+        return
+      }
       const eventData = {
         title: titleUpCase.toUpperCase(),
         start_time: start,
-        // + ':' + '00',
         end_time: end,
-        // + ':' + '00',
         street_address_1: line1,
         city: city,
         state: state,
         zip: zip,
-        day: e.target.day.value,
-        month: e.target.month.value,
-        year: e.target.year.value
+        day: day,
+        month: month,
+        year: year
       }
       this.getLatLngFromAPI(eventData, newAddress.join('+'))
     }
@@ -79,10 +150,12 @@ class NewEvent extends React.Component {
     API.newEvent(event)
       .then(data => {
         if (data.error) {
-          this.responseGif(data.error)
+          throw Error(data.error)
         } else {
-          console.log(data)
+          this.thanksGif()
         }
+      }).catch(error => {
+        this.responseGif(error)
       })
   }
 
@@ -92,6 +165,13 @@ class NewEvent extends React.Component {
       text: `${response}`,
       confirmButtonColor: '#b61b28',
       animation: false
+    })
+  }
+
+  thanksGif = () => {
+    MySwal.fire({
+      text: 'Thank you for your support! Your contribution will help us strengthen our Democracy!',
+      type: 'success'
     })
   }
 
@@ -109,12 +189,14 @@ class NewEvent extends React.Component {
               placeholder='Event Title'
             />
             <label>Start Time</label>
-            <input
-              style={{ width: 200 }}
-              type='text'
-              name='start'
-              placeholder='Start Time 00:00'
-            />
+            <div class="fields">
+              <div class="two wide field"></div>
+              <input
+                style={{ width: 200 }}
+                type='text'
+                name='start'
+                placeholder='Start Time 00:00'
+              /></div>
             <label>End Time</label>
             <div class="fields">
               <div class="two wide field"></div>
