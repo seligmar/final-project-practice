@@ -163,7 +163,8 @@
 }
 
 .youtube-block-grid {
-  padding-top: 5%
+  padding-top: 5%;
+  padding-bottom: 5%
 }
 
 .youtube {
@@ -311,7 +312,26 @@
   /* MENU  */
 
   .Menu {
-    padding-top: 5%;
     color: #fff; 
     background-color: #b61b28;
+
+  }
+
+  .menu-grid {
+  }
+
+  .get-involved-box {
+
+  }
+
+  .donation-box{
+
+  }
+
+  .about-box {
+
+  }
+  
+.involved-button{
+
   }
