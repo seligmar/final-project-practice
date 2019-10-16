@@ -5,11 +5,11 @@ import { Route, Switch, Link } from 'react-router-dom'
 import About from './components/About'
 import Home from './components/Home'
 import Donate from './components/Donate'
-import UserIndex from './components/UserIndex'
 import API from './API'
 import Swal from 'sweetalert2'
 import withReactContent from 'sweetalert2-react-content'
 import Menu from './Menu'
+import TopMenu from './components/TopMenu'
 
 const MySwal = withReactContent(Swal)
 
@@ -87,26 +87,16 @@ class App extends React.Component {
   render() {
     return (
       <div className='App'>
-        <div className='top-menu'>Menu Bar goes Here
-        <button class="ui button"><i class="align justify icon"></i></button>
-          {this.state.loggedIn ?
-            <button className="button-login" onClick={() => this.logout()}>Log Out</button>
-            : <button className="button-login" onClick={() => this.showLogIn()}>Log In</button>
-          }
-          {this.state.loggedIn ?
-            <p>Welcome back, {this.state.username}! Thank you for your support!</p>
-            : null}</div>
-        {/* any way to call up user donation and event info? 
-        if donations total 20 or more s
-        short of limit, ask to give $20 */}
-        {this.state.showLogIn ?
-          <UserIndex
-            showLogIn={this.showLogIn}
-            userState={this.userState}
-            logIn={this.logIn}
-            loggedIn={this.state.loggedIn}
-            HideLogIn={this.HideLogIn}
-          /> : null}
+        <TopMenu
+          loggedIn={this.state.loggedIn}
+          logout={this.logout}
+          showLogInState={this.state.showLogIn}
+          username={this.state.username}
+          logIn={this.logIn}
+          HideLogIn={this.HideLogIn}
+          userState={this.userState}
+          showLogIn={this.showLogIn}
+        />
         <Switch>
           <Route path='/elizabethwarren2020' component={routerProps =>
             <Home {...routerProps}
