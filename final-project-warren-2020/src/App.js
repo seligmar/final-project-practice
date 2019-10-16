@@ -10,6 +10,7 @@ import Swal from 'sweetalert2'
 import withReactContent from 'sweetalert2-react-content'
 import Menu from './Menu'
 import TopMenu from './components/TopMenu'
+import FindMyReps from './components/FindMyReps'
 
 const MySwal = withReactContent(Swal)
 
@@ -98,14 +99,25 @@ class App extends React.Component {
           showLogIn={this.showLogIn}
         />
         <Switch>
-          <Route path='/elizabethwarren2020' component={routerProps =>
-            <Home {...routerProps}
-              username={this.state.username}
-              closeGive={this.closeGive}
-              loggedIn={this.state.loggedIn}
-              logIn={this.logIn}
-              resetDonationsBar={this.resetDonationsBar}
-              showDonationsBar={this.state.donationsBar} />} />
+          <Route path='/elizabethwarren2020'
+            component={routerProps =>
+              <Home {...routerProps}
+                username={this.state.username}
+                closeGive={this.closeGive}
+                loggedIn={this.state.loggedIn}
+                logIn={this.logIn}
+                resetDonationsBar={this.resetDonationsBar}
+                showDonationsBar={this.state.donationsBar} />} />
+
+          <Route path='/my-reps/elizabethwarren2020'
+            component={routerProps =>
+              <FindMyReps {...routerProps}
+                username={this.state.username}
+                loggedIn={this.state.loggedIn}
+                logIn={this.logIn}
+                resetDonationsBar={this.resetDonationsBar}
+                showDonationsBar={this.state.donationsBar} />} />
+
           <Route path='/getinvolved' component={routerProps =>
             <GetInvolved {...routerProps}
               username={this.state.username}

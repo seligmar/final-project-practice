@@ -400,11 +400,19 @@
     grid-column-start: 1; 
     grid-column-end: 1; 
     grid-row-start: 1; 
-    grid-row-end: 4; 
+    grid-row-end: 5; 
     /* background-image: url('./images/34b0af99.jpg') */
   }
 
   .get-involved-box {
+    padding-top: 15%;
+    /* border-color:  #b7e4cf;
+    border-style: solid; 
+    border-width: '1px'; */
+    padding-bottom: 5%;
+  }
+
+  .my-reps {
     padding-top: 15%;
     /* border-color:  #b7e4cf;
     border-style: solid; 
