@@ -122,7 +122,7 @@ class GetInvolved extends React.Component {
         }
         {
           this.props.showDonationsBar ? (
-            <Link to="/donate/elizabethwarren2020">
+            <Link to="/donate/elizabethwarren2020" target="_top">
               <div className='donationsBar-new' onClick={e => this.props.resetDonationsBar(e)}>
                 <h1 className="giving-text">Give Now</h1></div>
             </Link>

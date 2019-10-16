@@ -7,7 +7,7 @@ class About extends React.Component {
   render() {
     return (
       <div className="about-page-background">
-        <Link to="/donate/elizabethwarren2020">
+        <Link to="/donate/elizabethwarren2020" target="_top">
           <div className='donationsBar-new'>
             <h1 className="giving-text">Give Now</h1></div>
         </Link>

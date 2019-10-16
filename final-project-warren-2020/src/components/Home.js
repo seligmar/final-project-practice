@@ -9,18 +9,10 @@ class Home extends React.Component {
   render() {
     return (
       <div>
-        {this.props.showDonationsBar ? (
-          <div className='maybe-later' onClick={e => this.props.closeGive(e)}>Maybe Later</div>
-        ) : null
-        }
-        {
-          this.props.showDonationsBar ? (
-            <Link to="/donate/elizabethwarren2020">
-              <div className='donationsBar' onClick={e => this.props.resetDonationsBar(e)}>
-                <h1 className="giving-text">Give Now</h1></div>
-            </Link>
-          ) : null
-        }
+        <Link to="/donate/elizabethwarren2020" target="_top">
+          <div className='donationsBar'   >
+            <h1 className="giving-text">Give Now</h1></div>
+        </Link>
         <div className='video-wrapper'>
           <ReactPlayer
             className='react-player'
