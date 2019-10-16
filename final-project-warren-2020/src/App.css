@@ -44,17 +44,19 @@
   width: 80%;
   height: 9%;
   color: #fff;
+  border-radius: 25px;
   /* round edges of buttons? might be cute */
 }
 
 .button-login {
   color: #232444;
-  padding-left: 6.8%;
-  padding-right: 6.8%;
+  padding-left: 4%;
+  padding-right: 4%;
   text-align: center;
   background-color: #b7e4cf;
   padding-bottom: 2%;
   padding-top: 2%;
+  border-radius: 25px;
   /* background-image: url('./images/MenuBar.jpg'); */
   border-color: #b7e4cf;
   border-width: 1px;
@@ -65,7 +67,8 @@
   border-color: #232444;
   border-width: 1px;
   width: 30%;
-  color: #fff
+  color: #fff;
+  border-radius: 10px;
 }
 
 /* TOP MENU BAR */
@@ -405,7 +408,7 @@
   }
 
   .get-involved-box {
-    padding-top: 15%;
+    padding-top: 10%;
     /* border-color:  #b7e4cf;
     border-style: solid; 
     border-width: '1px'; */
@@ -413,7 +416,7 @@
   }
 
   .my-reps {
-    padding-top: 15%;
+    padding-top: 10%;
     /* border-color:  #b7e4cf;
     border-style: solid; 
     border-width: '1px'; */
@@ -421,7 +424,7 @@
   }
 
   .donation-box{
-    padding-top: 15%;
+    padding-top: 10%;
     /* border-color:  #b7e4cf;
     border-style: solid; 
     border-width: '1px'; */
@@ -429,7 +432,7 @@
   }
 
   .about-box {
-    padding-top: 15%;
+    padding-top: 10%;
     /* border-color:  #b7e4cf;
     border-style: solid; 
     border-width: '1px'; */
