@@ -64,6 +64,17 @@
   color: #fff
 }
 
+/* TOP MENU BAR */
+.top-menu {
+  background-color: #b7e4cf;
+  height: 10%;
+  margin-left: auto;
+  margin-right: auto;
+  color: #232444;
+  width: 100%;
+}
+
+
 /* DONATIONS */
 
 .donationsBar-new {
@@ -343,14 +354,15 @@
   border-width: '1px';
   background-image: url('./images/34b0af99.jpg')
   }
-  
+
   .social-media {
-    /* display: grid; */
-    display : flex;
-    text-align: center;
+     display: grid; 
+     grid-template-columns: auto auto auto auto; 
+     text-align: center; 
     margin-left: 35%;
     margin-right: 35%;
     padding-top: 2%;
+    padding-bottom: 2%;
   }
   
   .menu-gif {
@@ -358,4 +370,11 @@
     border-style: solid; 
     border-width: '1px';
     background-image: url('./images/34b0af99.jpg')
+  }
+
+  .footer {
+    padding-bottom: 2%;
+    text-align: center; 
+    margin-left: 35%;
+    margin-right: 35%;
   }

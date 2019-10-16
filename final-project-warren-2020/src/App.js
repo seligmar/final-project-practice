@@ -87,62 +87,62 @@ class App extends React.Component {
   render() {
     return (
       <div className='App'>
-        <div>
+        <div className='top-menu'>Menu Bar goes Here
+        <button class="ui button"><i class="align justify icon"></i></button>
           {this.state.loggedIn ?
             <button className="button-login" onClick={() => this.logout()}>Log Out</button>
             : <button className="button-login" onClick={() => this.showLogIn()}>Log In</button>
           }
           {this.state.loggedIn ?
             <p>Welcome back, {this.state.username}! Thank you for your support!</p>
-            : null}
-          {/* any way to call up user donation and event info? 
+            : null}</div>
+        {/* any way to call up user donation and event info? 
         if donations total 20 or more s
         short of limit, ask to give $20 */}
-          {this.state.showLogIn ?
-            <UserIndex
-              showLogIn={this.showLogIn}
-              userState={this.userState}
+        {this.state.showLogIn ?
+          <UserIndex
+            showLogIn={this.showLogIn}
+            userState={this.userState}
+            logIn={this.logIn}
+            loggedIn={this.state.loggedIn}
+            HideLogIn={this.HideLogIn}
+          /> : null}
+        <Switch>
+          <Route path='/elizabethwarren2020' component={routerProps =>
+            <Home {...routerProps}
+              username={this.state.username}
+              closeGive={this.closeGive}
+              loggedIn={this.state.loggedIn}
+              logIn={this.logIn}
+              resetDonationsBar={this.resetDonationsBar}
+              showDonationsBar={this.state.donationsBar} />} />
+          <Route path='/getinvolved' component={routerProps =>
+            <GetInvolved {...routerProps}
+              username={this.state.username}
+              closeGive={this.closeGive}
+              loggedIn={this.state.loggedIn}
+              logIn={this.logIn}
+              resetDonationsBar={this.resetDonationsBar}
+              showDonationsBar={this.state.donationsBar}
+            />} />
+
+          <Route path="/about/elizabethwarren2020" component={routerProps =>
+            <About {...routerProps}
+              closeGive={this.closeGive}
+              logIn={this.logIn}
+              username={this.state.username}
+              loggedIn={this.state.loggedIn}
+              resetDonationsBar={this.resetDonationsBar}
+              showDonationsBar={this.state.donationsBar} />} />
+          <Route path="/donate/elizabethwarren2020" component={routerProps =>
+            <Donate {...routerProps}
               logIn={this.logIn}
               loggedIn={this.state.loggedIn}
-              HideLogIn={this.HideLogIn}
-            /> : null}
-          <Switch>
-            <Route path='/elizabethwarren2020' component={routerProps =>
-              <Home {...routerProps}
-                username={this.state.username}
-                closeGive={this.closeGive}
-                loggedIn={this.state.loggedIn}
-                logIn={this.logIn}
-                resetDonationsBar={this.resetDonationsBar}
-                showDonationsBar={this.state.donationsBar} />} />
-            <Route path='/getinvolved' component={routerProps =>
-              <GetInvolved {...routerProps}
-                username={this.state.username}
-                closeGive={this.closeGive}
-                loggedIn={this.state.loggedIn}
-                logIn={this.logIn}
-                resetDonationsBar={this.resetDonationsBar}
-                showDonationsBar={this.state.donationsBar}
-              />} />
-
-            <Route path="/about/elizabethwarren2020" component={routerProps =>
-              <About {...routerProps}
-                closeGive={this.closeGive}
-                logIn={this.logIn}
-                username={this.state.username}
-                loggedIn={this.state.loggedIn}
-                resetDonationsBar={this.resetDonationsBar}
-                showDonationsBar={this.state.donationsBar} />} />
-            <Route path="/donate/elizabethwarren2020" component={routerProps =>
-              <Donate {...routerProps}
-                logIn={this.logIn}
-                loggedIn={this.state.loggedIn}
-                username={this.state.username}
-              />} />
-            <Route component={() => <h1>404 - Page Not Found</h1>} />
-          </Switch>
-          <Menu />
-        </div>
+              username={this.state.username}
+            />} />
+          <Route component={() => <h1>404 - Page Not Found</h1>} />
+        </Switch>
+        <Menu />
       </div>
     )
   }
