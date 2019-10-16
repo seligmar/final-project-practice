@@ -18,18 +18,27 @@ class About extends React.Component {
             </div>
           </div>
         </div>
-        <div className='about-page'><h3>Elizabeth grew up on the ragged edge of the middle class in Oklahoma and became a teacher, a law professor, and a US Senator because America invested in kids like her.</h3></div>
+
+
+        <h2 className='about-page-header'>Elizabeth grew up on the ragged edge of the middle class in Oklahoma and became a teacher, a law professor, and a US Senator because America invested in kids like her.</h2>
+        <div>
+          <div className='image-box'>
+            <img className='bio-img-1' src='https://images.ctfassets.net/4ubxbgy9463z/6DpizKApsvsuw03rAiqgXB/386fb583a4ea3b255413900786a78a53/Bio-1.jpg' alt='Elizabeth with her mom and brothers' />
+          </div></div>
+        <p style={{ fontSize: '10' }}>Elizabeth with her mom and brothers</p>
         <div className='about-page'>
           <h3>Elizabeth's dad sold fencing and carpeting, and ended up as a building maintenance man. Her mom stayed home with Elizabeth and her older brothers.
           When Elizabeth was twelve, her dad suffered a heart attack and was out of work for a long time. They lost the family station wagon, and were about an inch away from losing their home, when her mom got a minimum wage job answering phones at Sears. That job saved their home, and it saved their family.
           </h3></div>
-        <div className='image-box'>
-          <img className='bio-img-1' src='https://images.ctfassets.net/4ubxbgy9463z/6DpizKApsvsuw03rAiqgXB/386fb583a4ea3b255413900786a78a53/Bio-1.jpg' alt='Elizabeth with her mom and brothers' />
-          <p style={{ fontSize: '10' }}>Elizabeth with her mom and brothers</p>
-        </div>
+
         <div className='about-page'><h3>All three of Elizabeth’s older brothers served in the military. Her oldest brother was career Air Force and flew combat missions in Vietnam.
             Her middle brother went on to work construction. Her youngest brother started his own business.</h3>
         </div>
+        <div className='image-box'>
+          <img className='bio-img-1' src='https://images.ctfassets.net/4ubxbgy9463z/4bypAdjXMaFz3GmsCXIzti/93ac674c958c3863f96fe26e50b4130f/Bio-2.jpg'
+            alt='Elizabeth with her mom and brothers' />
+        </div>
+        <p style={{ fontSize: '10' }}>Elizabeth at age 22 holding her newborn daughter, Amelia</p>
         <div className='about-page'>
           <h3>From the time Elizabeth was in second grade, she wanted to be a teacher, but her family didn’t have money for college.
           She earned a debate scholarship, but dropped out to get married to her high school sweetheart at 19.
@@ -42,15 +51,16 @@ class About extends React.Component {
           Three years later, she graduated at eight months pregnant with her son Alex.
           Elizabeth hung out a shingle and practiced law out of her living room, but she soon returned to teaching.
         </h3></div>
-        <div className='image-box'>
-          <img className='bio-img-1' src='https://mediad.publicbroadcasting.net/p/shared/npr/styles/x_large/nprshared/201811/514053746.jpg' alt='Elizabeth with her mom and brothers' />
-        </div>
         <div className='about-page'>
           <h3>
             Elizabeth was a law professor for more than 30 years at Rutgers University, the University of Houston, University of Texas-Austin, University of Michigan, University of Pennsylvania, and Harvard University.
             She is one of the nation’s top experts on the financial pressures facing middle class families.
             She taught classes on commercial law, contracts, and bankruptcy, and conducted groundbreaking research on the connection between health care costs and personal bankruptcy.
         </h3></div>
+        <div className='image-box'>
+          <img className='bio-img-1' src='https://mediad.publicbroadcasting.net/p/shared/npr/styles/x_large/nprshared/201811/514053746.jpg' alt='Elizabeth with her mom and brothers' />
+        </div>
+        <p style={{ fontSize: '10' }}>Elizabeth serving in the United States Senate</p>
         <div className='about-page'>
           <h3>During the 2008 financial crisis, Democratic Majority Leader Harry Reid asked Elizabeth to serve as Chair of the Congressional Oversight Panel to provide some oversight of TARP, the Wall Street bailout.
         She fought to protect taxpayers, hold Wall Street accountable, and ensure tough oversight of both the Bush and Obama Administrations.
@@ -64,18 +74,23 @@ class About extends React.Component {
             </h3></div>
         <div className='about-page-gif'>
           <h3>
-            Elizabeth and her husband Bruce have been married for 38 years. They have three grandchildren and a golden retriever named Bailey.</h3>
-      <div className='gif'>
-        <ReactPlayer
-          className='react-player'
-          url='https://media.giphy.com/media/TK4XFFAzhHmar2MsDG/giphy.mp4'
-          playing='true'
-          loop='true'
-          width='100%'
-        />
-      </div>
-      //   </div >
-      // </div >
+            Elizabeth and her husband Bruce have been married for 38 years. They have three grandchildren and a golden retriever named Bailey.</h3> </div>
+        <div className='image-box'>
+          <img className='bio-img-1' src='https://bostonglobe-prod.cdn.arcpublishing.com/resizer/cHeMydQvQQ2qKehYZKCRAuKcmZw=/420x0/arc-anglerfish-arc2-prod-bostonglobe.s3.amazonaws.com/public/XSYK5LD6L4I6TGDHAVKMS6HRZ4.jpg' alt='Elizabeth with her mom and brothers' />
+        </div>
+        <p style={{ fontSize: '10' }}>Elizabeth, Bruce, and Bailey</p>
+        <div></div>
+        {/* <div className='gif'>
+            <ReactPlayer
+              className='react-player'
+              url='https://media.giphy.com/media/TK4XFFAzhHmar2MsDG/giphy.mp4'
+              playing='true'
+              loop='true'
+              width='100%'
+            />
+          </div> */}
+      </div >
+
     )
   }
 }

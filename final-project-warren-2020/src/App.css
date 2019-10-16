@@ -280,23 +280,34 @@
 }
 
 .about-page {
-  padding: 3%;
-  margin-top: 5%;
+  /* padding: 2%; */
+  margin-top: 3%;
   margin-left: 10%;
   margin-right: 10%;
-  color: #232444; 
-  background-image: url("./images/WhiteBackground.PNG");
+  color: #fff; 
+  /* background-image: url("./images/WhiteBackground.PNG"); */
+  font-style: italic;
+  text-align: left;
+}
+
+.about-page-header {
+  margin-top: 3%;
+  margin-left: 10%;
+  margin-right: 10%;
+  color: #fff; 
+  /* background-image: url("./images/WhiteBackground.PNG"); */
   font-style: italic;
 }
 
 .about-page-gif {
-  padding: 3%;
-  margin-top: 5%;
+  /* padding: 2%; */
+  margin-top: 3%;
   margin-left: 10%;
   margin-right: 10%;
-  color: #232444; 
-  background-color: #fff;
+  color: #fff; 
   font-style: italic;
+  margin-bottom: 4%;
+  text-align: left;
 }
 
 .gif {
