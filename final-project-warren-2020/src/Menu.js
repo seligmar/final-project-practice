@@ -6,47 +6,51 @@ class Menu extends React.Component {
     return (
       <div className='Menu'>
         <div className='menu-grid'>
-          <Link to="/elizabethwarren2020">
-            <div className='about-box'>
-              <h1>Home</h1></div>
-          </Link>
-          <Link to="/donate/elizabethwarren2020">
-            <div className='donation-box'>
-              <h1>Give Now</h1></div>
-          </Link>
-          <Link to="/getinvolved/elizabethwarren2020">
-            <div className='get-involved-box'>
-              <h1 className='involved-button'>Get Involved</h1></div>
-          </Link>
-          <Link to="/about/elizabethwarren2020">
-            <div className='about-box'>
-              <h1>About</h1></div>
-          </Link>
+          <div className='links'>
+            <Link to="/elizabethwarren2020">
+              <div className='about-box'>
+                <h1>Home</h1></div>
+            </Link>
+            <Link to="/donate/elizabethwarren2020">
+              <div className='donation-box'>
+                <h1>Give Now</h1></div>
+            </Link>
+            <Link to="/getinvolved/elizabethwarren2020">
+              <div className='get-involved-box'>
+                <h1 className='involved-button'>Get Involved</h1></div>
+            </Link>
+            <Link to="/about/elizabethwarren2020">
+              <div className='about-box'>
+                <h1>About</h1></div>
+            </Link>
+          </div>
           <div className='menu-gif'>
             <iframe src="https://giphy.com/embed/LqrDQpeG0ojjfEjKCb"
               height="480"
               frameBorder="0" class="giphy-embed" allowFullScreen></iframe>
           </div>
-          <div className='social-media-grid' >
-            <div className='four ui icon buttons'>
-              <div className='social-media'>
-                <a href="https://www.facebook.com/ElizabethWarren/" target="_blank">
-                  <button class="ui facebook button">
-                    <i class="facebook icon"></i>
-                    Facebook</button>
-                </a>
-                <a href='https://twitter.com/ewarren' target="_blank">
-                  <button class="ui twitter button">
-                    <i class="twitter icon"></i>Twitter</button></a>
-                <a href='https://www.instagram.com/elizabethwarren/' target="_blank">
-                  <button class="ui instagram button">
-                    <i class="instagram icon"></i>Instagram</button></a>
+        </div>
+        {/*  */}
 
-                <a href='https://www.youtube.com/channel/UCrj-0FxK19tgUR2EbHkBBGg' target="_blank">
-                  <button class="ui  youtube button">
-                    <i class="youtube icon" ></i>
-                    YouTube</button></a>
-              </div>
+        <div className='social-media-grid' >
+          <div className='four ui icon buttons'>
+            <div className='social-media'>
+              <a href="https://www.facebook.com/ElizabethWarren/" target="_blank">
+                <button class="ui facebook button">
+                  <i class="facebook icon"></i>
+                  Facebook</button>
+              </a>
+              <a href='https://twitter.com/ewarren' target="_blank">
+                <button class="ui twitter button">
+                  <i class="twitter icon"></i>Twitter</button></a>
+              <a href='https://www.instagram.com/elizabethwarren/' target="_blank">
+                <button class="ui instagram button">
+                  <i class="instagram icon"></i>Instagram</button></a>
+
+              <a href='https://www.youtube.com/channel/UCrj-0FxK19tgUR2EbHkBBGg' target="_blank">
+                <button class="ui  youtube button">
+                  <i class="youtube icon" ></i>
+                  YouTube</button></a>
             </div>
           </div>
           <div className='footer'>

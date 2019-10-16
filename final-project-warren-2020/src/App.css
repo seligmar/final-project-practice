@@ -328,13 +328,34 @@
   }
 
   .menu-grid {
+    display: grid;
+    grid-template-columns: auto auto;
+  }
+
+  .links {
+    grid-column-start: 1; 
+    grid-column-end: 1; 
+    grid-row-start: 1; 
+    grid-row-end: 4; 
   }
 
   .get-involved-box {
 
   }
 
+  .menu-gif {
+    grid-column-start: 2; 
+    grid-column-end: 2; 
+    grid-row-start: 2; 
+    grid-row-end: 2; 
+    border-color:  #b7e4cf;
+    border-style: solid; 
+    border-width: '1px';
+    background-image: url('./images/34b0af99.jpg')
+  }
+
   .donation-box{
+    padding-top: 5%;
     border-color:  #b7e4cf;
     border-style: solid; 
     border-width: '1px';
@@ -342,6 +363,7 @@
   }
 
   .about-box {
+    padding-top: 5%;
     border-color:  #b7e4cf;
     border-style: solid; 
     border-width: '1px';
@@ -365,12 +387,7 @@
     padding-bottom: 2%;
   }
   
-  .menu-gif {
-    border-color:  #b7e4cf;
-    border-style: solid; 
-    border-width: '1px';
-    background-image: url('./images/34b0af99.jpg')
-  }
+ 
 
   .footer {
     padding-bottom: 2%;
