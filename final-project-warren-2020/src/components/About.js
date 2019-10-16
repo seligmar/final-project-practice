@@ -7,18 +7,27 @@ class About extends React.Component {
   render() {
     return (
       <div>
-        {this.props.showDonationsBar ? (
+        {/* {this.props.showDonationsBar ? (
           <div className='maybe-later' onClick={e => this.props.closeGive(e)}>Maybe Later</div>
         ) : null
         }
         {
-          this.props.showDonationsBar ? (
-            <Link to="/donate/elizabethwarren2020">
-              <div className='donationsBar-new' onClick={e => this.props.resetDonationsBar(e)}>
-                <h1 className="giving-text">Give Now</h1></div>
-            </Link>
-          ) : null
-        }
+          this.props.showDonationsBar ? ( */}
+        <Link to="/donate/elizabethwarren2020">
+          <div className='donationsBar-new'
+          // onClick={e => this.props.resetDonationsBar(e)}
+          >
+            <h1 className="giving-text">Give Now</h1></div>
+        </Link>
+        {/* ) : null
+        } */}
+        <div className="hero-image-div">
+          <div class="hero-image" >
+            <div class="hero-text">
+              <h1>Nevertheless, She Persisted</h1>
+            </div>
+          </div>
+        </div>
         <div className='about-page'>
           <h1></h1>
           <h3>Elizabeth's dad sold fencing and carpeting, and ended up as a building maintenance man. Her mom stayed home with Elizabeth and her older brothers.
