@@ -7,19 +7,19 @@ class Menu extends React.Component {
       <div className='Menu'>
         <div className='menu-grid'>
           <div className='links'>
-            <Link to="/elizabethwarren2020">
+            <Link to="/elizabethwarren2020" target="_top">
               <div className='about-box'>
                 <h1>Home</h1></div>
             </Link>
-            <Link to="/donate/elizabethwarren2020">
+            <Link to="/donate/elizabethwarren2020" target="_top">
               <div className='donation-box'>
                 <h1>Give Now</h1></div>
             </Link>
-            <Link to="/getinvolved/elizabethwarren2020">
+            <Link to="/getinvolved/elizabethwarren2020" target="_top">
               <div className='get-involved-box'>
                 <h1 className='involved-button'>Get Involved</h1></div>
             </Link>
-            <Link to="/about/elizabethwarren2020">
+            <Link to="/about/elizabethwarren2020" target="_top">
               <div className='about-box'>
                 <h1>About</h1></div>
             </Link>
