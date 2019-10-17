@@ -1,23 +1,18 @@
 import React from 'react'
 import ReactPlayer from 'react-player'
 import { Link } from 'react-router-dom'
+import { TwitterTimelineEmbed } from 'react-twitter-embed'
+
+// import { TwitterTimelineEmbed, TwitterShareButton, TwitterFollowButton, TwitterHashtagButton, TwitterMentionButton, TwitterTweetEmbed, TwitterMomentShare, TwitterDMButton, TwitterVideoEmbed, TwitterOnAirButton } from 'react-twitter-embed';
 
 class Home extends React.Component {
   render() {
     return (
       <div>
-        {this.props.showDonationsBar ? (
-          <div className='maybe-later' onClick={e => this.props.closeGive(e)}>Maybe Later</div>
-        ) : null
-        }
-        {
-          this.props.showDonationsBar ? (
-            <Link to="/donate/elizabethwarren2020">
-              <div className='donationsBar' onClick={e => this.props.resetDonationsBar(e)}>
-                <h1 className="giving-text">Give Now</h1></div>
-            </Link>
-          ) : null
-        }
+        <Link to="/donate/elizabethwarren2020" target="_top">
+          <div className='donationsBar'   >
+            <h1 className="giving-text">Give Now</h1></div>
+        </Link>
         <div className='video-wrapper'>
           <ReactPlayer
             className='react-player'
@@ -25,7 +20,7 @@ class Home extends React.Component {
             playing='true'
             loop='true'
             width='100%'
-            height='0%'
+            height='80%'
           />
         </div>
         <div className='quote-grid'>
@@ -46,12 +41,18 @@ class Home extends React.Component {
             <h1></h1>
           </div>
         </div>
+        <div className='twitter'>
+          <div className='twitter-box'>
+            <TwitterTimelineEmbed
+              sourceType="profile"
+              screenName="ewarren"
+              options={{ height: 400 }}
+            /></div></div>
         <div className='youtube-block-grid'>
           <div className='youtube'>
-            <iframe
-              title='Dream Big'
-              width="100%" height="580" src="https://www.youtube.com/embed/uF3IjYG8eeY"
-              frameBorder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture"
+            <iframe title='Dream Big'
+              width='100%' height='580' src="https://www.youtube.com/embed/uF3IjYG8eeY"
+              frameBorder='0' allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture"
               allowfullscreen>
             </iframe>
           </div>

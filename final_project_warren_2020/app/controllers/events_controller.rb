@@ -20,9 +20,53 @@ class EventsController < ApplicationController
       lat: event.lat}
       events << eachEvent
     end 
-    render json: events
+    upcoming = events.select do |event| 
+      event[:year] > Date.today.year ||  
+      (event[:month] >= Date.today.month && 
+      event[:day] >= Date.today.day) 
+    end
+    render json: upcoming
+  end 
+
+  def create 
+      event = Event.new(event_params)
+      if event.save
+          render json: event, status: :create
+        else 
+          render json: { error: user.errors.full_messages }, status: :unprocessable_entity
+      end 
   end 
 
   private
 
+  def event_params 
+    params.require(:event).permit(
+      :title, 
+    :start_time, 
+    :end_time, 
+    :day, 
+    :month, 
+    :year, 
+    :street_address_1, 
+    :city, 
+    :state, 
+    :zip, 
+    :lat, 
+    :lng)
+  end 
+
 end
+
+# start_time: params[:start_time], 
+# end_time: params[:end_time], 
+# day: params[:day],
+# month: params[:month], 
+# year: params[:year],
+# street_address_1: params[:street_address_1],
+# city: params[:city],
+# state: params[:state],
+# zip: params[:zip],
+# title: params[:title],
+# lng: params[:lng],
+# lat: params[:lat]
+

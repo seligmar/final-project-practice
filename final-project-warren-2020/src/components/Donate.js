@@ -9,7 +9,45 @@ import API from '../API'
 
 const MySwal = withReactContent(Swal)
 
+const total = 0
+
 class Donate extends React.Component {
+
+  state = {
+    nameEntered: false,
+    addressEntered: false,
+    totalEntered: false,
+    total: 0,
+    showFEC: false
+  }
+
+  showAddress = (e) => {
+    e.preventDefault()
+    if (parseInt(e.target.parentElement.childNodes[1].value) > 2800) {
+      MySwal.fire({
+        title: 'Invalid Contribution',
+        text: 'Invalid Contribution',
+        confirmButtonColor: '#b61b28',
+        animation: false,
+        html:
+          'Please refer to the ' +
+          '<a href="https://www.fec.gov/resources/cms-content/documents/contribution_limits_chart_2019-2020.pdf" target="_blank">FEC</a> ' +
+          'for more information on campaign contribution limits'
+      })
+      return
+    }
+    else
+      this.setState({ totalEntered: !this.state.totalEntered })
+    this.setState({ total: total + parseInt(e.target.parentElement.childNodes[1].value) })
+    this.setState({ nameEntered: !this.state.nameEntered })
+  }
+
+  showBill = (e) => {
+    e.preventDefault()
+    this.setState({ nameEntered: !this.state.nameEntered })
+    this.setState({ addressEntered: !this.state.addressEntered })
+    this.setState({ showFEC: !this.state.showFEC })
+  }
 
   donateNew = e => {
     e.preventDefault()
@@ -22,7 +60,7 @@ class Donate extends React.Component {
     }
     else {
       const donation = {
-        total: parseInt(e.target.parentElement.childNodes[15].childNodes[1].value)
+        total: this.state.total
       }
       this.postDonation(donation)
     }
@@ -41,7 +79,7 @@ class Donate extends React.Component {
       })
   }
 
-  thanksGif = (message) => {
+  thanksGif = () => {
     MySwal.fire({
       text: 'Thank you for your generosity! Your contribution will help us strengthen our Democracy!',
       type: 'success'
@@ -63,67 +101,100 @@ class Donate extends React.Component {
   }
 
   render() {
+    const buttons = {
+      'background-color': '#b61b28',
+      color: '#fff'
+    }
+
     return (
-      <div >
+      <div className='donation-page'>
         <div className='donation-pitch'>
           <h2>THE TIME FOR SMALL IDEAS IS OVER</h2>
           We're fighting for big, structural change, and we're counting on grassroots donors to make it possible.
           Even $3 makes a difference.
         </div>
-        < div className='donation-page'>
+        < div >
           <div className='donations-form'>
-            <div>
+            <div class='field'>
               <form class="ui form">
-                <label>First Name</label>
-                <input type="text" name="name" placeholder="First Name" />
-                <label>Last Name</label>
-                <input type="text" name="surname" placeholder="Last Name" />
-                <label>Address</label>
-                <input type="text" name="address" placeholder="Street Address" />
-                <div class="four wide field">
-                  <input type="text" name="city" placeholder="City" />
-                  <input type="text" name="state" placeholder="State" />
-                  <input type="text" name="zip" placeholder="Zip" />
-                </div >
-                <div> Billing Information</div>
-                <div class="seven wide field">
-                  <label>Card Number</label>
-                  <input type="text" name="cardnumber" maxlength="16" placeholder="Card #" />
-                </div>
-                <div class="three wide field">
-                  <label>CVC</label>
-                  <input type="text" name="cvc" maxlength="3" placeholder="CVC" />
-                </div>
-                <label>Expiration</label>
-                <div class="two fields">
-                  <div class="field">
-                    <select class="ui fluid search dropdown" name="expire-month">
-                      <option value="">Month</option>
-                      <option value="1">January</option>
-                      <option value="2">February</option>
-                      <option value="3">March</option>
-                      <option value="4">April</option>
-                      <option value="5">May</option>
-                      <option value="6">June</option>
-                      <option value="7">July</option>
-                      <option value="8">August</option>
-                      <option value="9">September</option>
-                      <option value="10">October</option>
-                      <option value="11">November</option>
-                      <option value="12">December</option>
-                    </select>
-                  </div></div>
-                <input type="text" name="expire-year" maxlength="4" placeholder="Year" />
-                <br></br><br></br>
-                <div class="seven wide field">
-                  <label>Total:  </label>
-                  <input type="text" name="total" maxlength="7" placeholder="total" /></div>
-                <br></br>
-                <div onClick={(e) => this.donateNew(e)} class="button">Donate Now</div>
-                <br></br><br></br>
+                {this.state.total === 0 ? (
+                  <div>< label > Total:  </label>
+                    <input type="text" name="total" maxlength="7" placeholder="total" />
+                    <label>First Name</label>
+                    <input type="text" name="name" placeholder="First Name" />
+                    <label>Last Name</label>
+                    <input type="text" name="surname" placeholder="Last Name" />
+                    <button onClick={(e) => this.showAddress(e)} class="ui button" style={buttons}>Next</button></div>) : null}
+                {this.state.nameEntered ? (
+                  <div><label>Address: </label>
+                    <input
+                      style={{ width: 200 }}
+                      type='text'
+                      name='addressLine1'
+                      placeholder='address'
+                    /> <br></br>
+                    <label>City: </label>
+                    <input
+                      style={{ width: 200 }}
+                      type='text'
+                      name='city'
+                      placeholder='city'
+                    /> <br></br>
+                    <label>State: </label>
+                    <input
+                      style={{ width: 200 }}
+                      type='text'
+                      name='state'
+                      placeholder='State Abreviation'
+                    /> <br></br>
+                    <label>Zip: </label>
+                    <input
+                      style={{ width: 200 }}
+                      type='text'
+                      name='zip'
+                      placeholder='Zip Code'
+                    />
+                    <button onClick={(e) => this.showBill(e)} class="ui button" style={buttons}>Next</button></div>
+                ) : null}
+                {this.state.addressEntered ? (
+                  <div>
+                    < div > Billing Information</div>
+                    <div class="seven wide field">
+                      <label>Card Number</label>
+                      <input type="text" name="cardnumber" maxlength="16" placeholder="Card #" />
+                    </div>
+                    <div class="three wide field">
+                      <label>CVC</label>
+                      <input type="text" name="cvc" maxlength="3" placeholder="CVC" />
+                    </div>
+                    <label>Expiration</label>
+                    <div class="two fields">
+                      <div class="field">
+                        <select class="ui fluid search dropdown" name="expire-month">
+                          <option value="">Month</option>
+                          <option value="1">January</option>
+                          <option value="2">February</option>
+                          <option value="3">March</option>
+                          <option value="4">April</option>
+                          <option value="5">May</option>
+                          <option value="6">June</option>
+                          <option value="7">July</option>
+                          <option value="8">August</option>
+                          <option value="9">September</option>
+                          <option value="10">October</option>
+                          <option value="11">November</option>
+                          <option value="12">December</option>
+                        </select>
+                      </div></div>
+                    <input type="text" name="expire-year" maxlength="4" placeholder="Year" />
+                    <br></br> <br></br>
+                    <div onClick={(e) => this.donateNew(e)} class="ui button" style={buttons}>Donate Now</div>
+                  </div>) : null}
               </form>
             </div>
           </div>
+        </div >
+        <div className='FEC-bar'>
           <div className='FEC'>
             <p className='FEC-rules'>Contribution rules:</p>
             <p>I am a U.S. citizen or lawfully admitted permanent resident (i.e., green card holder).</p>
@@ -136,6 +207,7 @@ class Donate extends React.Component {
             <p>I am not a registered Federal lobbyist.</p>
             <p>I am not an executive of a health insurance or pharmaceutical company.</p>
             <p>I am not a registered foreign agent.</p>
+            <p>Individuals may give a maximum of $5,600 per election cycle: $2,800 for the Primary + $2,800 for the General.</p>
             <p>Contributions or gifts to political candidates are not deductible as charitable contributions for Federal income tax purposes.</p>
           </div >
         </div>

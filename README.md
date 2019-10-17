@@ -13,6 +13,8 @@ https://www.figma.com/file/KY3BKNojNY9CZgudaWBWw5/Warren2020?node-id=8%3A1
 
 https://trello.com/b/RbqpIb10/final-project-back-end 
 
+https://blog.cloudboost.io/using-inline-styles-in-jsx-c1d03cbe6fe0 - inline styling answer- very helpful 
+
 https://www.npmjs.com/package/react-konami-code - consider adding konami easter egg 
 
 EMBED FEATURES 
@@ -22,6 +24,10 @@ https://developer.twitter.com/en/docs/twitter-for-websites/timelines/overview
 https://github.com/CookPete/react-player - react player github
 
 https://www.youtube.com/watch?time_continue=172&v=Pf7g32CwX_s - how to make google maps is go youtube video
+
+https://www.youtube.com/watch?v=pRiQeo17u6c - google geocode API
+
+https://www.npmjs.com/package/react-twitter-embed - embed tweets
 
 LEGAL INFO 
 https://www.fec.gov/resources/cms-content/documents/contribution_limits_chart_2019-2020.pdf 
@@ -52,3 +58,7 @@ https://www.vogue.com/article/elizabeth-warren-shares-pregnancy-discrimination-s
 https://www.harpersbazaar.com/culture/politics/a29008478/elizabeth-warren-quotes/
 
 https://www.women.com/ashleylocke/lists/elizabeth-warren-quotes-080719 
+
+USE REDUX WHEN RECREATE 
+
+http://www.4president.us/ - archive of past presidential websites 
