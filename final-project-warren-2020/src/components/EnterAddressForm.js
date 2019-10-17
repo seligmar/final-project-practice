@@ -2,7 +2,6 @@ import React from 'react'
 
 const EnterAddressForm = props => {
   const buttons = {
-    // border: '1%',
     'background-color': '#b61b28',
     color: '#fff'
   }

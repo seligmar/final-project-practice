@@ -68,37 +68,38 @@ class NewEvent extends React.Component {
         })
         return
       }
-      const day = e.target.day.value
-      if (day.length !== 2
-        || typeof (parseInt(day[0])) !== 'number'
-        || typeof (parseInt(day[1])) !== 'number') {
+
+      // if (day.length !== 2
+      //   || typeof (parseInt(day[0])) !== 'number'
+      //   || typeof (parseInt(day[1])) !== 'number') {
+      //   MySwal.fire({
+      //     title: 'Please format the date DD',
+      //     confirmButtonColor: '#b61b28',
+      //     animation: false
+      //   })
+      //   return
+      // }
+      // if (month.length !== 2
+      //   || typeof (parseInt(month[0])) !== 'number'
+      //   || typeof (parseInt(month[1])) !== 'number') {
+      //   MySwal.fire({
+      //     title: 'Please format the month MM',
+      //     confirmButtonColor: '#b61b28',
+      //     animation: false
+      //   })
+      //   return
+      const day1 = e.target.date.value
+      const date = day1.substring(8)
+      const year = day1.slice(0, 4)
+      const month = day1.slice(5, 7)
+      if (year !== "2019" || year !== "2020") {
+        // || typeof (parseInt(year[0])) !== 'number'
+        // || typeof (parseInt(year[1])) !== 'number'
+        // || typeof (parseInt(year[2])) !== 'number'
+        // || typeof (parseInt(year[3])) !== 'number'
+        // || year !== ("2020" || "2019")) {
         MySwal.fire({
-          title: 'Please format the date DD',
-          confirmButtonColor: '#b61b28',
-          animation: false
-        })
-        return
-      }
-      const month = e.target.month.value
-      if (month.length !== 2
-        || typeof (parseInt(month[0])) !== 'number'
-        || typeof (parseInt(month[1])) !== 'number') {
-        MySwal.fire({
-          title: 'Please format the month MM',
-          confirmButtonColor: '#b61b28',
-          animation: false
-        })
-        return
-      }
-      const year = e.target.year.value
-      if (year.length !== 4
-        || typeof (parseInt(year[0])) !== 'number'
-        || typeof (parseInt(year[1])) !== 'number'
-        || typeof (parseInt(year[2])) !== 'number'
-        || typeof (parseInt(year[3])) !== 'number'
-        || year !== ("2020" || "2019")) {
-        MySwal.fire({
-          title: 'Please format the year YYYY',
+          title: 'Please enter a date in 2019 or 2020',
           confirmButtonColor: '#b61b28',
           animation: false
         })
@@ -125,7 +126,7 @@ class NewEvent extends React.Component {
         city: city,
         state: state,
         zip: zip,
-        day: day,
+        day: date,
         month: month,
         year: year
       }
@@ -184,86 +185,78 @@ class NewEvent extends React.Component {
   }
 
   render() {
+    const buttons = {
+      'background-color': '#b61b28',
+      color: '#fff'
+    }
+
+    const formPadding = {
+      padding: '5%'
+    }
     return (
       <div className='login' >
-        <form onSubmit={e => this.newEvent(e)} className='ui form'>
-          <div style={{ paddingBottom: '10px' }} class='field'>
-            <p>Join the fight with Liz!</p>
-            <label>Let Us Know What You Have Planned!</label>
+        <div class='field'>
+          <form onSubmit={e => this.newEvent(e)} className='ui form'>
+            <h4>Let Us Know What You Have Planned!</h4>
+            <label>Title:{' '} </label>
             <input
               style={{ width: 200 }}
               type='text'
               name='title'
               placeholder='Event Title'
-            />
+            />  <br></br>
             <label>Start Time</label>
-            <div class="fields">
-              <div class="two wide field"></div>
-              <input
-                style={{ width: 200 }}
-                type='text'
-                name='start'
-                placeholder='Start Time 00:00'
-              /></div>
+            <input
+              style={{ width: 200 }}
+              type='text'
+              name='start'
+              placeholder='Start Time 00:00'
+            />  <br></br>
             <label>End Time</label>
-            <div class="fields">
-              <div class="two wide field"></div>
-              <input
-                style={{ width: 200 }}
-                type='text'
-                name='end'
-                placeholder='End Time 00:00'
-              />
-              <input
-                style={{ width: 200 }}
-                type='text'
-                name='day'
-                placeholder='DD'
-              /></div>
-            <div class="fields">
-              <div class="two wide field"></div>
-              <input
-                style={{ width: 200 }}
-                type='text'
-                name='month'
-                placeholder='MM'
-              /> </div>
-            <div class="fields">
-              <div class="four wide field"></div>
-              <input
-                style={{ width: 200 }}
-                type='text'
-                name='year'
-                placeholder='YYYY'
-              /></div>
-            <label>Please Enter the Address Where the Event Will Occor:</label>
+            <input
+              style={{ width: 200 }}
+              type='text'
+              name='end'
+              placeholder='End Time 00:00'
+            />  <br></br>
+            <label>Event Date: </label>
+            <input
+              style={{ width: 200 }}
+              type='date'
+              name='date'
+            />
+            <h4>Please Enter the Address Where the Event Will Occor:</h4>
+            <label>Address: </label>
             <input
               style={{ width: 200 }}
               type='text'
               name='addressLine1'
               placeholder='address line 1'
-            />
+            />  <br></br>
+            <label>City: </label>
             <input
               style={{ width: 200 }}
               type='text'
               name='city'
               placeholder='city'
-            />
+            />  <br></br>
+            <label>State: </label>
             <input
               style={{ width: 200 }}
               type='text'
               name='state'
               placeholder='State Abreviation'
-            />
+            />   <br></br>
+            <label>Zip: </label>
             <input
               style={{ width: 200 }}
               type='text'
               name='zip'
               placeholder='Zip Code'
-            />
-            <button className='ui button' type='submit'>Submit</button>
-          </div>
-        </form>
+            /><br></br>
+            <button className='small ui button' style={buttons} type='submit'>Submit</button>
+          </form>
+        </div>
       </div >
     )
   }
