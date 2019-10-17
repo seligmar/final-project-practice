@@ -11,6 +11,16 @@ const MySwal = withReactContent(Swal)
 
 class Donate extends React.Component {
 
+  state = {
+    nameEntered: false,
+    addressEntered: false,
+    totalEntered: false
+  }
+
+  showName = () => this.setState({ totalEntered: !this.state.totalEntered })
+
+  showAddress = () => this.setState({ nameEntered: !this.state.nameEntered }, this.showName)
+
   donateNew = e => {
     e.preventDefault()
     if (!this.props.username) {
@@ -63,8 +73,13 @@ class Donate extends React.Component {
   }
 
   render() {
+    const buttons = {
+      'background-color': '#b61b28',
+      color: '#fff'
+    }
+
     return (
-      <div >
+      <div>
         <div className='donation-pitch'>
           <h2>THE TIME FOR SMALL IDEAS IS OVER</h2>
           We're fighting for big, structural change, and we're counting on grassroots donors to make it possible.
@@ -72,19 +87,48 @@ class Donate extends React.Component {
         </div>
         < div className='donation-page'>
           <div className='donations-form'>
-            <div>
+            <div class='field'>
               <form class="ui form">
-                <label>First Name</label>
-                <input type="text" name="name" placeholder="First Name" />
-                <label>Last Name</label>
-                <input type="text" name="surname" placeholder="Last Name" />
-                <label>Address</label>
-                <input type="text" name="address" placeholder="Street Address" />
-                <div class="four wide field">
-                  <input type="text" name="city" placeholder="City" />
-                  <input type="text" name="state" placeholder="State" />
-                  <input type="text" name="zip" placeholder="Zip" />
-                </div >
+                <label>Total:  </label>
+                <input type="text" name="total" maxlength="7" placeholder="total" />
+                <button onClick={() => this.showName()} class="ui button" style={buttons}>Next</button>
+                {this.state.totalEntered ? (
+                  <div> <label>First Name</label>
+                    <input type="text" name="name" placeholder="First Name" />
+                    <label>Last Name</label>
+                    <input type="text" name="surname" placeholder="Last Name" />
+                    <button onClick={() => this.showAddress()} class="ui button" style={buttons}>Next</button></div>
+                ) : null}
+                {this.state.nameEntered ? (
+                  <div><label>Address: </label>
+                    <input
+                      style={{ width: 200 }}
+                      type='text'
+                      name='addressLine1'
+                      placeholder='address'
+                    /> <br></br>
+                    <label>City: </label>
+                    <input
+                      style={{ width: 200 }}
+                      type='text'
+                      name='city'
+                      placeholder='city'
+                    /> <br></br>
+                    <label>State: </label>
+                    <input
+                      style={{ width: 200 }}
+                      type='text'
+                      name='state'
+                      placeholder='State Abreviation'
+                    /> <br></br>
+                    <label>Zip: </label>
+                    <input
+                      style={{ width: 200 }}
+                      type='text'
+                      name='zip'
+                      placeholder='Zip Code'
+                    /></div>) : null}
+                <br></br>
                 <div> Billing Information</div>
                 <div class="seven wide field">
                   <label>Card Number</label>
@@ -119,7 +163,7 @@ class Donate extends React.Component {
                   <label>Total:  </label>
                   <input type="text" name="total" maxlength="7" placeholder="total" /></div>
                 <br></br>
-                <div onClick={(e) => this.donateNew(e)} class="button">Donate Now</div>
+                <div onClick={(e) => this.donateNew(e)} class="ui button" style={buttons}>Donate Now</div>
                 <br></br><br></br>
               </form>
             </div>
@@ -139,8 +183,8 @@ class Donate extends React.Component {
             <p>Individuals may give a maximum of $5,600 per election cycle: $2,800 for the Primary + $2,800 for the General.</p>
             <p>Contributions or gifts to political candidates are not deductible as charitable contributions for Federal income tax purposes.</p>
           </div >
-        </div>
-      </div >
+        </div >
+      </div>
     )
   }
 }

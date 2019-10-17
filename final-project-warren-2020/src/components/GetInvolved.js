@@ -98,7 +98,7 @@ class GetInvolved extends React.Component {
               Hide Map
           </button>
           ) : (<button className='button' onClick={() => this.showMap()}>
-            Show Map
+            Show Events on the Map
       </button>)
         }
         {
