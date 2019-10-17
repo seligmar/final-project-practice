@@ -7,7 +7,7 @@ const TopMenu = props => {
   const styles = {
     position: 'absolute',
     left: '2%',
-    top: '2%',
+    top: '2%'
   }
   return (
     <div className='top-menu'>
@@ -17,16 +17,6 @@ const TopMenu = props => {
 if donations total 20 or more s
 short of limit, ask to give $20 */}
       <i class="align justify icon" style={styles}></i>
-      {
-        props.showLogInState ?
-          <UserIndex
-            showLogIn={props.showLogIn}
-            userState={props.userState}
-            logIn={props.logIn}
-            loggedIn={props.loggedIn}
-            HideLogIn={props.HideLogIn}
-          /> : null
-      }
       {props.loggedIn ?
         <button className="button-login" onClick={() => props.logout()}>Log Out</button>
         : <button className="button-login" onClick={() => props.showLogIn()}>Log In</button>
@@ -47,6 +37,16 @@ short of limit, ask to give $20 */}
       <Link to="/my-reps/elizabethwarren2020">
         <button className="button-login" >Find My Reps</button>
       </Link>
+      {
+        props.showLogInState ?
+          <UserIndex
+            showLogIn={props.showLogIn}
+            userState={props.userState}
+            logIn={props.logIn}
+            loggedIn={props.loggedIn}
+            HideLogIn={props.HideLogIn}
+          /> : null
+      }
       {
         props.loggedIn ?
           <p>Welcome back, {props.username}! Thank you for your support!</p>

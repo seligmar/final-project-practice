@@ -13,6 +13,8 @@ https://www.figma.com/file/KY3BKNojNY9CZgudaWBWw5/Warren2020?node-id=8%3A1
 
 https://trello.com/b/RbqpIb10/final-project-back-end 
 
+https://blog.cloudboost.io/using-inline-styles-in-jsx-c1d03cbe6fe0 - inline styling answer- very helpful 
+
 https://www.npmjs.com/package/react-konami-code - consider adding konami easter egg 
 
 EMBED FEATURES 

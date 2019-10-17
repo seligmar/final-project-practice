@@ -373,21 +373,35 @@
 /* LOGIN */
 
 .login {  
-  text-align: center;
+    text-align: center;
     height: middle;
-    border-style: solid;
-    border-width: 10px;
-    border-color: #b7e4cf;
-    background-color: #fff;
-    color: black;
-    /* height: 180px; */
     position: right;
     margin-left: 10%;
     margin-right: 10%;
-    /* top: 50%; */
+  }
+
+
+.buttons-login {
+  text-align: center;
+  padding: 3%;
+  margin-left: 25%; 
+  margin-right: 37%
+  }
+  
+  .field {
+    background-color: #fff;
+    color: black;
   }
 
   /* MENU  */
+
+ .link {
+  color: #232444 
+ }
+
+ .link:hover {
+  color: #b7e4cf
+}
 
   .Menu {
     color: #fff; 
