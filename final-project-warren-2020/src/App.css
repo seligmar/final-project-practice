@@ -489,20 +489,20 @@
   margin-right: 25%
   }
 
-  .reps-background{
+  .reps-background {
     margin-left: 10%;
     margin-right: 10%;
     font-style: italic;
-    margin-bottom: 3%
+    margin-bottom: 3%;
   }
 
   .show-reps { 
+    margin-top: 3%;
+    margin-bottom: 3%;
     margin-left: 10%;
     margin-right: 10%;
-    border-color: #b61b28;
-    border-style: solid;
-    border-width: 1px;
-    background-color: #fff;
+    background-color: #b61b28;
+    color: #232444;
   }
 
   .march-img {
@@ -510,5 +510,9 @@
     width: 100%;
     margin-top: 3%;
     margin-bottom: 3%
-    /* height: 100% */
+  }
+
+  .rep-names {
+    margin-top: 2%;
+    margin-bottom: 2%;
   }
