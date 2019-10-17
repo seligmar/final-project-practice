@@ -93,11 +93,13 @@ class GetInvolved extends React.Component {
           />
         </div>
         {
-          this.state.showEvent ? (
+          this.state.showMap ? (
             <button className='button' onClick={() => this.showMap()}>
-              Show All Events On The Map!
+              Hide Map
           </button>
-          ) : null
+          ) : (<button className='button' onClick={() => this.showMap()}>
+            Show Map
+      </button>)
         }
         {
           this.state.createEvent ? (

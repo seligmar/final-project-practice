@@ -192,17 +192,22 @@ class NewEvent extends React.Component {
   render() {
     const buttons = {
       'background-color': '#b61b28',
-      color: '#fff'
+      color: '#fff',
+      'margin-top': '3%',
+      'margin-left': '10%',
+      'margin-right': '55%'
+      // 'margin-bottom': '1%'
     }
 
     const formPadding = {
-      padding: '5%'
+      padding: '5%',
+      'margin-top': '3%',
+      'margin-bottom': '3%'
     }
     return (
-
       < div className='login' >
         <div class='field'>
-          <form onSubmit={e => this.newEvent(e)} className='ui form'>
+          <form onSubmit={e => this.newEvent(e)} className='ui form' style={formPadding}>
             <h4>Let Us Know What You Have Planned!</h4>
             <label>Title:{' '} </label>
             <input
