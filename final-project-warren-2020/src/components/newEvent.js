@@ -11,13 +11,14 @@ const GOOGLE_API_KEY = 'AIzaSyBuNd5baj7zHX5OmBtTYoBkhW_a4WN81S8'
 
 class NewEvent extends React.Component {
 
-  // HOW TO CHEKC IF IT IS LATER THAN TODAY
-  // var today = new Date();
-  // var dd = String(today.getDate()).padStart(2, '0');
-  // var mm = String(today.getMonth() + 1).padStart(2, '0'); //January is 0!
-  // var yyyy = today.getFullYear();
-
-  // todaySDATE = mm + '/' + dd + '/' + yyyy;
+  findToday = () => {
+    const today = new Date();
+    const dd = String(today.getDate()).padStart(2, '0');
+    const mm = String(today.getMonth() + 1).padStart(2, '0'); //January is 0!
+    const yyyy = today.getFullYear()
+    const todaySDATE = mm + dd + yyyy
+    return todaySDATE
+  }
 
   newEvent = e => {
     e.preventDefault()
@@ -92,6 +93,20 @@ class NewEvent extends React.Component {
       const date = day1.substring(8)
       const year = day1.slice(0, 4)
       const month = day1.slice(5, 7)
+      const compareDate = month + date + year
+      const today = new Date();
+      const dd = String(today.getDate()).padStart(2, '0')
+      const mm = String(today.getMonth() + 1).padStart(2, '0') //January is 0!
+      const yyyy = today.getFullYear()
+      const todaySDATE = mm + dd + yyyy
+      if (compareDate - todaySDATE < 0) {
+        MySwal.fire({
+          title: 'Please enter a date after today',
+          confirmButtonColor: '#b61b28',
+          animation: false
+        })
+        return
+      }
       if (year !== "2019" && year !== "2020") {
         // || typeof (parseInt(year[0])) !== 'number'
         // || typeof (parseInt(year[1])) !== 'number'
