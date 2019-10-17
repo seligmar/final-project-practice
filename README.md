@@ -58,3 +58,5 @@ https://www.harpersbazaar.com/culture/politics/a29008478/elizabeth-warren-quotes
 https://www.women.com/ashleylocke/lists/elizabeth-warren-quotes-080719 
 
 USE REDUX WHEN RECREATE 
+
+http://www.4president.us/ - archive of past presidential websites 

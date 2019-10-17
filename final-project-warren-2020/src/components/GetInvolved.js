@@ -80,7 +80,7 @@ class GetInvolved extends React.Component {
     return (
       <div>
         <Link to="/donate/elizabethwarren2020" target="_top">
-          <div className='donationsBar-new'>
+          <div className='donationsBar'>
             <h1 className="giving-text">Give Now</h1></div>
         </Link>
         {this.props.username ? (

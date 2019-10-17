@@ -42,7 +42,7 @@
   border-color: #232444;
   border-width: 1px;
   width: 80%;
-  height: 9%;
+  height: 5vh; 
   color: #fff;
   border-radius: 25px;
   /* round edges of buttons? might be cute */
@@ -50,8 +50,8 @@
 
 .button-login {
   color: #232444;
-  padding-left: 4%;
-  padding-right: 4%;
+  padding-left: 3%;
+  padding-right: 3%;
   text-align: center;
   background-color: #b7e4cf;
   padding-bottom: 2%;
@@ -140,7 +140,7 @@
   text-align: left;
   margin-left: 10%;
   margin-right: 10%;
-  padding-top: 5%;
+  padding-top: 15%;
   padding-bottom: 5%
 }
 
