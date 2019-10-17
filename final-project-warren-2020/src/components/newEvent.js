@@ -92,7 +92,7 @@ class NewEvent extends React.Component {
       const date = day1.substring(8)
       const year = day1.slice(0, 4)
       const month = day1.slice(5, 7)
-      if (year !== "2019" || year !== "2020") {
+      if (year !== "2019" && year !== "2020") {
         // || typeof (parseInt(year[0])) !== 'number'
         // || typeof (parseInt(year[1])) !== 'number'
         // || typeof (parseInt(year[2])) !== 'number'
@@ -162,6 +162,7 @@ class NewEvent extends React.Component {
           throw Error(data.error)
         } else {
           this.thanksGif()
+          this.props.hideForm()
         }
       }).catch(error => {
         this.responseGif(error)

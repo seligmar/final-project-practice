@@ -23,7 +23,7 @@ class GetInvolved extends React.Component {
   }
 
   createEventState = () => {
-    this.setState({ createEvent: true })
+    this.setState({ createEvent: !this.state.createEvent })
   }
 
   getEvents = () => API.getEvents().then(events => this.setState({ events }, this.showEvent))
@@ -101,7 +101,8 @@ class GetInvolved extends React.Component {
         }
         {
           this.state.createEvent ? (
-            <NewEvent user={this.props.username} />
+            <NewEvent user={this.props.username}
+              hideForm={this.createEventState} />
           ) : null
         }
         {
