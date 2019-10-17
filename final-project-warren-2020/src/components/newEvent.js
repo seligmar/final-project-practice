@@ -98,23 +98,12 @@ class NewEvent extends React.Component {
       const dd = String(today.getDate()).padStart(2, '0')
       const mm = String(today.getMonth() + 1).padStart(2, '0') //January is 0!
       const yyyy = today.getFullYear()
-      const todaySDATE = mm + dd + yyyy
-      if (compareDate - todaySDATE < 0) {
+      const todaySDATE = yyyy + mm + dd
+      if (year < yyyy || (
+        (month <= mm) && (date <= dd)
+      )) {
         MySwal.fire({
           title: 'Please enter a date after today',
-          confirmButtonColor: '#b61b28',
-          animation: false
-        })
-        return
-      }
-      if (year !== "2019" && year !== "2020") {
-        // || typeof (parseInt(year[0])) !== 'number'
-        // || typeof (parseInt(year[1])) !== 'number'
-        // || typeof (parseInt(year[2])) !== 'number'
-        // || typeof (parseInt(year[3])) !== 'number'
-        // || year !== ("2020" || "2019")) {
-        MySwal.fire({
-          title: 'Please enter a date in 2019 or 2020',
           confirmButtonColor: '#b61b28',
           animation: false
         })
@@ -210,7 +199,8 @@ class NewEvent extends React.Component {
       padding: '5%'
     }
     return (
-      <div className='login' >
+
+      < div className='login' >
         <div class='field'>
           <form onSubmit={e => this.newEvent(e)} className='ui form'>
             <h4>Let Us Know What You Have Planned!</h4>
@@ -240,6 +230,8 @@ class NewEvent extends React.Component {
               style={{ width: 200 }}
               type='date'
               name='date'
+              min="2019-10-17"
+              max="2020-11-03"
             />
             <h4>Please Enter the Address Where the Event Will Occor:</h4>
             <label>Address: </label>
