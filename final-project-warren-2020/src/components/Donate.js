@@ -9,16 +9,19 @@ import API from '../API'
 
 const MySwal = withReactContent(Swal)
 
+const total = 0
+
 class Donate extends React.Component {
 
   state = {
     nameEntered: false,
     addressEntered: false,
     totalEntered: false,
-    total: 0
+    total: 0,
+    showFEC: false
   }
 
-  showName = (e) => {
+  showAddress = (e) => {
     e.preventDefault()
     if (parseInt(e.target.parentElement.childNodes[1].value) > 2800) {
       MySwal.fire({
@@ -35,17 +38,15 @@ class Donate extends React.Component {
     }
     else
       this.setState({ totalEntered: !this.state.totalEntered })
-    this.setState({ total: e.target.parentElement.childNodes[1].value })
-  }
-
-  showAddress = (e) => {
-    e.preventDefault()
+    this.setState({ total: total + parseInt(e.target.parentElement.childNodes[1].value) })
     this.setState({ nameEntered: !this.state.nameEntered })
   }
 
   showBill = (e) => {
     e.preventDefault()
+    this.setState({ nameEntered: !this.state.nameEntered })
     this.setState({ addressEntered: !this.state.addressEntered })
+    this.setState({ showFEC: !this.state.showFEC })
   }
 
   donateNew = e => {
@@ -106,26 +107,24 @@ class Donate extends React.Component {
     }
 
     return (
-      <div>
+      <div className='donation-page'>
         <div className='donation-pitch'>
           <h2>THE TIME FOR SMALL IDEAS IS OVER</h2>
           We're fighting for big, structural change, and we're counting on grassroots donors to make it possible.
           Even $3 makes a difference.
         </div>
-        < div className='donation-page'>
+        < div >
           <div className='donations-form'>
             <div class='field'>
               <form class="ui form">
-                <label>Total:  </label>
-                <input type="text" name="total" maxlength="7" placeholder="total" />
-                <button onClick={e => this.showName(e)} class="ui button" style={buttons}>Next</button>
-                {this.state.totalEntered ? (
-                  <div> <label>First Name</label>
+                {this.state.total === 0 ? (
+                  <div>< label > Total:  </label>
+                    <input type="text" name="total" maxlength="7" placeholder="total" />
+                    <label>First Name</label>
                     <input type="text" name="name" placeholder="First Name" />
                     <label>Last Name</label>
                     <input type="text" name="surname" placeholder="Last Name" />
-                    <button onClick={(e) => this.showAddress(e)} class="ui button" style={buttons}>Next</button></div>
-                ) : null}
+                    <button onClick={(e) => this.showAddress(e)} class="ui button" style={buttons}>Next</button></div>) : null}
                 {this.state.nameEntered ? (
                   <div><label>Address: </label>
                     <input
@@ -195,21 +194,23 @@ class Donate extends React.Component {
             </div>
           </div>
         </div >
-        <div className='FEC'>
-          <p className='FEC-rules'>Contribution rules:</p>
-          <p>I am a U.S. citizen or lawfully admitted permanent resident (i.e., green card holder).</p>
-          <p>This contribution is made from my own funds, and funds are not being provided to me by another person or entity for the purpose of making this contribution.</p>
-          <p>I am making this contribution with my own personal credit card and not with a corporate or business credit card or a card issued to another person.</p>
-          <p>I am at least eighteen years old.</p>
-          <p>I am not a federal contractor.</p>
-          <p>This contribution is not made from the funds of a political action committee.</p>
-          <p>I am not an executive of a fossil fuel company.</p>
-          <p>I am not a registered Federal lobbyist.</p>
-          <p>I am not an executive of a health insurance or pharmaceutical company.</p>
-          <p>I am not a registered foreign agent.</p>
-          <p>Individuals may give a maximum of $5,600 per election cycle: $2,800 for the Primary + $2,800 for the General.</p>
-          <p>Contributions or gifts to political candidates are not deductible as charitable contributions for Federal income tax purposes.</p>
-        </div >
+        <div className='FEC-bar'>
+          <div className='FEC'>
+            <p className='FEC-rules'>Contribution rules:</p>
+            <p>I am a U.S. citizen or lawfully admitted permanent resident (i.e., green card holder).</p>
+            <p>This contribution is made from my own funds, and funds are not being provided to me by another person or entity for the purpose of making this contribution.</p>
+            <p>I am making this contribution with my own personal credit card and not with a corporate or business credit card or a card issued to another person.</p>
+            <p>I am at least eighteen years old.</p>
+            <p>I am not a federal contractor.</p>
+            <p>This contribution is not made from the funds of a political action committee.</p>
+            <p>I am not an executive of a fossil fuel company.</p>
+            <p>I am not a registered Federal lobbyist.</p>
+            <p>I am not an executive of a health insurance or pharmaceutical company.</p>
+            <p>I am not a registered foreign agent.</p>
+            <p>Individuals may give a maximum of $5,600 per election cycle: $2,800 for the Primary + $2,800 for the General.</p>
+            <p>Contributions or gifts to political candidates are not deductible as charitable contributions for Federal income tax purposes.</p>
+          </div >
+        </div>
       </div >
     )
   }
