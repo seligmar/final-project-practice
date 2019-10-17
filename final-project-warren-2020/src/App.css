@@ -62,6 +62,7 @@
   border-width: 1px;
 }
 
+
 .event-button {
   background-color: #b61b28;
   border-color: #232444;
@@ -386,6 +387,13 @@
   padding: 3%;
   margin-left: 25%; 
   margin-right: 37%
+  }
+
+.buttons-create-user {
+  text-align: center;
+  padding: 3%;
+  margin-left: 33%; 
+  margin-right: 30%
   }
   
   .field {

@@ -1,12 +1,26 @@
 import React from 'react'
 
 const NewSupporter = props => {
+  const xButton = {
+    position: 'relative',
+    left: '48.5%',
+    top: '0%'
+  }
+
+  const buttons = {
+    // border: '1%',
+    'background-color': '#b61b28',
+    color: '#fff',
+    'border-color': '#232444'
+  }
+
   return (
     <div className='login'>
-      <form onSubmit={e => props.LogInNewUser(e)} className='ui form'>
-        <div style={{ paddingBottom: '10px' }} class='field'>
+      <div class='field'>
+        <form onSubmit={e => props.LogInNewUser(e)} className='ui form'>
+          <button style={xButton} onClick={() => props.HideLogIn()}>X</button>
           <p>Join the fight with Liz!</p>
-          <label>Please Enter Your Name:</label>
+          <label>Please Enter Your Name: </label>
           <input
             style={{ width: 200 }}
             type='text'
@@ -14,7 +28,7 @@ const NewSupporter = props => {
             placeholder='username'
           />
           <br></br>
-          <label>Create Your Password:</label>
+          <label>Create Your Password: </label>
           <input
             style={{ width: 200 }}
             type='password'
@@ -22,20 +36,20 @@ const NewSupporter = props => {
             placeholder='password'
           />
           <br></br>
-          <label>Provide your email address:</label>
+          <label>Provide your email address: </label>
           <input
             style={{ width: 200 }}
             type='text'
             name='email'
             placeholder='email address' />
-          <br></br>
-          <button class='event-button' type='submit'>
-            Become a Supporter!
-      </button>
-          <button className='event-button' onClick={() => props.HideLogIn()}>Hide Login</button>
-        </div>
-      </form>
-    </div>
+          <div className='buttons-create-user'>
+            {/* <div className='ui buttons'> */}
+            <button className='small ui button' style={buttons} type='submit'>
+              Become a Supporter!</button>
+          </div>
+        </form>
+      </div >
+    </div >
   )
 }
 
