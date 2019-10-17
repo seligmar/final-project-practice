@@ -20,7 +20,7 @@ const Login = props => {
       <div class='field'>
         <form onSubmit={e => props.logIn(e)} className='ui form'>
           <button style={xButton} onClick={() => props.HideLogIn()}>X</button>
-          <p>Log In</p>
+          <h4>Log In</h4>
           <label>UserName: </label>
           <input
             style={{ width: 200 }}

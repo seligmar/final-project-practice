@@ -19,7 +19,7 @@ const NewSupporter = props => {
       <div class='field'>
         <form onSubmit={e => props.LogInNewUser(e)} className='ui form'>
           <button style={xButton} onClick={() => props.HideLogIn()}>X</button>
-          <p>Join the fight with Liz!</p>
+          <h4> Join the fight with Liz!</h4>
           <label>Please Enter Your Name: </label>
           <input
             style={{ width: 200 }}

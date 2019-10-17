@@ -46,7 +46,11 @@ class FindMyReps extends React.Component {
 
   render() {
     return (
-      <div> Hello World
+      <div>
+        <Link to="/donate/elizabethwarren2020" target="_top">
+          <div className='donationsBar'>
+            <h1 className="giving-text">Give Now</h1></div>
+        </Link>
         {this.state.renderReps ? <ShowReps reps={this.state.reps} /> : null}
         <EnterAddressForm callGoogleAPI={this.callGoogleAPI} />
       </div>
