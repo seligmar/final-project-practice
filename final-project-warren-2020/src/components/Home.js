@@ -3,6 +3,7 @@ import ReactPlayer from 'react-player'
 import { Link } from 'react-router-dom'
 import { TwitterTimelineEmbed } from 'react-twitter-embed'
 import WomensHealth from './WomensHealth'
+import IssuesBar from './IssuesBar'
 
 // import { TwitterTimelineEmbed, TwitterShareButton, TwitterFollowButton, TwitterHashtagButton, TwitterMentionButton, TwitterTweetEmbed, TwitterMomentShare, TwitterDMButton, TwitterVideoEmbed, TwitterOnAirButton } from 'react-twitter-embed';
 
@@ -44,41 +45,14 @@ class Home extends React.Component {
                 <p>― Elizabeth Warren</p></h2>
             </div>
             <div className='link-button'>
-              <Link to="/getinvolved/elizabethwarren2020" >
+              <Link to="/getinvolved/elizabethwarren2020" target="_top">
                 <button style={buttons} class='fluid ui button'>Get Involved Today</button>
               </Link>
             </div>
           </div>
         </div>
         {}
-        <div className='issues'>
-          <div class='ui three column grid'>
-            <div class='column'>
-              <div className='ui card'>
-                <img src='https://www.macleans.ca/wp-content/uploads/2018/07/abortion-rights-protest-1024x768-810x445.jpg' />
-                <Link to="/choice/elizabethwarren2020">
-                  <button className='button'>Learn More About Liz's Committment to Choice</button>
-                </Link>
-              </div>
-            </div>
-            <div class="column">
-              <div className='ui card'>
-                <img src='https://www.macleans.ca/wp-content/uploads/2018/07/abortion-rights-protest-1024x768-810x445.jpg' />
-                <Link to="/choice/elizabethwarren2020">
-                  <button className='button'>Learn More About Liz's Committment to Choice</button>
-                </Link>
-              </div>
-            </div>
-            <div class="column">
-              <div className='ui card'>
-                <img src='https://www.macleans.ca/wp-content/uploads/2018/07/abortion-rights-protest-1024x768-810x445.jpg' />
-                <Link to="/choice/elizabethwarren2020">
-                  <button className='button'>Learn More About Liz's Committment to Choice</button>
-                </Link>
-              </div>
-            </div>
-          </div>
-        </div >
+        <IssuesBar />
         {}
         <div className='twitter'>
           <div className='twitter-box'>

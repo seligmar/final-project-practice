@@ -12,6 +12,7 @@ import Menu from './Menu'
 import TopMenu from './components/TopMenu'
 import FindMyReps from './components/FindMyReps'
 import WomensHealth from './components/WomensHealth'
+import Labor from './components/Labor'
 
 const MySwal = withReactContent(Swal)
 
@@ -131,6 +132,9 @@ class App extends React.Component {
           />
           <Route path='/choice/elizabethwarren2020' component={routerProps =>
             <WomensHealth {...routerProps} />}
+          />
+          <Route path='/labor/elizabethwarren2020' component={routerProps =>
+            <Labor {...routerProps} />}
           />
           <Route path="/about/elizabethwarren2020" component={routerProps =>
             <About {...routerProps}
