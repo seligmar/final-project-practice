@@ -329,6 +329,18 @@
   padding-top: 1% 
 }
 
+.choice-image-box {
+  margin-top: 5%;
+  margin-left: 10%;
+  margin-right: 10%;
+}
+
+.issue-page-highlights {
+  padding-top: 5%;
+  padding-bottom: 5%;
+  text-align: center
+}
+
 .image-box {
   margin-top: 5%;
   margin-left: 10%;

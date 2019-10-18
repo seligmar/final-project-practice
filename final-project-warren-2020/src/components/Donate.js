@@ -145,7 +145,6 @@ class Donate extends React.Component {
                     <div style={header}>Please Enter Your Billing Address:</div>
                     <label>Address: </label>
                     <input
-
                       type='text'
                       name='addressLine1'
                       placeholder='address'

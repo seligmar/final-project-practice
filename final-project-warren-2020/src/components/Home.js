@@ -2,6 +2,7 @@ import React from 'react'
 import ReactPlayer from 'react-player'
 import { Link } from 'react-router-dom'
 import { TwitterTimelineEmbed } from 'react-twitter-embed'
+import WomensHealth from './WomensHealth'
 
 // import { TwitterTimelineEmbed, TwitterShareButton, TwitterFollowButton, TwitterHashtagButton, TwitterMentionButton, TwitterTweetEmbed, TwitterMomentShare, TwitterDMButton, TwitterVideoEmbed, TwitterOnAirButton } from 'react-twitter-embed';
 
@@ -40,6 +41,11 @@ class Home extends React.Component {
             </Link>
             <h1></h1>
           </div>
+        </div>
+        <div>
+          <Link to="/choice/elizabethwarren2020">
+            <button className='button'>Learn More About Liz's Committment to Choice</button>
+          </Link>
         </div>
         <div className='twitter'>
           <div className='twitter-box'>

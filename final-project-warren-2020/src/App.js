@@ -11,6 +11,7 @@ import withReactContent from 'sweetalert2-react-content'
 import Menu from './Menu'
 import TopMenu from './components/TopMenu'
 import FindMyReps from './components/FindMyReps'
+import WomensHealth from './components/WomensHealth'
 
 const MySwal = withReactContent(Swal)
 
@@ -126,8 +127,11 @@ class App extends React.Component {
               logIn={this.logIn}
               resetDonationsBar={this.resetDonationsBar}
               showDonationsBar={this.state.donationsBar}
-            />} />
-
+            />}
+          />
+          <Route path='/choice/elizabethwarren2020' component={routerProps =>
+            <WomensHealth {...routerProps} />}
+          />
           <Route path="/about/elizabethwarren2020" component={routerProps =>
             <About {...routerProps}
               closeGive={this.closeGive}
