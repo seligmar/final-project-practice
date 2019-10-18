@@ -8,10 +8,14 @@ const NewSupporter = props => {
   }
 
   const buttons = {
-    // border: '1%',
     'background-color': '#b61b28',
     color: '#fff',
     'border-color': '#232444'
+  }
+
+  const formHeader = {
+    'margin-bottom': '2%',
+    'text-decoration': 'underline'
   }
 
   return (
@@ -19,32 +23,27 @@ const NewSupporter = props => {
       <div class='field'>
         <form onSubmit={e => props.LogInNewUser(e)} className='ui form'>
           <button style={xButton} onClick={() => props.HideLogIn()}>X</button>
-          <h4> Join the fight with Liz!</h4>
+          <div style={formHeader}> Join the fight with Liz!</div>
           <label>Please Enter Your Name: </label>
           <input
-            style={{ width: 200 }}
             type='text'
             name='username'
             placeholder='username'
           />
-          <br></br>
           <label>Create Your Password: </label>
           <input
-            style={{ width: 200 }}
             type='password'
             name='password'
             placeholder='password'
           />
-          <br></br>
           <label>Provide your email address: </label>
           <input
-            style={{ width: 200 }}
             type='text'
             name='email'
             placeholder='email address' />
           <div className='buttons-create-user'>
             {/* <div className='ui buttons'> */}
-            <button className='small ui button' style={buttons} type='submit'>
+            <button className='fluid ui button' style={buttons} type='submit'>
               Become a Supporter!</button>
           </div>
         </form>
