@@ -60,6 +60,7 @@
   /* background-image: url('./images/MenuBar.jpg'); */
   border-color: #b7e4cf;
   border-width: 1px;
+  font-size: 16px
 }
 
 
@@ -458,6 +459,14 @@
   /* margin-left: 10%;
   margin-right: 10%; */
   }
+
+  .login-form-border {
+    border-color: #232444; 
+    border-style: solid; 
+    border-width: 10px;
+    /* margin-left: 10%;
+    margin-right: 10%; */
+    }
 
   .my-reps {
     padding-top: 10%;
