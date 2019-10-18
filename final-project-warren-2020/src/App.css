@@ -212,7 +212,9 @@
 .quote-grid {
   display: grid;
   grid-template-columns: 50% 0%;
-  padding-top: 4%; 
+}
+
+.quote-div {
   margin-left: 10%;
   margin-right: 10%;
   border-style: solid;
@@ -220,6 +222,7 @@
   border-color:#b7e4cf;
   margin-top: 5%;
   background-image: url('./images/34b0af99.jpg')
+
 }
 
 .quote-img {
@@ -348,6 +351,7 @@
   text-decoration: underline;
   font-style: normal;
 }
+
 .li-content {
     margin-left: 12%;
     margin-right: 12%;
@@ -535,13 +539,10 @@ li {
   }
 
   .social-media {
-     display: grid; 
-     grid-template-columns: auto auto auto auto; 
-     text-align: center; 
-    margin-left: 35%;
-    margin-right: 35%;
-    padding-top: 2%;
-    padding-bottom: 2%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
   }
   
   .footer {

@@ -7,7 +7,7 @@ const EnterAddressForm = props => {
   }
 
   const formPadding = {
-    padding: '2%',
+    padding: '2%'
   }
 
   const border = {

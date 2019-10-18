@@ -1,6 +1,16 @@
 import React from 'react'
 import { Link } from 'react-router-dom'
 
+const buttonStyle = {
+  width: '100px',
+  display: 'flex',
+  justifyContent: 'space-between',
+  alignItems: 'center',
+  margin: '0 10px',
+  'margin-top': '4%',
+  'margin-bottom': '4%'
+}
+
 class Menu extends React.Component {
   render() {
     return (
@@ -40,19 +50,20 @@ class Menu extends React.Component {
           <div className='four ui icon buttons'>
             <div className='social-media'>
               <a href="https://www.facebook.com/ElizabethWarren/" target="_blank">
-                <button class="ui facebook button">
+                <button style={buttonStyle} class="ui facebook button">
                   <i class="facebook icon"></i>
-                  Facebook</button>
+                  Facebook
+                </button>
               </a>
               <a href='https://twitter.com/ewarren' target="_blank">
-                <button class="ui twitter button">
+                <button style={buttonStyle} class="ui twitter button">
                   <i class="twitter icon"></i>Twitter</button></a>
               <a href='https://www.instagram.com/elizabethwarren/' target="_blank">
-                <button class="ui instagram button">
+                <button style={buttonStyle} class="ui instagram button">
                   <i class="instagram icon"></i>Instagram</button></a>
 
               <a href='https://www.youtube.com/channel/UCrj-0FxK19tgUR2EbHkBBGg' target="_blank">
-                <button class="ui  youtube button">
+                <button style={buttonStyle} class="ui  youtube button">
                   <i class="youtube icon" ></i>
                   YouTube</button></a>
             </div>
