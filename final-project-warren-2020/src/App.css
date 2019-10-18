@@ -336,9 +336,29 @@
 }
 
 .issue-page-highlights {
-  padding-top: 5%;
-  padding-bottom: 5%;
-  text-align: center
+  padding-top: 2%;
+  padding-bottom: 2%;
+  text-align: center;
+  border-bottom: 5px solid rgb(183, 228, 207);
+  border-top: 5px solid rgb(183, 228, 207);
+  font-style: normal;
+}
+
+.issue-page-underline {
+  text-decoration: underline;
+  font-style: normal;
+}
+.li-content {
+    margin-left: 12%;
+    margin-right: 12%;
+    /* padding-top: 3%;
+    padding-bottom: 3%; */
+    font-style: normal;
+    font-size: 15px;
+}
+
+li {
+  font-style: normal;
 }
 
 .image-box {
