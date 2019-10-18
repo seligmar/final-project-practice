@@ -16,8 +16,7 @@ const IssuesBar = () => {
               <div style={{ color: 'black' }} class="content">
                 <p class="header">Union Jobs are American Jobs</p>
                 <div class="description">
-                  Matthew is an interior designer living in New York. If I fill this
-                  with content will this work to fit my div?
+                  It’s not a question of more government or less government. It’s about who government works for.
               </div>
               </div>
               <Link to="/labor/elizabethwarren2020" target="_top">
@@ -55,10 +54,10 @@ const IssuesBar = () => {
               </div>
               <div style={{ color: 'black' }} class="content">
                 <p class="header">Women's Rights are Human Rights</p>
-                <div class="description">
-                  Matthew is an interior designer living in New York. If I fill this
-                  with content will this work to fit my div?
-              </div>
+                <div class="description" >
+                  Congress should act to ensure that the will of the people- the right to choose- remains the law of the land.
+
+                </div>
               </div>
               <Link to="/choice/elizabethwarren2020" target="_top">
                 <button style={{ 'margin-bottom': '1%' }} className='button'>Choice</button>

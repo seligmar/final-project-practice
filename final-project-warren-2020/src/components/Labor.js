@@ -34,9 +34,10 @@ const Labor = () => {
             And General Electric recently shut down an industrial engine factory in Wisconsin and shipped the jobs to Canada.
             The list goes on and on.</h3>
 
-          <h3>
+          <h3 className="issue-page-highlights">
             These “American” companies show only one real loyalty:
-            to the short-term interests of their shareholders, a third of whom are foreign investors.
+            to the short-term interests of their shareholders, a third of whom are foreign investors.</h3>
+          <h3>
             If they can close up an American factory and ship jobs overseas to save a nickel,
             that’s exactly what they will do — abandoning loyal American workers and hollowing out American cities along the way.
         </h3>
@@ -45,9 +46,6 @@ const Labor = () => {
             And of course, they ignore those same supposed principles and intervene regularly to protect the interests of multinational corporations and international capital.
         </h3>
           <h3 className="issue-page-highlights">The result? Millions of good jobs lost overseas and a generation of stagnant wages, growing inequality, and sluggish economic growth. </h3>
-          <h3>
-            President Trump has packed the courts with extreme, anti-choice judges. Senate Republicans stole a Supreme Court seat and rammed through the confirmation of Justice Kavanaugh last year in order to cement an anti-choice majority on the Supreme Court.
-        </h3>
           <h3>
             If Washington wants to put a stop to this, it can.
             If we want faster growth, stronger American industry, and more good American jobs,
