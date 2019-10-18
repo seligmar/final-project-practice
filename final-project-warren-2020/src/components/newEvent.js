@@ -11,15 +11,6 @@ const GOOGLE_API_KEY = 'AIzaSyBuNd5baj7zHX5OmBtTYoBkhW_a4WN81S8'
 
 class NewEvent extends React.Component {
 
-  findToday = () => {
-    const today = new Date();
-    const dd = String(today.getDate()).padStart(2, '0');
-    const mm = String(today.getMonth() + 1).padStart(2, '0'); //January is 0!
-    const yyyy = today.getFullYear()
-    const todaySDATE = mm + dd + yyyy
-    return todaySDATE
-  }
-
   newEvent = e => {
     e.preventDefault()
     if (!this.props.user) {
@@ -193,82 +184,84 @@ class NewEvent extends React.Component {
     const buttons = {
       'background-color': '#b61b28',
       color: '#fff',
-      'margin-top': '3%',
-      'margin-left': '10%',
-      'margin-right': '55%'
-      // 'margin-bottom': '1%'
+      'margin-top': '3%'
     }
 
+    const formHeader = {
+      'margin-bottom': '2%',
+      'text-decoration': 'underline'
+    }
+    const formHeader2 = {
+      'margin-top': '3%',
+      'margin-bottom': '2%',
+      'text-decoration': 'underline'
+    }
     const formPadding = {
       padding: '5%',
       'margin-top': '3%',
-      'margin-bottom': '3%'
+      'margin-bottom': '3%',
     }
+
     return (
-      < div className='login' >
-        <div class='field'>
-          <form onSubmit={e => this.newEvent(e)} className='ui form' style={formPadding}>
-            <h4>Let Us Know What You Have Planned!</h4>
-            <label>Title:{' '} </label>
-            <input
-              style={{ width: 200 }}
-              type='text'
-              name='title'
-              placeholder='Event Title'
-            />  <br></br>
-            <label>Start Time</label>
-            <input
-              style={{ width: 200 }}
-              type='text'
-              name='start'
-              placeholder='Start Time 00:00'
-            />  <br></br>
-            <label>End Time</label>
-            <input
-              style={{ width: 200 }}
-              type='text'
-              name='end'
-              placeholder='End Time 00:00'
-            />  <br></br>
-            <label>Event Date: </label>
-            <input
-              style={{ width: 200 }}
-              type='date'
-              name='date'
-              min="2019-10-17"
-              max="2020-11-03"
-            />
-            <h4>Please Enter the Address Where the Event Will Occor:</h4>
-            <label>Address: </label>
-            <input
-              style={{ width: 200 }}
-              type='text'
-              name='addressLine1'
-              placeholder='address line 1'
-            />  <br></br>
-            <label>City: </label>
-            <input
-              style={{ width: 200 }}
-              type='text'
-              name='city'
-              placeholder='city'
-            />  <br></br>
-            <label>State: </label>
-            <input
-              style={{ width: 200 }}
-              type='text'
-              name='state'
-              placeholder='State Abreviation'
-            />   <br></br>
-            <label>Zip: </label>
-            <input
-              style={{ width: 200 }}
-              type='text'
-              name='zip'
-              placeholder='Zip Code'
-            /><br></br>
-            <button className='small ui button' style={buttons} type='submit'>Submit</button>
-          </form>
+      <div className='event-login'>
+        <div class='event-field'>
+          <div className='form-border'>
+            <form onSubmit={e => this.newEvent(e)} className='ui form' style={formPadding}>
+              <div style={formHeader}>Let Us Know What You Have Planned!</div>
+              <label>Title:{' '} </label>
+              <input
+                type='text'
+                name='title'
+                placeholder='Event Title'
+              />
+              <label>Start Time</label>
+              <input
+                type='text'
+                name='start'
+                placeholder='Start Time 00:00'
+              />
+              <label>End Time</label>
+              <input
+                type='text'
+                name='end'
+                placeholder='End Time 00:00'
+              />  <br></br><br></br>
+              <label>Event Date: </label>
+              <input
+                type='date'
+                name='date'
+                min="2019-10-17"
+                max="2020-11-03"
+              /><br></br>
+              <div style={formHeader2}>Please Enter the Address Where the Event Will Occor:</div>
+              <label>Address: </label>
+              <input
+                type='text'
+                name='addressLine1'
+                placeholder='Address'
+              />
+              <label>City: </label>
+              <input
+                type='text'
+                name='city'
+                placeholder='City'
+              />
+              <label>State: </label>
+              <input
+                type='text'
+                name='state'
+                placeholder='State Abreviation'
+              />
+              <label>Zip: </label>
+              <input
+
+                type='text'
+                name='zip'
+                placeholder='Zip Code'
+              />
+              <button className='fluid ui button' style={buttons} type='submit'>Submit</button>
+            </form>
+          </div>
         </div>
       </div >
     )
