@@ -367,6 +367,11 @@
   color: black
 }
 
+.event-div-style {
+  padding-top: 1%;
+  padding-bottom: 1%
+}
+
 /* LOGIN */
 
 .login {  
@@ -407,9 +412,8 @@
   .event-field {
     background-color: #fff;
     color: black;
-    /* margin-left: 1%;
-    margin-right: 1% */
   }
+
   /* MENU  */
 
  .link {
@@ -423,6 +427,7 @@
   .Menu {
     color: #fff; 
     background-color: #b61b28;
+    max-height: 200vh;
   }
 
   .menu-grid {

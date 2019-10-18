@@ -5,7 +5,7 @@ const ListEvents = props => {
   return (
     <div>
       {props.events.map(event => (
-        <div style={{ 'padding-top': '1%' }} key={event.id}>
+        <div className='event-div-style' key={event.id}>
           <div className='event-div'>
             <div className='ui fluid card'>
               <div className='class-content'>

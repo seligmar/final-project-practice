@@ -197,7 +197,7 @@ class NewEvent extends React.Component {
       'text-decoration': 'underline'
     }
     const formPadding = {
-      padding: '5%',
+      padding: '2%',
       'margin-top': '3%',
       'margin-bottom': '3%',
     }
