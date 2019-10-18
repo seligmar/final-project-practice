@@ -30,12 +30,12 @@ class Home extends React.Component {
             height='80%'
           />
         </div>
-        <div className='quote-grid'>
-          <div className='quote-img'>
-            <img className='img' alt="Elizabeth Warren in front of American flag"
-              src='https://www.usnews.com/dims4/USNEWS/692809a/2147483647/crop/4050x2658%2B0%2B3/resize/640x420/quality/85/?url=http%3A%2F%2Fcom-usnews-beam-media.s3.amazonaws.com%2F94%2F29%2Fe66a0d5349cd8c3dbbce6ac04d92%2F190911-2020warren-editorial.warren.JPG' />
-          </div>
-          <div className='quote-div'>
+        <div className='quote-div'>
+          <div className='quote-grid'>
+            <div className='quote-img'>
+              <img className='img' alt="Elizabeth Warren in front of American flag"
+                src='https://www.usnews.com/dims4/USNEWS/692809a/2147483647/crop/4050x2658%2B0%2B3/resize/640x420/quality/85/?url=http%3A%2F%2Fcom-usnews-beam-media.s3.amazonaws.com%2F94%2F29%2Fe66a0d5349cd8c3dbbce6ac04d92%2F190911-2020warren-editorial.warren.JPG' />
+            </div>
             <div className='grid-quote'>
               <h2 className='quote-text'>
                 <p>There's a lot at stake for our democracy.{' '}
@@ -43,19 +43,43 @@ class Home extends React.Component {
                 <p>I'm not afraid.</p>
                 <p>― Elizabeth Warren</p></h2>
             </div>
-            <Link to="/getinvolved/elizabethwarren2020">
-              <button style={buttons} class='fluid ui button'>Get Involved Today</button>
-            </Link>
+            <div className='link-button'>
+              <Link to="/getinvolved/elizabethwarren2020" >
+                <button style={buttons} class='fluid ui button'>Get Involved Today</button>
+              </Link>
+            </div>
           </div>
         </div>
-        <div style={{ 'padding-top': '5%' }} className='issues-grid'>
-          <div className='ui-card'>
-            <img src='https://www.macleans.ca/wp-content/uploads/2018/07/abortion-rights-protest-1024x768-810x445.jpg' />
-            <Link to="/choice/elizabethwarren2020">
-              <button className='button'>Learn More About Liz's Committment to Choice</button>
-            </Link>
+        {}
+        <div className='issues'>
+          <div class='ui three column grid'>
+            <div class='column'>
+              <div className='ui card'>
+                <img src='https://www.macleans.ca/wp-content/uploads/2018/07/abortion-rights-protest-1024x768-810x445.jpg' />
+                <Link to="/choice/elizabethwarren2020">
+                  <button className='button'>Learn More About Liz's Committment to Choice</button>
+                </Link>
+              </div>
+            </div>
+            <div class="column">
+              <div className='ui card'>
+                <img src='https://www.macleans.ca/wp-content/uploads/2018/07/abortion-rights-protest-1024x768-810x445.jpg' />
+                <Link to="/choice/elizabethwarren2020">
+                  <button className='button'>Learn More About Liz's Committment to Choice</button>
+                </Link>
+              </div>
+            </div>
+            <div class="column">
+              <div className='ui card'>
+                <img src='https://www.macleans.ca/wp-content/uploads/2018/07/abortion-rights-protest-1024x768-810x445.jpg' />
+                <Link to="/choice/elizabethwarren2020">
+                  <button className='button'>Learn More About Liz's Committment to Choice</button>
+                </Link>
+              </div>
+            </div>
           </div>
         </div >
+        {}
         <div className='twitter'>
           <div className='twitter-box'>
             <TwitterTimelineEmbed
