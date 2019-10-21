@@ -7,7 +7,7 @@ const DONATE_URL = BASEURL + 'donate'
 const NEW_EVENT_URL = BASEURL + 'new-event'
 const RSVP_URL = BASEURL + 'rsvp'
 
-const GOOGLE_API_KEY = 'AIzaSyBuNd5baj7zHX5OmBtTYoBkhW_a4WN81S8'
+// const GOOGLE_API_KEY = 'AIzaSyBuNd5baj7zHX5OmBtTYoBkhW_a4WN81S8'
 
 const get = url =>
   fetch(url, {
