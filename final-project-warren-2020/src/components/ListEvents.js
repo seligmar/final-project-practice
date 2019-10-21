@@ -1,9 +1,11 @@
 import React from 'react'
 
 const ListEvents = props => {
+  const events =
+    props.filteredEvents ? props.events.filter(event => event.zip === props.zip) : props.events
   return (
     <div>
-      {props.events.map(event => (
+      {events.map(event => (
         <div className='event-div-style' key={event.id}>
           <div className='event-div'>
             <div className='ui fluid card'>

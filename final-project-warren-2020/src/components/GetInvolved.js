@@ -21,7 +21,8 @@ class GetInvolved extends React.Component {
     user: false,
     newUser: false,
     createEvent: false,
-    zip: ''
+    zip: '',
+    filteredEvents: false
   }
 
   createEventState = () => {
@@ -82,15 +83,17 @@ class GetInvolved extends React.Component {
   }
 
   filterEvents = () => {
-    const filteredEvents = this.state.events.filter(event =>
-      event.zip === this.state.zip)
-    this.setState({ events: filteredEvents })
+    this.setState({ filteredEvents: !this.state.filteredEvents })
   }
 
   getZip = e => {
     e.preventDefault()
     const newZip = e.target.zip.value
     this.setState({ zip: newZip }, this.filterEvents)
+  }
+
+  showAll = () => {
+    this.setState({ zip: '' }, this.filterEvents)
   }
 
   render() {
@@ -101,7 +104,7 @@ class GetInvolved extends React.Component {
             <h1 className="giving-text">Give Now</h1></div>
         </Link>
         <NavBar
-          getEvents={this.getEvents}
+          showAll={this.showAll}
           getZip={this.getZip} />
         {this.props.username ? (
           <button className='button' onClick={() => this.createEventState()}>
@@ -131,6 +134,8 @@ class GetInvolved extends React.Component {
         {
           this.state.showEvent ? (
             <ListEvents
+              filteredEvents={this.state.filteredEvents}
+              zip={this.state.zip}
               events={this.state.events} rsvp={this.rsvp} />
           ) : null
         }

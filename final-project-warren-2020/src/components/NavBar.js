@@ -35,7 +35,7 @@ const NavBar = props => {
             placeholder='Zip'
           />
           <button style={buttons}>  Find Events Near Me</button>
-          <button style={buttons} onClick={() => props.getEvents}>  Show All Events</button>
+          <button style={buttons} onClick={() => props.showAll}>  Show All Events</button>
         </form>
         <div style={{ 'padding-bottom': '2%' }}></div>
       </div>
