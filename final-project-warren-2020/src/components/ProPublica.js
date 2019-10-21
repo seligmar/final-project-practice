@@ -37,19 +37,61 @@ class ProPublica extends React.Component {
   showResults = () => this.setState({ showResults: true })
 
   render() {
+    const divStyle = {
+      color: '#232444',
+      'height': '40vh',
+    }
+
     return (
-      <div className='show-reps'>
+      <div className='issues'>
+        <h1 style={{ 'color': '#232444' }}>News</h1>
         {this.state.showResults ? (
-          <h4>{this.state.news[0].date}
-            {this.state.news[0].title}
-            <p>Call:{' '}
-              {this.state.news[0].url}</p>
-            <div></div>
-            {this.state.news[1].date}:
-              {this.state.news[1].title}
-            Call:{' '}
-            {this.state.news[0].url}</h4>) : null}
-      </div>
+          <div class='ui three column grid'>
+            <div class="column">
+              <div className='event-div-style' style={{ 'margin-left': '5%' }}>
+                <div className='ui card'>
+                  <div style={divStyle} class="content">
+                    <div class="description">
+                      <h3>{this.state.news[0].date}</h3>
+                      <p class="header">{this.state.news[0].title}</p>
+                      <a href={this.state.news[0].url}>Read More</a>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div >
+            <div class="column">
+              <div className='event-div-style' style={{ 'margin-left': '5%' }}>
+                <div className='ui card'>
+                  <div style={divStyle} class="content">
+                    <div class="description">
+                      <h3> {this.state.news[1].date} </h3>
+
+                      <p class="header">{this.state.news[1].title}</p>
+                      <a href={this.state.news[1].url}> Read More</a>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div >
+            <div class="column">
+              <div className='event-div-style' style={{ 'margin-left': '5%' }}>
+                <div className='ui card'>
+                  <div style={divStyle} class="content">
+                    <div class="description">
+                      <h3>   {this.state.news[2].date} </h3>
+                      <p class="header">{this.state.news[2].title}</p>
+                      <a href={this.state.news[2].url}> Read More</a>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div >
+          </div>
+        ) : null
+        }
+      </div >
+
     )
   }
 }
