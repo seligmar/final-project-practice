@@ -603,7 +603,10 @@ li {
     margin-bottom: 3%;
     margin-left: 10%;
     margin-right: 10%;
-    background-color: #b61b28;
+    border-color: #b61b28;
+    border-width: 10px;
+    border-style: solid;
+    background-color: #fff;
     color: #232444;
   }
 

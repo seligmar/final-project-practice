@@ -2,8 +2,8 @@ import React from 'react'
 import ReactPlayer from 'react-player'
 import { Link } from 'react-router-dom'
 import { TwitterTimelineEmbed } from 'react-twitter-embed'
-import WomensHealth from './WomensHealth'
 import IssuesBar from './IssuesBar'
+import ProPublica from './ProPublica'
 
 // import { TwitterTimelineEmbed, TwitterShareButton, TwitterFollowButton, TwitterHashtagButton, TwitterMentionButton, TwitterTweetEmbed, TwitterMomentShare, TwitterDMButton, TwitterVideoEmbed, TwitterOnAirButton } from 'react-twitter-embed';
 
@@ -61,6 +61,7 @@ class Home extends React.Component {
               screenName="ewarren"
               options={{ height: 400 }}
             /></div></div>
+        <ProPublica />
         <div className='youtube-block-grid'>
           <div className='youtube'>
             <iframe title='Dream Big'
