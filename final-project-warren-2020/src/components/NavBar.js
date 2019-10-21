@@ -23,10 +23,12 @@ const NavBar = props => {
     'text-decoration': 'underline'
   }
 
+
+
   return <div>
     <div style={margins} className='login'>
       <div style={border} class='field'>
-        <form onSubmit={(e) => props.getZip(e)}>
+        <form className='ui form'>
           <div style={formHeader}>Find Events Near Me!</div>
           <label>Zip </label>
           <input
@@ -34,11 +36,14 @@ const NavBar = props => {
             name='zip'
             placeholder='Zip'
           />
-          <button style={buttons}>  Find Events Near Me</button>
-          <button style={buttons} onClick={() => props.showAll}>  Show All Events</button>
+          <p></p>
+          {props.filteredEvents ?
+            <button className='ui button' style={buttons} onClick={() => props.showAll()}>  Show All Events</button>
+            : <button className='ui button' onClick={e => props.getZip(e)} style={buttons}>  Find Events Near Me</button>}
         </form>
         <div style={{ 'padding-bottom': '2%' }}></div>
       </div>
+
     </div >
   </div >
 }

@@ -22,7 +22,8 @@ class GetInvolved extends React.Component {
     newUser: false,
     createEvent: false,
     zip: '',
-    filteredEvents: false
+    filteredEvents: false,
+    componentDidMountState: false
   }
 
   createEventState = () => {
@@ -32,11 +33,11 @@ class GetInvolved extends React.Component {
   getEvents = () => API.getEvents().then(events => this.setState({ events }, this.showEvent))
 
 
-  showEvent = () => this.setState({ showEvent: true })
+  showEvent = () => this.setState({ showEvent: true }, this.showMap)
 
-  // ,this.showMap)
+  showMap = () => this.setState({ showMap: !this.state.showMap }, this.showFire)
 
-  showMap = () => this.setState({ showMap: !this.state.showMap })
+  showFire = () => this.setState({ componentDidMountState: true })
 
   componentDidMount() {
     this.getEvents()
@@ -88,7 +89,7 @@ class GetInvolved extends React.Component {
 
   getZip = e => {
     e.preventDefault()
-    const newZip = e.target.zip.value
+    const newZip = e.target.parentElement.childNodes[2].value
     this.setState({ zip: newZip }, this.filterEvents)
   }
 
@@ -104,6 +105,8 @@ class GetInvolved extends React.Component {
             <h1 className="giving-text">Give Now</h1></div>
         </Link>
         <NavBar
+          showFire={this.state.showFire}
+          filteredEvents={this.state.filteredEvents}
           showAll={this.showAll}
           getZip={this.getZip} />
         {this.props.username ? (
@@ -111,6 +114,8 @@ class GetInvolved extends React.Component {
             Create Event</button>) : null}
         <div className='map-element'>
           <MapFragment
+            filteredEvents={this.state.filteredEvents}
+            zip={this.state.zip}
             showMap={this.state.showMap}
             events={this.state.events}
           />

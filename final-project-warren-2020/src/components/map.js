@@ -16,9 +16,11 @@ const GOOGLE_API_KEY = 'AIzaSyBuNd5baj7zHX5OmBtTYoBkhW_a4WN81S8'
 const MapFragment = props => {
   const Map = () => {
     const [selectedEvent, setSelectedEvent] = useState(null)
+    const events =
+      props.filteredEvents ? props.events.filter(event => event.zip === props.zip) : props.events
     return (
       <GoogleMap defaultZoom={3} defaultCenter={{ lat: 41, lng: -93 }}>
-        {props.events.map(event => (
+        {events.map(event => (
           <Marker
             key={event.id}
             position={{ lat: event.lat, lng: event.lng }}
