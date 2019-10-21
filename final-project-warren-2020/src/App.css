@@ -485,7 +485,7 @@ li {
   .Menu {
     color: #fff; 
     background-color: #b61b28;
-    max-height: 200vh;
+    max-height: 100vh;
   }
 
   .menu-grid {

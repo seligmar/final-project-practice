@@ -1,7 +1,6 @@
 import React from 'react'
 
 const ListEvents = props => {
-
   return (
     <div>
       {props.events.map(event => (

@@ -7,6 +7,7 @@ import API from '../API'
 import NewEvent from './NewEvent'
 import Swal from 'sweetalert2'
 import withReactContent from 'sweetalert2-react-content'
+import NavBar from './NavBar'
 
 const MySwal = withReactContent(Swal)
 
@@ -19,7 +20,8 @@ class GetInvolved extends React.Component {
     showMap: false,
     user: false,
     newUser: false,
-    createEvent: false
+    createEvent: false,
+    zip: ''
   }
 
   createEventState = () => {
@@ -28,7 +30,10 @@ class GetInvolved extends React.Component {
 
   getEvents = () => API.getEvents().then(events => this.setState({ events }, this.showEvent))
 
+
   showEvent = () => this.setState({ showEvent: true })
+
+  // ,this.showMap)
 
   showMap = () => this.setState({ showMap: !this.state.showMap })
 
@@ -76,6 +81,18 @@ class GetInvolved extends React.Component {
     })
   }
 
+  filterEvents = () => {
+    const filteredEvents = this.state.events.filter(event =>
+      event.zip === this.state.zip)
+    this.setState({ events: filteredEvents })
+  }
+
+  getZip = e => {
+    e.preventDefault()
+    const newZip = e.target.zip.value
+    this.setState({ zip: newZip }, this.filterEvents)
+  }
+
   render() {
     return (
       <div>
@@ -83,6 +100,9 @@ class GetInvolved extends React.Component {
           <div className='donationsBar'>
             <h1 className="giving-text">Give Now</h1></div>
         </Link>
+        <NavBar
+          getEvents={this.getEvents}
+          getZip={this.getZip} />
         {this.props.username ? (
           <button className='button' onClick={() => this.createEventState()}>
             Create Event</button>) : null}
@@ -103,16 +123,17 @@ class GetInvolved extends React.Component {
         }
         {
           this.state.createEvent ? (
-            <NewEvent user={this.props.username}
+            <NewEvent
+              user={this.props.username}
               hideForm={this.createEventState} />
           ) : null
         }
         {
           this.state.showEvent ? (
-            <ListEvents events={this.state.events} rsvp={this.rsvp} />
+            <ListEvents
+              events={this.state.events} rsvp={this.rsvp} />
           ) : null
         }
-
       </div>
     )
   }

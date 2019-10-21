@@ -51,9 +51,7 @@ class Home extends React.Component {
             </div>
           </div>
         </div>
-        {}
         <IssuesBar />
-        {}
         <div className='twitter'>
           <div className='twitter-box'>
             <TwitterTimelineEmbed

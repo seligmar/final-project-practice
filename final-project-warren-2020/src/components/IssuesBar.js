@@ -5,8 +5,8 @@ const IssuesBar = () => {
 
   const divStyle = {
     color: '#232444',
-    'height': '40vh',
-  'background-size': 'contain'
+    'height': '25vh',
+
 
   }
 
@@ -14,12 +14,17 @@ const IssuesBar = () => {
     'height': '15wh'
   }
 
+  const card = {
+    'box-shadow': 'none',
+   'background-size': 'contain'
+  }
+
   return (
     <div className='issues'>
       <div class='ui three column grid'>
         <div class="column">
           <div className='event-div-style' style={{ 'margin-left': '5%' }}>
-            <div className='ui card'>
+            <div style={card} className='ui card'>
               <div style={imgDiv} className='ui medium image'>
                 <img
                   src='
@@ -39,7 +44,7 @@ const IssuesBar = () => {
         </div>
         <div class="column">
           <div className='event-div-style' >
-            <div className='ui card'>
+            <div style={card} className='ui card'>
               <div className='ui medium image'>
                 <img style={imgDiv}
                   src='https://www.commondreams.org/sites/default/files/styles/cd_large/public/headlines/time_for_medicare_for_all1.jpg?itok=AtWHGu63' />
@@ -58,7 +63,7 @@ const IssuesBar = () => {
         </div>
         <div class="column">
           <div className='event-div-style' style={{ 'margin-right': '5%' }}>
-            <div className='ui card'>
+            <div style={card} className='ui card'>
               <div style={imgDiv} className='ui medium image'>
                 <img
                   src='https://www.macleans.ca/wp-content/uploads/2018/07/abortion-rights-protest-1024x768-810x445.jpg' />
