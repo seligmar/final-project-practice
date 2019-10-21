@@ -34,6 +34,30 @@ short of limit, ask to give $20 */}
       <Link to="/about/elizabethwarren2020">
         <button className="button-login" >About</button>
       </Link>
+      <div class="ui compact menu">
+        <div class="ui simple dropdown item">
+          Issues
+    <i class="dropdown icon"></i>
+          <div class="menu">
+            <div class="item">
+              <Link to="/healthcare/elizabethwarren2020">
+                <button className="button-login" >healthcare</button>
+              </Link>
+            </div>
+            <div class="item">
+              <Link to="/choice/elizabethwarren2020">
+                <button className="button-login" >Choice</button>
+              </Link>
+            </div>
+            <div class="item">
+              <Link to="/labor/elizabethwarren2020">
+                <button className="button-login" >Labor</button>
+              </Link>
+            </div>
+          </div>
+        </div>
+      </div>
+
       <Link to="/my-reps/elizabethwarren2020">
         <button className="button-login" >Find My Reps</button>
       </Link>

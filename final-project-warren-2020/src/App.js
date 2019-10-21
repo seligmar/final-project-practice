@@ -13,6 +13,7 @@ import TopMenu from './components/TopMenu'
 import FindMyReps from './components/FindMyReps'
 import WomensHealth from './components/WomensHealth'
 import Labor from './components/Labor'
+import Healthcare from './components/Heathcare'
 
 const MySwal = withReactContent(Swal)
 
@@ -135,6 +136,9 @@ class App extends React.Component {
           />
           <Route path='/labor/elizabethwarren2020' component={routerProps =>
             <Labor {...routerProps} />}
+          />
+          <Route path='/healthcare/elizabethwarren2020' component={routerProps =>
+            <Healthcare {...routerProps} />}
           />
           <Route path="/about/elizabethwarren2020" component={routerProps =>
             <About {...routerProps}

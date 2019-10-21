@@ -29,18 +29,17 @@ const IssuesBar = () => {
           <div className='event-div-style' >
             <div className='ui fluid card'>
               <div className='ui medium image'>
-                <img
-                  src='https://www.macleans.ca/wp-content/uploads/2018/07/abortion-rights-protest-1024x768-810x445.jpg' />
+                <img style={{ 'padding-bottom': '5%' }}
+                  src='https://www.commondreams.org/sites/default/files/styles/cd_large/public/headlines/time_for_medicare_for_all1.jpg?itok=AtWHGu63' />
               </div>
               <div style={{ color: 'black' }} class="content">
-                <p class="header">Daniel Louise</p>
+                <p class="header">HealthCare is a Basic Human Right</p>
                 <div class="description">
-                  Matthew is an interior designer living in New York. If I fill this
-                  with content will this work to fit my div?
+                  Medicare for All is the best way to give every single person in this country a guarantee of high-quality health care.   That's why Elizabeth will fight for Medicare for All.
               </div>
               </div>
               <Link to="/choice/elizabethwarren2020" target="_top">
-                <button className='button'>Choice</button>
+                <button className='button'>HealthCare</button>
               </Link>
             </div>
           </div>
