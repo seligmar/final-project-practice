@@ -63,6 +63,16 @@
   font-size: 16px
 }
 
+.button-dropdown {
+  color: #232444;
+  text-align: left;
+  background-color: #b7e4cf;
+  border-color: #b7e4cf;
+  padding: 7%;
+  padding-top: 10%;
+  font-size: 16px
+}
+
 
 .event-button {
   background-color: #b61b28;

@@ -9,6 +9,21 @@ const TopMenu = props => {
     left: '2%',
     top: '2%'
   }
+
+  const dropdown = {
+    'background-color': '#b7e4cf',
+    'color': '#232444',
+    'font-size': '1.2rem',
+    'border-color': '#b7e4cf',
+    'padding- left': '4%',
+    'padding - right': '4%'
+  }
+  const dropdown1 = {
+    'background-color': '#b7e4cf',
+    'color': '#232444',
+    'text-align': 'left'
+  }
+
   return (
     <div className='top-menu'>
 
@@ -21,10 +36,28 @@ short of limit, ask to give $20 */}
         <button className="button-login" onClick={() => props.logout()}>Log Out</button>
         : <button className="button-login" onClick={() => props.showLogIn()}>Log In</button>
       }
-
       <Link to="/elizabethwarren2020">
         <button className="button-login" >Home</button>
       </Link>
+      <div style={dropdown} class="ui compact menu">
+        <div class="ui simple dropdown item">
+          Issues
+    <i class="dropdown icon"></i>
+          <div style={dropdown1} class="menu">
+            <div class="item">
+              <Link to="/healthcare/elizabethwarren2020" >
+                <div className="button-dropdown" >HealthCare</div>
+              </Link>
+              <Link to="/choice/elizabethwarren2020">
+                <button className="button-dropdown" >Choice</button>
+              </Link>
+              <Link to="/labor/elizabethwarren2020">
+                <div className="button-dropdown" >Labor</div>
+              </Link>
+            </div>
+          </div>
+        </div>
+      </div >
       <Link to="/donate/elizabethwarren2020">
         <button className="button-login" >Give Now</button>
       </Link>
@@ -34,33 +67,10 @@ short of limit, ask to give $20 */}
       <Link to="/about/elizabethwarren2020">
         <button className="button-login" >About</button>
       </Link>
-      <div class="ui compact menu">
-        <div class="ui simple dropdown item">
-          Issues
-    <i class="dropdown icon"></i>
-          <div class="menu">
-            <div class="item">
-              <Link to="/healthcare/elizabethwarren2020">
-                <button className="button-login" >healthcare</button>
-              </Link>
-            </div>
-            <div class="item">
-              <Link to="/choice/elizabethwarren2020">
-                <button className="button-login" >Choice</button>
-              </Link>
-            </div>
-            <div class="item">
-              <Link to="/labor/elizabethwarren2020">
-                <button className="button-login" >Labor</button>
-              </Link>
-            </div>
-          </div>
-        </div>
-      </div>
-
       <Link to="/my-reps/elizabethwarren2020">
         <button className="button-login" >Find My Reps</button>
       </Link>
+
       {
         props.showLogInState ?
           <UserIndex
