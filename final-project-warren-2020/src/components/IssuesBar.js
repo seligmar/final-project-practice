@@ -6,8 +6,6 @@ const IssuesBar = () => {
   const divStyle = {
     color: '#232444',
     'height': '25vh',
-
-
   }
 
   const imgDiv = {
@@ -23,7 +21,7 @@ const IssuesBar = () => {
     <div className='issues'>
       <div class='ui three column grid'>
         <div class="column">
-          <div className='event-div-style' style={{ 'margin-left': '5%' }}>
+          <div className='event-div-style' style={{ 'margin-left': '25%'}}>
             <div style={card} className='ui card'>
               <div style={imgDiv} className='ui medium image'>
                 <img
@@ -43,7 +41,7 @@ const IssuesBar = () => {
           </div>
         </div>
         <div class="column">
-          <div className='event-div-style' >
+          <div className='event-div-style' style={{ 'margin-left': '25%'}}>
             <div style={card} className='ui card'>
               <div className='ui medium image'>
                 <img style={imgDiv}
@@ -62,7 +60,7 @@ const IssuesBar = () => {
           </div>
         </div>
         <div class="column">
-          <div className='event-div-style' style={{ 'margin-right': '5%' }}>
+          <div className='event-div-style' style={{ 'margin-left': '25%'}}>
             <div style={card} className='ui card'>
               <div style={imgDiv} className='ui medium image'>
                 <img

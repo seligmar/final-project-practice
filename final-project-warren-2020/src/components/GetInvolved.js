@@ -35,9 +35,11 @@ class GetInvolved extends React.Component {
 
   showEvent = () => this.setState({ showEvent: true }, this.showMap)
 
-  showMap = () => this.setState({ showMap: !this.state.showMap }, this.showFire)
+  showMap = () => this.setState({ showMap: !this.state.showMap })
 
   showFire = () => this.setState({ componentDidMountState: true })
+
+  // this.showFire
 
   componentDidMount() {
     this.getEvents()
@@ -105,6 +107,7 @@ class GetInvolved extends React.Component {
             <h1 className="giving-text">Give Now</h1></div>
         </Link>
         <NavBar
+          componentDidMountState={this.state.componentDidMountState}
           showFire={this.state.showFire}
           filteredEvents={this.state.filteredEvents}
           showAll={this.showAll}
@@ -141,7 +144,8 @@ class GetInvolved extends React.Component {
             <ListEvents
               filteredEvents={this.state.filteredEvents}
               zip={this.state.zip}
-              events={this.state.events} rsvp={this.rsvp} />
+              events={this.state.events}
+              rsvp={this.rsvp} />
           ) : null
         }
       </div>

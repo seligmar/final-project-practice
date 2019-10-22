@@ -21,7 +21,11 @@ const TopMenu = props => {
   const dropdown1 = {
     'background-color': '#b7e4cf',
     'color': '#232444',
-    'text-align': 'left'
+    'text-align': 'left',
+    'box-shadow': 'none',
+    'border-color': '#b7e4cf',
+    'padding- left': '4%',
+    'padding - right': '4%'
   }
 
   return (
@@ -40,7 +44,7 @@ short of limit, ask to give $20 */}
         <button className="button-login" >Home</button>
       </Link>
       <div style={dropdown} class="ui compact menu">
-        <div class="ui simple dropdown item">
+        <div style={dropdown} class="ui simple dropdown item">
           Issues
     <i class="dropdown icon"></i>
           <div style={dropdown1} class="menu">

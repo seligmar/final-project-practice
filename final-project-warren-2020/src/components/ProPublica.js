@@ -44,40 +44,40 @@ class ProPublica extends React.Component {
         {this.state.showResults ? (
           <div class='ui three column grid'>
             <div class="column">
-              <div className='event-div-style' style={{ 'margin-left': '5%' }}>
+              <div className='event-div-style' style={{ 'margin-left': '25%' }}>
                 <div style={card} className='ui card'>
                   <div style={divStyle} class="content">
                     <div class="description">
                       <h3>{this.state.news[0].date}</h3>
                       <p class="header">{this.state.news[0].title}</p>
-                      <a href={this.state.news[0].url}>Read More</a>
+                      <a href={this.state.news[0].url} target="_blank">Read More</a>
                     </div>
                   </div>
                 </div>
               </div>
             </div >
             <div class="column">
-              <div className='event-div-style' style={{ 'margin-left': '5%' }}>
+              <div className='event-div-style' style={{ 'margin-left': '25%' }}>
                 <div style={card} className='ui card'>
                   <div style={divStyle} class="content">
                     <div class="description">
                       <h3> {this.state.news[1].date} </h3>
 
                       <p class="header">{this.state.news[1].title}</p>
-                      <a href={this.state.news[1].url}> Read More</a>
+                      <a href={this.state.news[1].url} target="_blank"> Read More</a>
                     </div>
                   </div>
                 </div>
               </div>
             </div >
             <div class="column">
-              <div className='event-div-style' style={{ 'margin-left': '5%' }}>
+              <div className='event-div-style' style={{ 'margin-left': '25%' }}>
                 <div style={card} className='ui card'>
                   <div style={divStyle} class="content">
                     <div class="description">
                       <h3>   {this.state.news[2].date} </h3>
                       <p class="header">{this.state.news[2].title}</p>
-                      <a href={this.state.news[2].url}> Read More</a>
+                      <a href={this.state.news[2].url} target="_blank"> Read More</a>
                     </div>
                   </div>
                 </div>

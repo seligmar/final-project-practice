@@ -8,6 +8,13 @@ const MySwal = withReactContent(Swal)
 const ListEvents = props => {
   const events =
     props.filteredEvents ? props.events.filter(event => event.zip === props.zip) : props.events
+  // if (events.length === 0) {
+  //   MySwal.fire({
+  //     text: 'No events have been scheduled in your area! Please consider logging in or creating an account to schedule an event in your area!',
+  //     type: 'error',
+  //     confirmButtonColor: '#b61b28'
+  //   })
+  // }
   return (
     <div>
       {events.map(event => (

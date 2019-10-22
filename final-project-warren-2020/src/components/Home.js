@@ -57,7 +57,10 @@ class Home extends React.Component {
             <TwitterTimelineEmbed
               sourceType="profile"
               screenName="ewarren"
-              options={{ height: 400 }}
+              options={{
+                height: 400,
+                width: 1200
+              }}
             /></div></div>
         <ProPublica />
         <div className='youtube-block-grid'>
