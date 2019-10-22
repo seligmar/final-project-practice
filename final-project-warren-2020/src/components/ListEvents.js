@@ -12,7 +12,7 @@ const ListEvents = props => {
     MySwal.fire({
       text: 'No events area scheduled in your area. Log in or create an account to schedule an event in your neighborhood!',
       // type: 'error',
-      imageUrl: 'https://media.giphy.com/media/UUtWxpMhy3ZvHojSdI/200w_d.gif',
+      // imageURL: '',
       confirmButtonColor: '#b61b28'
     })
   }
@@ -26,10 +26,10 @@ const ListEvents = props => {
                 <img className='ui small right floated image'
                   alt="Warren Yard Sign"
                   src='https://cdn.shopify.com/s/files/1/1908/6551/products/YardSign-Comp_LG_1_530x@2x.jpg?v=1561750606' />
-                <p className='header'>{event.title}</p>
+                <p class="header">{event.title}</p>
                 <p>{event.start_time} - {event.start_time} on {event.day}/{event.month}/{event.year}</p>
-                <p className='description'>{event.street_address_1}</p>
-                <p className='description'>
+                <p class='description'>{event.street_address_1}</p>
+                <p class='description'>
                   {event.city}, {event.state} {event.zip}
                 </p>
                 <button className='event-button' onClick={(e) => props.rsvp(e, event.id)}>RSVP!</button>

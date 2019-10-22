@@ -28,6 +28,7 @@ class EventsController < ApplicationController
     render json: upcoming
   end 
 
+
   def create 
       event = Event.new(event_params)
       if event.save

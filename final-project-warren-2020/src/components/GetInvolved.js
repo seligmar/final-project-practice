@@ -113,23 +113,6 @@ class GetInvolved extends React.Component {
         {this.props.username ? (
           <button className='button' onClick={() => this.createEventState()}>
             Create Event</button>) : null}
-        <div className='map-element'>
-          <MapFragment
-            filteredEvents={this.state.filteredEvents}
-            zip={this.state.zip}
-            showMap={this.state.showMap}
-            events={this.state.events}
-          />
-        </div>
-        {
-          this.state.showMap ? (
-            <button className='button' onClick={() => this.showMap()}>
-              Hide Map
-          </button>
-          ) : (<button className='button' onClick={() => this.showMap()}>
-            Show Events on the Map
-      </button>)
-        }
         {
           this.state.createEvent ? (
             <NewEvent
@@ -137,6 +120,15 @@ class GetInvolved extends React.Component {
               hideForm={this.createEventState} />
           ) : null
         }
+        <div className='map-element'>
+          <MapFragment
+            filteredEvents={this.state.filteredEvents}
+            zip={this.state.zip}
+            showMap={this.state.showMap}
+            events={this.state.events}
+            showMapFunction={this.showMap}
+          />
+        </div>
         {
           this.state.showEvent ? (
             <ListEvents
