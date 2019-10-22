@@ -22,8 +22,7 @@ class GetInvolved extends React.Component {
     newUser: false,
     createEvent: false,
     zip: '',
-    filteredEvents: false,
-    componentDidMountState: false
+    filteredEvents: false
   }
 
   createEventState = () => {
@@ -32,12 +31,9 @@ class GetInvolved extends React.Component {
 
   getEvents = () => API.getEvents().then(events => this.setState({ events }, this.showEvent))
 
-
   showEvent = () => this.setState({ showEvent: true }, this.showMap)
 
   showMap = () => this.setState({ showMap: !this.state.showMap })
-
-  showFire = () => this.setState({ componentDidMountState: true })
 
   // this.showFire
 
@@ -95,8 +91,10 @@ class GetInvolved extends React.Component {
     this.setState({ zip: newZip }, this.filterEvents)
   }
 
-  showAll = () => {
-    this.setState({ zip: '' }, this.filterEvents)
+  showAll = e => {
+    e.preventDefault()
+    this.setState({ filteredEvents: !this.state.filteredEvents })
+    this.setState({ zip: '' })
   }
 
   render() {

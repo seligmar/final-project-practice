@@ -44,8 +44,10 @@ class ProPublica extends React.Component {
         {this.state.showResults ? (
           <div class='ui three column grid'>
             <div class="column">
-              <div className='event-div-style' style={{ 'margin-left': '25%' }}>
-                <div style={card} className='ui card'>
+              <div className='event-div-style'
+              // style={{ 'margin-left': '25%' }}
+              >
+                <div style={card} className='ui centered card'>
                   <div style={divStyle} class="content">
                     <div class="description">
                       <h3>{this.state.news[0].date}</h3>
@@ -57,8 +59,10 @@ class ProPublica extends React.Component {
               </div>
             </div >
             <div class="column">
-              <div className='event-div-style' style={{ 'margin-left': '25%' }}>
-                <div style={card} className='ui card'>
+              <div className='event-div-style'
+              // style={{ 'margin-left': '25%' }}
+              >
+                <div style={card} className='ui centered card'>
                   <div style={divStyle} class="content">
                     <div class="description">
                       <h3> {this.state.news[1].date} </h3>
@@ -71,8 +75,10 @@ class ProPublica extends React.Component {
               </div>
             </div >
             <div class="column">
-              <div className='event-div-style' style={{ 'margin-left': '25%' }}>
-                <div style={card} className='ui card'>
+              <div className='event-div-style'
+              // style={{ 'margin-left': '25%' }}
+              >
+                <div style={card} className='ui centered card'>
                   <div style={divStyle} class="content">
                     <div class="description">
                       <h3>   {this.state.news[2].date} </h3>

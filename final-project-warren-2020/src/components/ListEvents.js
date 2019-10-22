@@ -8,13 +8,14 @@ const MySwal = withReactContent(Swal)
 const ListEvents = props => {
   const events =
     props.filteredEvents ? props.events.filter(event => event.zip === props.zip) : props.events
-  // if (events.length === 0) {
-  //   MySwal.fire({
-  //     text: 'No events have been scheduled in your area! Please consider logging in or creating an account to schedule an event in your area!',
-  //     type: 'error',
-  //     confirmButtonColor: '#b61b28'
-  //   })
-  // }
+  if (events.length === 0 && props.filteredEvents === true) {
+    MySwal.fire({
+      text: 'No events area scheduled in your area. Log in or create an account to schedule an event in your neighborhood!',
+      // type: 'error',
+      imageUrl: 'https://media.giphy.com/media/UUtWxpMhy3ZvHojSdI/200w_d.gif',
+      confirmButtonColor: '#b61b28'
+    })
+  }
   return (
     <div>
       {events.map(event => (

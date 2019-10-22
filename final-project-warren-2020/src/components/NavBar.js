@@ -38,7 +38,7 @@ const NavBar = props => {
           />
           <p></p>
           {props.filteredEvents ?
-            <button className='ui button' style={buttons} onClick={() => props.showAll()}>  Show All Events</button>
+            <button className='ui button' style={buttons} onClick={e => props.showAll(e)}>  Show All Events</button>
             : <button className='ui button' onClick={e => props.getZip(e)} style={buttons}>  Find Events Near Me</button>}
         </form>
         <div style={{ 'padding-bottom': '2%' }}></div>

@@ -21,8 +21,10 @@ const IssuesBar = () => {
     <div className='issues'>
       <div class='ui three column grid'>
         <div class="column">
-          <div className='event-div-style' style={{ 'margin-left': '25%'}}>
-            <div style={card} className='ui card'>
+          <div className='event-div-style' 
+          // style={{ 'margin-left': '25%'}}
+          >
+            <div style={card} className='ui centered card'>
               <div style={imgDiv} className='ui medium image'>
                 <img
                   src='
@@ -41,8 +43,10 @@ const IssuesBar = () => {
           </div>
         </div>
         <div class="column">
-          <div className='event-div-style' style={{ 'margin-left': '25%'}}>
-            <div style={card} className='ui card'>
+          <div className='event-div-style' 
+          // style={{ 'margin-left': '25%'}}
+          >
+            <div style={card} className='ui centered card'>
               <div className='ui medium image'>
                 <img style={imgDiv}
                   src='https://www.commondreams.org/sites/default/files/styles/cd_large/public/headlines/time_for_medicare_for_all1.jpg?itok=AtWHGu63' />
@@ -60,8 +64,10 @@ const IssuesBar = () => {
           </div>
         </div>
         <div class="column">
-          <div className='event-div-style' style={{ 'margin-left': '25%'}}>
-            <div style={card} className='ui card'>
+          <div className='event-div-style' 
+          // style={{ 'margin-left': '25%'}}
+          >
+            <div style={card} className='ui centered card'>
               <div style={imgDiv} className='ui medium image'>
                 <img
                   src='https://www.macleans.ca/wp-content/uploads/2018/07/abortion-rights-protest-1024x768-810x445.jpg' />
