@@ -49,10 +49,12 @@
   height: 5vh; 
   color: #fff;
   border-radius: 5px;
+  cursor: pointer;
   /* round edges of buttons? might be cute */
 }
 
 .button-login {
+  cursor: pointer;
   color: #232444;
   padding-left: 3%;
   padding-right: 3%;
@@ -74,7 +76,8 @@
   border-color: #b7e4cf;
   padding: 7%;
   padding-top: 10%;
-  font-size: 16px
+  font-size: 16px;
+  cursor: pointer;
 }
 
 
@@ -459,6 +462,7 @@ li {
 .buttons-login {
   text-align: center;
   padding: 3%;
+  cursor: pointer;
   /* margin-left: 23%; */
   /* margin-right: 35%  */
   }
@@ -466,6 +470,7 @@ li {
 .buttons-create-user {
   text-align: center;
   padding: 3%;
+  cursor: pointer;
   /* margin-left: 30%; 
   margin-right: 30% */
   }

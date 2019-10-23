@@ -134,7 +134,7 @@ class Donate extends React.Component {
                 {this.state.total === 0 ? (
                   <div><div style={header}>Please Enter Your Donation: </div>
                     < label > Total:  </label>
-                    <input type="text" name="total" maxlength="7" placeholder="total" />
+                    <input type="text" name="total" maxlength="7" placeholder="Total" />
                     <label>First Name</label>
                     <input type="text" name="name" placeholder="First Name" />
                     <label>Last Name</label>

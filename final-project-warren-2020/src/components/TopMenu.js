@@ -7,7 +7,7 @@ const TopMenu = props => {
   const styles = {
     position: 'absolute',
     left: '2%',
-    top: '2%'
+    top: '3.5%'
   }
 
   const dropdown = {
