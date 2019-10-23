@@ -42,6 +42,8 @@ REACT INFO
 
 https://www.youtube.com/watch?v=Law7wfdg_ls - react router youtube video 
 
+https://github.com/ReactTraining/react-router/blob/master/packages/react-router-dom/docs/guides/scroll-restoration.md ScrollToTop
+
 MISC 
 
 https://github.com/sweetalert2/sweetalert2-react-content - alerts

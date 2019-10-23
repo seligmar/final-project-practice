@@ -203,7 +203,7 @@ class NewEvent extends React.Component {
     }
 
     return (
-      <div className='event-login'>
+      <div style={{ 'margin-top': '2%', }} className='event-login'>
         <div class='event-field'>
           <div className='form-border'>
             <form onSubmit={e => this.newEvent(e)} className='ui form' style={formPadding}>

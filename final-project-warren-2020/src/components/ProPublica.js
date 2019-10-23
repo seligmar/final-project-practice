@@ -66,7 +66,6 @@ class ProPublica extends React.Component {
                   <div style={divStyle} class="content">
                     <div class="description">
                       <h3> {this.state.news[1].date} </h3>
-
                       <p class="header">{this.state.news[1].title}</p>
                       <a href={this.state.news[1].url} target="_blank"> Read More</a>
                     </div>

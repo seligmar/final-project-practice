@@ -8,6 +8,7 @@ import NewEvent from './NewEvent'
 import Swal from 'sweetalert2'
 import withReactContent from 'sweetalert2-react-content'
 import NavBar from './NavBar'
+import NewEventButton from './NewEventButton'
 
 const MySwal = withReactContent(Swal)
 
@@ -104,15 +105,10 @@ class GetInvolved extends React.Component {
           <div className='donationsBar'>
             <h1 className="giving-text">Give Now</h1></div>
         </Link>
-        <NavBar
-          componentDidMountState={this.state.componentDidMountState}
-          showFire={this.state.showFire}
-          filteredEvents={this.state.filteredEvents}
-          showAll={this.showAll}
-          getZip={this.getZip} />
-        {this.props.username ? (
-          <button className='button' onClick={() => this.createEventState()}>
-            Create Event</button>) : null}
+        {this.props.username ?
+          <NewEventButton
+            createEventState={this.createEventState}
+          /> : null}
         {
           this.state.createEvent ? (
             <NewEvent
@@ -120,6 +116,13 @@ class GetInvolved extends React.Component {
               hideForm={this.createEventState} />
           ) : null
         }
+        <NavBar
+          componentDidMountState={this.state.componentDidMountState}
+          showFire={this.state.showFire}
+          filteredEvents={this.state.filteredEvents}
+          showAll={this.showAll}
+          getZip={this.getZip} />
+
         <div className='map-element'>
           <MapFragment
             filteredEvents={this.state.filteredEvents}
