@@ -23,7 +23,15 @@ class Donate extends React.Component {
 
   showAddress = (e) => {
     e.preventDefault()
-    if (parseInt(e.target.parentElement.childNodes[1].value) > 2800) {
+    if (!this.props.username) {
+      MySwal.fire({
+        text: 'Please log in to donate',
+        type: 'error',
+        confirmButtonColor: '#b61b28'
+      })
+      return
+    }
+    if (parseInt(e.target.parentElement.childNodes[2].value) > 2800) {
       MySwal.fire({
         title: 'Invalid Contribution',
         text: 'Invalid Contribution',
@@ -38,7 +46,7 @@ class Donate extends React.Component {
     }
     else
       this.setState({ totalEntered: !this.state.totalEntered })
-    this.setState({ total: total + parseInt(e.target.parentElement.childNodes[1].value) })
+    this.setState({ total: total + parseInt(e.target.parentElement.childNodes[2].value) })
     this.setState({ nameEntered: !this.state.nameEntered })
   }
 
@@ -103,7 +111,13 @@ class Donate extends React.Component {
   render() {
     const buttons = {
       'background-color': '#b61b28',
-      color: '#fff'
+      color: '#fff',
+      'margin-top': '5%'
+    }
+
+    const header = {
+      'margin-bottom': '5%',
+      'text-decoration': 'underline'
     }
 
     return (
@@ -118,38 +132,39 @@ class Donate extends React.Component {
             <div class='field'>
               <form class="ui form">
                 {this.state.total === 0 ? (
-                  <div>< label > Total:  </label>
-                    <input type="text" name="total" maxlength="7" placeholder="total" />
+                  <div><div style={header}>Please Enter Your Donation: </div>
+                    < label > Total:  </label>
+                    <input type="text" name="total" maxlength="7" placeholder="Total" />
                     <label>First Name</label>
                     <input type="text" name="name" placeholder="First Name" />
                     <label>Last Name</label>
                     <input type="text" name="surname" placeholder="Last Name" />
                     <button onClick={(e) => this.showAddress(e)} class="ui button" style={buttons}>Next</button></div>) : null}
                 {this.state.nameEntered ? (
-                  <div><label>Address: </label>
+                  <div>
+                    <div style={header}>Please Enter Your Billing Address:</div>
+                    <label>Address: </label>
                     <input
-                      style={{ width: 200 }}
                       type='text'
                       name='addressLine1'
                       placeholder='address'
-                    /> <br></br>
+                    />
                     <label>City: </label>
                     <input
-                      style={{ width: 200 }}
+
                       type='text'
                       name='city'
                       placeholder='city'
-                    /> <br></br>
+                    />
                     <label>State: </label>
                     <input
-                      style={{ width: 200 }}
+
                       type='text'
                       name='state'
                       placeholder='State Abreviation'
-                    /> <br></br>
+                    />
                     <label>Zip: </label>
                     <input
-                      style={{ width: 200 }}
                       type='text'
                       name='zip'
                       placeholder='Zip Code'
@@ -158,34 +173,29 @@ class Donate extends React.Component {
                 ) : null}
                 {this.state.addressEntered ? (
                   <div>
-                    < div > Billing Information</div>
-                    <div class="seven wide field">
-                      <label>Card Number</label>
-                      <input type="text" name="cardnumber" maxlength="16" placeholder="Card #" />
-                    </div>
-                    <div class="three wide field">
-                      <label>CVC</label>
-                      <input type="text" name="cvc" maxlength="3" placeholder="CVC" />
-                    </div>
+                    <div style={header}> Billing Information</div>
+                    <label>Card Number</label>
+                    <input type="text" name="cardnumber" maxlength="16" placeholder="Card #" />
+                    <label>CVC</label>
+                    <input type="text" name="cvc" maxlength="3" placeholder="CVC" />
                     <label>Expiration</label>
-                    <div class="two fields">
-                      <div class="field">
-                        <select class="ui fluid search dropdown" name="expire-month">
-                          <option value="">Month</option>
-                          <option value="1">January</option>
-                          <option value="2">February</option>
-                          <option value="3">March</option>
-                          <option value="4">April</option>
-                          <option value="5">May</option>
-                          <option value="6">June</option>
-                          <option value="7">July</option>
-                          <option value="8">August</option>
-                          <option value="9">September</option>
-                          <option value="10">October</option>
-                          <option value="11">November</option>
-                          <option value="12">December</option>
-                        </select>
-                      </div></div>
+                    <div class="field">
+                      <select class="ui fluid search dropdown" name="expire-month">
+                        <option value="">Month</option>
+                        <option value="1">January</option>
+                        <option value="2">February</option>
+                        <option value="3">March</option>
+                        <option value="4">April</option>
+                        <option value="5">May</option>
+                        <option value="6">June</option>
+                        <option value="7">July</option>
+                        <option value="8">August</option>
+                        <option value="9">September</option>
+                        <option value="10">October</option>
+                        <option value="11">November</option>
+                        <option value="12">December</option>
+                      </select>
+                    </div>
                     <input type="text" name="expire-year" maxlength="4" placeholder="Year" />
                     <br></br> <br></br>
                     <div onClick={(e) => this.donateNew(e)} class="ui button" style={buttons}>Donate Now</div>

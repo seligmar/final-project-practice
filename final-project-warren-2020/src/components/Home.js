@@ -2,11 +2,19 @@ import React from 'react'
 import ReactPlayer from 'react-player'
 import { Link } from 'react-router-dom'
 import { TwitterTimelineEmbed } from 'react-twitter-embed'
+import IssuesBar from './IssuesBar'
+import ProPublica from './ProPublica'
 
 // import { TwitterTimelineEmbed, TwitterShareButton, TwitterFollowButton, TwitterHashtagButton, TwitterMentionButton, TwitterTweetEmbed, TwitterMomentShare, TwitterDMButton, TwitterVideoEmbed, TwitterOnAirButton } from 'react-twitter-embed';
 
 class Home extends React.Component {
+
   render() {
+
+    const buttons = {
+      'background-color': '#b61b28',
+      color: '#fff'
+    }
     return (
       <div>
         <Link to="/donate/elizabethwarren2020" target="_top">
@@ -23,31 +31,38 @@ class Home extends React.Component {
             height='80%'
           />
         </div>
-        <div className='quote-grid'>
-          <div className='quote-img'>
-            <img className='img' alt="Elizabeth Warren in front of American flag"
-              src='https://www.usnews.com/dims4/USNEWS/692809a/2147483647/crop/4050x2658%2B0%2B3/resize/640x420/quality/85/?url=http%3A%2F%2Fcom-usnews-beam-media.s3.amazonaws.com%2F94%2F29%2Fe66a0d5349cd8c3dbbce6ac04d92%2F190911-2020warren-editorial.warren.JPG' />
-          </div>
-          <div className='grid-quote'>
-            <h2 className='quote-text'>
-              <p>There's a lot at stake for our democracy.{' '}
-                But we can't choose a candidate we don't believe in just because we're afraid.</p>
-              <p>I'm not afraid.</p>
-              <p>― Elizabeth Warren</p></h2>
-            <h1></h1>
-            <Link to="/getinvolved/elizabethwarren2020">
-              <button className='button'>Get Involved Today</button>
-            </Link>
-            <h1></h1>
+        <div className='quote-div'>
+          <div className='quote-grid'>
+            <div className='quote-img'>
+              <img className='img' alt="Elizabeth Warren in front of American flag"
+                src='https://www.usnews.com/dims4/USNEWS/692809a/2147483647/crop/4050x2658%2B0%2B3/resize/640x420/quality/85/?url=http%3A%2F%2Fcom-usnews-beam-media.s3.amazonaws.com%2F94%2F29%2Fe66a0d5349cd8c3dbbce6ac04d92%2F190911-2020warren-editorial.warren.JPG' />
+            </div>
+            <div className='grid-quote'>
+              <h2 className='quote-text'>
+                <p>There's a lot at stake for our democracy.{' '}
+                  But we can't choose a candidate we don't believe in just because we're afraid.</p>
+                <p>I'm not afraid.</p>
+                <p>― Elizabeth Warren</p></h2>
+            </div>
+            <div className='link-button'>
+              <Link to="/getinvolved/elizabethwarren2020" target="_top">
+                <button style={buttons} class='fluid ui button'>Get Involved Today</button>
+              </Link>
+            </div>
           </div>
         </div>
+        <IssuesBar />
         <div className='twitter'>
           <div className='twitter-box'>
             <TwitterTimelineEmbed
               sourceType="profile"
               screenName="ewarren"
-              options={{ height: 400 }}
+              options={{
+                height: 400,
+                width: 1200
+              }}
             /></div></div>
+        <ProPublica />
         <div className='youtube-block-grid'>
           <div className='youtube'>
             <iframe title='Dream Big'
@@ -57,7 +72,7 @@ class Home extends React.Component {
             </iframe>
           </div>
         </div>
-      </div>
+      </div >
     )
   }
 }

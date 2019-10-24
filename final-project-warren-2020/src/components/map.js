@@ -14,31 +14,46 @@ import {
 const GOOGLE_API_KEY = 'AIzaSyBuNd5baj7zHX5OmBtTYoBkhW_a4WN81S8'
 
 const MapFragment = props => {
+  const xButton = {
+    position: 'relative',
+    left: '48.0%',
+    top: '0%',
+    'margin-top': '1.5%',
+    'background-color': '#b61b28',
+    color: '#fff',
+    'border-color': '#b61b28',
+    'border-radius': '5px',
+  }
   const Map = () => {
     const [selectedEvent, setSelectedEvent] = useState(null)
+    const events =
+      props.filteredEvents ? props.events.filter(event => event.zip === props.zip) : props.events
     return (
-      <GoogleMap defaultZoom={3} defaultCenter={{ lat: 41, lng: -93 }}>
-        {props.events.map(event => (
-          <Marker
-            key={event.id}
-            position={{ lat: event.lat, lng: event.lng }}
-            onClick={() => setSelectedEvent(event)}
-          />
-        ))}
-        {selectedEvent ? (
-          <InfoWindow
-            position={{ lat: selectedEvent.lat, lng: selectedEvent.lng }}
-            onCloseClick={() => setSelectedEvent(null)}
-          >
-            <div style={{ color: '#232444' }}>
-              <p>{selectedEvent.title}</p>
-              <p>{selectedEvent.start_time} - {selectedEvent.start_time} on {selectedEvent.day}/{selectedEvent.month}/{selectedEvent.year}</p>
-              <p>{selectedEvent.street_address_1}</p>
-              {selectedEvent.city}, {selectedEvent.state}, {selectedEvent.zip}
-            </div>
-          </InfoWindow>
-        ) : null}
-      </GoogleMap>
+      <div>
+        < button style={xButton} onClick={() => props.showMapFunction()}>Hide Map</button>
+        <GoogleMap defaultZoom={3} defaultCenter={{ lat: 41, lng: -93 }}>
+          {events.map(event => (
+            <Marker
+              key={event.id}
+              position={{ lat: event.lat, lng: event.lng }}
+              onClick={() => setSelectedEvent(event)}
+            />
+          ))}
+          {selectedEvent ? (
+            <InfoWindow
+              position={{ lat: selectedEvent.lat, lng: selectedEvent.lng }}
+              onCloseClick={() => setSelectedEvent(null)}
+            >
+              <div style={{ color: '#232444' }}>
+                <p>{selectedEvent.title}</p>
+                <p>{selectedEvent.start_time} - {selectedEvent.start_time} on {selectedEvent.day}/{selectedEvent.month}/{selectedEvent.year}</p>
+                <p>{selectedEvent.street_address_1}</p>
+                {selectedEvent.city}, {selectedEvent.state}, {selectedEvent.zip}
+              </div>
+            </InfoWindow>
+          ) : null}
+        </GoogleMap>
+      </div>
     )
   }
 

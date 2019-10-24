@@ -7,14 +7,7 @@ const DONATE_URL = BASEURL + 'donate'
 const NEW_EVENT_URL = BASEURL + 'new-event'
 const RSVP_URL = BASEURL + 'rsvp'
 
-const MY_PRO_PUBLICA_KEY = 'mGZ80fLhqn7WGi7KyArHqNLZTz0sCgehU4E9mIv7'
-const PRO_PUBLICA_WARREN_ID = 'W000817'
-const PRO_PUBLICA_BASE = 'https://api.propublica.org/congress/v1/116/senate'
-const PRO_PUBLICA_MEMBERINFO =
-  PRO_PUBLICA_BASE + '/members/' + PRO_PUBLICA_WARREN_ID + '.json'
-const PRO_PUBLICA_STATEMENTS = PRO_PUBLICA_BASE + '/members/' + PRO_PUBLICA_WARREN_ID + '/statements/116.json'
-
-const GOOGLE_API_KEY = 'AIzaSyBuNd5baj7zHX5OmBtTYoBkhW_a4WN81S8'
+// const GOOGLE_API_KEY = 'AIzaSyBuNd5baj7zHX5OmBtTYoBkhW_a4WN81S8'
 
 const get = url =>
   fetch(url, {
@@ -48,7 +41,8 @@ const getEvents = () => get(EVENTS_URL)
 
 const newEvent = (data) => post(NEW_EVENT_URL, data)
 
-export default { signIn, validate, newUser, donate, getEvents, newEvent, rsvp }
+
+export default { signIn, validate, newUser, donate, getEvents, newEvent, rsvp, }
 
 
 // // "https://api.propublica.org/congress/v1/members/W000817.json"
@@ -65,14 +59,6 @@ export default { signIn, validate, newUser, donate, getEvents, newEvent, rsvp }
 //   //   `https://www.googleapis.com/civicinfo/v2/representatives?address=1701+N+Calvert+St+Baltimore+MD+21202&includeOffices=true&key=${GOOGLE_API_KEY}`
 //   // ).then(resp => resp.json())
 
-//   // getProPublicaStatements = () => {
-//   //   return fetch(PRO_PUBLICA_STATEMENTS, {
-//   //     method: 'GET',
-//   //     headers: {
-//   //       'X-API-Key': MY_PRO_PUBLICA_KEY
-//   //     }
-//   //   }).then(resp => resp.json())
-//   // }
 
 //   // getMemberInfo = () => {
 //   //   return fetch(PRO_PUBLICA_MEMBERINFO, {

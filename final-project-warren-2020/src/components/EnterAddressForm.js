@@ -7,50 +7,61 @@ const EnterAddressForm = props => {
   }
 
   const formPadding = {
-    padding: '5%'
+    padding: '2%'
+  }
+
+  const border = {
+    'border-color': '#b7e4cf',
+    'border-width': '1px'
+  }
+
+  const formHeader = {
+    'margin-bottom': '2%',
+    'text-decoration': 'underline'
   }
 
   return (
-    <div className='login'>
+    <div style={{ 'margin-top': '3%' }} className='login'>
       <div class='field'>
-        <form onSubmit={e => props.callGoogleAPI(e)} class='ui form' style={formPadding}>
-          {/*  className='input-form'> */}
-          <h4>Where Do You Live?</h4>
-          <label>Address: </label>
-          <input
-            style={{ width: 200 }}
-            type='text'
-            name='addressLine1'
-            placeholder='address line 1'
-          />  <br></br>
-          <label>City: </label>
-          <input
-            style={{ width: 200 }}
-            type='text'
-            name='city'
-            placeholder='city'
-          />  <br></br>
-          <label>State: </label>
-          <input
-            style={{ width: 200 }}
-            type='text'
-            name='state'
-            placeholder='State Abreviation'
-          />   <br></br>
-          <label>Zip: </label>
-          <input
-            style={{ width: 200 }}
-            type='text'
-            name='zip'
-            placeholder='Zip Code'
-          />
-          <br></br>
-          <div className='rep-button'>
-            <button className='small ui button' style={buttons} type='submit'>
-              Find Who Represents Me
+        <div className='form-border'>
+          <div style={border}>
+            <form onSubmit={e => props.callGoogleAPI(e)} class='ui form' style={formPadding}>
+              {/*  className='input-form'> */}
+              <div style={formHeader}>Where Do You Live?</div>
+              <label>Address: </label>
+              <input
+                type='text'
+                name='addressLine1'
+                placeholder='Address'
+              />
+              <label>City: </label>
+              <input
+                type='text'
+                name='city'
+                placeholder='City'
+              />
+              <label>State: </label>
+              <input
+                type='text'
+                name='state'
+                placeholder='State Abreviation'
+              />
+              <label>Zip: </label>
+              <input
+
+                type='text'
+                name='zip'
+                placeholder='Zip Code'
+              />
+
+              <div className='rep-button'>
+                <button className='fluid ui button' style={buttons} type='submit'>
+                  Find Who Represents Me
         </button>
+              </div>
+            </form>
           </div>
-        </form>
+        </div>
       </div>
     </div >
   )

@@ -20,13 +20,14 @@ class EventsController < ApplicationController
       lat: event.lat}
       events << eachEvent
     end 
-    upcoming = events.select do |event| 
-      event[:year] > Date.today.year ||  
-      (event[:month] >= Date.today.month && 
-      event[:day] >= Date.today.day) 
-    end
-    render json: upcoming
+    # upcoming = events.select do |event| 
+    #   event[:year] > Date.today.year ||  
+    #   (event[:month] >= Date.today.month && 
+    #   event[:day] >= Date.today.day) 
+
+    render json: events
   end 
+
 
   def create 
       event = Event.new(event_params)

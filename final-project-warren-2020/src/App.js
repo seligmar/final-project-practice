@@ -11,6 +11,9 @@ import withReactContent from 'sweetalert2-react-content'
 import Menu from './Menu'
 import TopMenu from './components/TopMenu'
 import FindMyReps from './components/FindMyReps'
+import WomensHealth from './components/WomensHealth'
+import Labor from './components/Labor'
+import Healthcare from './components/Heathcare'
 
 const MySwal = withReactContent(Swal)
 
@@ -87,65 +90,76 @@ class App extends React.Component {
 
   render() {
     return (
-      <div className='App'>
-        <TopMenu
-          loggedIn={this.state.loggedIn}
-          logout={this.logout}
-          showLogInState={this.state.showLogIn}
-          username={this.state.username}
-          logIn={this.logIn}
-          HideLogIn={this.HideLogIn}
-          userState={this.userState}
-          showLogIn={this.showLogIn}
-        />
-        <Switch>
-          <Route path='/elizabethwarren2020'
-            component={routerProps =>
-              <Home {...routerProps}
+      <section>
+        <div className='App'>
+          <TopMenu
+            loggedIn={this.state.loggedIn}
+            logout={this.logout}
+            showLogInState={this.state.showLogIn}
+            username={this.state.username}
+            logIn={this.logIn}
+            HideLogIn={this.HideLogIn}
+            userState={this.userState}
+            showLogIn={this.showLogIn}
+          />
+          <Switch>
+            <Route path='/elizabethwarren2020'
+              component={routerProps =>
+                <Home {...routerProps}
+                  username={this.state.username}
+                  closeGive={this.closeGive}
+                  loggedIn={this.state.loggedIn}
+                  logIn={this.logIn}
+                  resetDonationsBar={this.resetDonationsBar}
+                  showDonationsBar={this.state.donationsBar} />} />
+
+            <Route path='/my-reps/elizabethwarren2020'
+              component={routerProps =>
+                <FindMyReps {...routerProps}
+                  username={this.state.username}
+                  loggedIn={this.state.loggedIn}
+                  logIn={this.logIn}
+                  resetDonationsBar={this.resetDonationsBar}
+                  showDonationsBar={this.state.donationsBar} />} />
+
+            <Route path='/getinvolved' component={routerProps =>
+              <GetInvolved {...routerProps}
                 username={this.state.username}
                 closeGive={this.closeGive}
                 loggedIn={this.state.loggedIn}
                 logIn={this.logIn}
                 resetDonationsBar={this.resetDonationsBar}
-                showDonationsBar={this.state.donationsBar} />} />
-
-          <Route path='/my-reps/elizabethwarren2020'
-            component={routerProps =>
-              <FindMyReps {...routerProps}
+                showDonationsBar={this.state.donationsBar}
+              />}
+            />
+            <Route path='/choice/elizabethwarren2020' component={routerProps =>
+              <WomensHealth {...routerProps} />}
+            />
+            <Route path='/labor/elizabethwarren2020' component={routerProps =>
+              <Labor {...routerProps} />}
+            />
+            <Route path='/healthcare/elizabethwarren2020' component={routerProps =>
+              <Healthcare {...routerProps} />}
+            />
+            <Route path="/about/elizabethwarren2020" component={routerProps =>
+              <About {...routerProps}
+                closeGive={this.closeGive}
+                logIn={this.logIn}
                 username={this.state.username}
                 loggedIn={this.state.loggedIn}
-                logIn={this.logIn}
                 resetDonationsBar={this.resetDonationsBar}
                 showDonationsBar={this.state.donationsBar} />} />
-
-          <Route path='/getinvolved' component={routerProps =>
-            <GetInvolved {...routerProps}
-              username={this.state.username}
-              closeGive={this.closeGive}
-              loggedIn={this.state.loggedIn}
-              logIn={this.logIn}
-              resetDonationsBar={this.resetDonationsBar}
-              showDonationsBar={this.state.donationsBar}
-            />} />
-
-          <Route path="/about/elizabethwarren2020" component={routerProps =>
-            <About {...routerProps}
-              closeGive={this.closeGive}
-              logIn={this.logIn}
-              username={this.state.username}
-              loggedIn={this.state.loggedIn}
-              resetDonationsBar={this.resetDonationsBar}
-              showDonationsBar={this.state.donationsBar} />} />
-          <Route path="/donate/elizabethwarren2020" component={routerProps =>
-            <Donate {...routerProps}
-              logIn={this.logIn}
-              loggedIn={this.state.loggedIn}
-              username={this.state.username}
-            />} />
-          <Route component={() => <h1>404 - Page Not Found</h1>} />
-        </Switch>
-        <Menu />
-      </div>
+            <Route path="/donate/elizabethwarren2020" component={routerProps =>
+              <Donate {...routerProps}
+                logIn={this.logIn}
+                loggedIn={this.state.loggedIn}
+                username={this.state.username}
+              />} />
+            <Route component={() => <h1>404 - Page Not Found</h1>} />
+          </Switch>
+          <Menu />
+        </div>
+      </section>
     )
   }
 }

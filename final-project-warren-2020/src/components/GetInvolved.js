@@ -7,6 +7,8 @@ import API from '../API'
 import NewEvent from './NewEvent'
 import Swal from 'sweetalert2'
 import withReactContent from 'sweetalert2-react-content'
+import NavBar from './NavBar'
+import NewEventButton from './NewEventButton'
 
 const MySwal = withReactContent(Swal)
 
@@ -19,7 +21,9 @@ class GetInvolved extends React.Component {
     showMap: false,
     user: false,
     newUser: false,
-    createEvent: false
+    createEvent: false,
+    zip: '',
+    filteredEvents: false
   }
 
   createEventState = () => {
@@ -28,9 +32,11 @@ class GetInvolved extends React.Component {
 
   getEvents = () => API.getEvents().then(events => this.setState({ events }, this.showEvent))
 
-  showEvent = () => this.setState({ showEvent: true })
+  showEvent = () => this.setState({ showEvent: true }, this.showMap)
 
   showMap = () => this.setState({ showMap: !this.state.showMap })
+
+  // this.showFire
 
   componentDidMount() {
     this.getEvents()
@@ -76,6 +82,22 @@ class GetInvolved extends React.Component {
     })
   }
 
+  filterEvents = () => {
+    this.setState({ filteredEvents: !this.state.filteredEvents })
+  }
+
+  getZip = e => {
+    e.preventDefault()
+    const newZip = e.target.parentElement.childNodes[2].value
+    this.setState({ zip: newZip }, this.filterEvents)
+  }
+
+  showAll = e => {
+    e.preventDefault()
+    this.setState({ filteredEvents: !this.state.filteredEvents })
+    this.setState({ zip: '' })
+  }
+
   render() {
     return (
       <div>
@@ -83,36 +105,42 @@ class GetInvolved extends React.Component {
           <div className='donationsBar'>
             <h1 className="giving-text">Give Now</h1></div>
         </Link>
-        {this.props.username ? (
-          <button className='button' onClick={() => this.createEventState()}>
-            Create Event</button>) : null}
-        <div className='map-element'>
-          <MapFragment
-            showMap={this.state.showMap}
-            events={this.state.events}
-          />
-        </div>
-        {
-          this.state.showMap ? (
-            <button className='button' onClick={() => this.showMap()}>
-              Hide Map
-          </button>
-          ) : (<button className='button' onClick={() => this.showMap()}>
-            Show Events on the Map
-      </button>)
-        }
+        {this.props.username ?
+          <NewEventButton
+            createEventState={this.createEventState}
+          /> : null}
         {
           this.state.createEvent ? (
-            <NewEvent user={this.props.username}
+            <NewEvent
+              user={this.props.username}
               hideForm={this.createEventState} />
           ) : null
         }
+        <NavBar
+          componentDidMountState={this.state.componentDidMountState}
+          showFire={this.state.showFire}
+          filteredEvents={this.state.filteredEvents}
+          showAll={this.showAll}
+          getZip={this.getZip} />
+
+        <div className='map-element'>
+          <MapFragment
+            filteredEvents={this.state.filteredEvents}
+            zip={this.state.zip}
+            showMap={this.state.showMap}
+            events={this.state.events}
+            showMapFunction={this.showMap}
+          />
+        </div>
         {
           this.state.showEvent ? (
-            <ListEvents events={this.state.events} rsvp={this.rsvp} />
+            <ListEvents
+              filteredEvents={this.state.filteredEvents}
+              zip={this.state.zip}
+              events={this.state.events}
+              rsvp={this.rsvp} />
           ) : null
         }
-
       </div>
     )
   }
