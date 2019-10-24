@@ -16,7 +16,7 @@ const Healthcare = () => {
         <div className='donationsBar-new'>
           <h1 className="giving-text">Give Now</h1></div>
       </Link>
-      <div className='choice-image-box'>
+      <div className='image-box-green'>
         <img className='bio-img-1'
           src='https://d3i6fh83elv35t.cloudfront.net/static/2018/07/RTX3G410-1024x683.jpg'
           alt='Medicare for All' /></div>
@@ -63,7 +63,6 @@ const Healthcare = () => {
         </h3>
         <h3 className='issue-page-highlights'>
         That's why Elizabeth will fight for Medicare for All.      </h3>
-        <div style={{ 'padding-bottom': '5%' }}></div>
       </div>
     </div >
   )

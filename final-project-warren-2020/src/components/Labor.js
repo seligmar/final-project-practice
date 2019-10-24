@@ -54,7 +54,6 @@ const Labor = () => {
           <h3 className='issue-page-highlights'>
             It’s not a question of more government or less government. It’s about who government works for.
       </h3>
-          <div style={{ 'padding-bottom': '5%' }}></div>
         </div>
       </div >
     </div >

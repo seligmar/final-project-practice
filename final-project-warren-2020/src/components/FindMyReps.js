@@ -51,16 +51,21 @@ class FindMyReps extends React.Component {
           <div className='donationsBar'>
             <h1 className="giving-text">Give Now</h1></div>
         </Link>
-        <br></br>
         <EnterAddressForm callGoogleAPI={this.callGoogleAPI} />
         {this.state.renderReps ? <ShowReps reps={this.state.reps} /> : null}
         <div className='reps-background'>
-          <img className='march-img' src="https://www.ocregister.com/wp-content/uploads/migration/ok5/ok5ku6-gettyimages632318210.jpg?w=620" />
-          <h3>“We come here to stand shoulder to shoulder to make clear: We are here. We will not be silent. We will not play dead. We will fight for what we believe in.”
+          <div className='image-box-green'>
+            <img className='bio-img-1' src="https://www.ocregister.com/wp-content/uploads/migration/ok5/ok5ku6-gettyimages632318210.jpg?w=620" />
+          </div>
+          <h3 style={{
+            'margin-left': '10%',
+            'margin-right': '10%'
+          }}>“We come here to stand shoulder to shoulder to make clear: We are here. We will not be silent. We will not play dead. We will fight for what we believe in.”
         </h3>
           <h3>—Elizabeth Warren speaking at the Women’s March in Boston</h3>
         </div>
       </div>
+
     )
   }
 }

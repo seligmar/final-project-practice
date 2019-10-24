@@ -4,13 +4,13 @@ const ShowReps = props => {
   const reps = {
     margin: '0',
     'font-family': 'sans-serif',
-    'text-align': 'left'
+    'text-align': 'center'
   }
 
   return (
     <div className='show-reps'>
       <div class="ui huge divided list">
-        <div style={reps} class="item">
+        <div style={reps} class="centered item">
           <img class="ui avatar image" src="https://images.vexels.com/media/users/3/166118/isolated/lists/638362f71b50e384413f0959ef09d9ba-american-flag-elements-icon.png" />
           <div class="content">
             <h4 class='header'>{props.reps.offices[2].name}: </h4>

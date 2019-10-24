@@ -18,8 +18,6 @@ class About extends React.Component {
             </div>
           </div>
         </div>
-
-
         <h2 className='about-page-header'>Elizabeth grew up on the ragged edge of the middle class in Oklahoma and became a teacher, a law professor, and a US Senator because America invested in kids like her.</h2>
         <div>
           <div className='image-box'>

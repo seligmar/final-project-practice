@@ -184,7 +184,8 @@ class NewEvent extends React.Component {
     const buttons = {
       'background-color': '#b61b28',
       color: '#fff',
-      'margin-top': '3%'
+      'margin-top': '3%',
+      'width': '80%'
     }
 
     const formHeader = {
@@ -230,7 +231,7 @@ class NewEvent extends React.Component {
               <input
                 type='date'
                 name='date'
-                min="2019-10-17"
+                min="2019-10-24"
                 max="2020-11-03"
               /><br></br>
               <div style={formHeader2}>Please Enter the Address Where the Event Will Occor:</div>
@@ -259,7 +260,7 @@ class NewEvent extends React.Component {
                 name='zip'
                 placeholder='Zip Code'
               />
-              <button className='fluid ui button' style={buttons} type='submit'>Submit</button>
+              <button className='centered ui button' style={buttons} type='submit'>Submit</button>
             </form>
           </div>
         </div>

@@ -21,7 +21,7 @@ const EnterAddressForm = props => {
   }
 
   return (
-    <div className='login'>
+    <div style={{ 'margin-top': '3%' }} className='login'>
       <div class='field'>
         <div className='form-border'>
           <div style={border}>

@@ -112,7 +112,6 @@ const WomensHealth = () => {
         </h3>
           <h3 className='issue-page-highlights'>Congress should act to ensure that the will of the people remains the law of the land.
       </h3>
-          <div style={{ 'padding-bottom': '5%' }}></div>
         </div>
       </div >
     </div >
