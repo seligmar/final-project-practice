@@ -2,7 +2,7 @@ ReadMe
 
 Getting Started
 
-The final project I created at the Flatiron School in-person software development program in London, this app is a campaign site created for Elizabeth Warren, who is running for the Democratic nomination for President in 2020. This site uses React and Ruby on Rails and calls on the Google Civic Information, Maps Javascript, and Geocoding APIs and the ProPublica API, as well as the APIs generated for the users, events, and donations models internal to the Rails back-end. The app uses the official colors of the Warren 2020 campaign and some semantic ui css.   
+The final project I created at the Flatiron School in-person software development program in London, this app is a campaign site for Elizabeth Warren, who is running for the Democratic nomination for President in 2020. This site uses React and Ruby on Rails and calls on the Google Civic Information, Maps Javascript, and Geocoding APIs and the ProPublica API, as well as the APIs generated for the users, events, and donations models internal to the Rails back-end. The app uses the official colors of the Warren 2020 campaign and some semantic ui css.   
 
 Demo here: https://www.youtube.com/watch?v=_CMc1fOTbcU
 
