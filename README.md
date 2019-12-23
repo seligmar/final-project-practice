@@ -55,3 +55,13 @@ https://github.com/sweetalert2/sweetalert2-react-content - alerts
 https://guides.rubyonrails.org/active_record_validations.html - validation in Ruby on Rails
 
 http://www.4president.us/ - archive of past presidential websites 
+
+Acknowledgments
+
+My entire cohort in London (class beginning 07/15/2019) and my instructors throughout the program were remarkable coders and human beings and I am very thankful to have been able to work with all of them. 
+
+I additionally referenced the youtube code-alongs of Leigh Halliday and Traversy Media to create the google map. 
+
+https://www.youtube.com/watch?time_continue=172&v=Pf7g32CwX_s - Leigh Halliday
+
+https://www.youtube.com/watch?v=pRiQeo17u6c - Traversy Media
