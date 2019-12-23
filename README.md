@@ -39,6 +39,7 @@ https://github.com/CookPete/react-player - react player github
 https://www.npmjs.com/package/react-twitter-embed - embed tweets
 
 LEGAL INFO 
+
 https://www.fec.gov/resources/cms-content/documents/contribution_limits_chart_2019-2020.pdf 
 
 REACT INFO 
